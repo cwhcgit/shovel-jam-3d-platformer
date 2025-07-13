@@ -1,0 +1,331 @@
+[gd_scene load_steps=83 format=3 uid="uid://b5w5a5j5j5j5"]
+
+[ext_resource type="PackedScene" uid="uid://c8oh353smnq7d" path="res://assets/kaykit_platformer/gltf/blue/arch_blue.gltf" id="1_0"]
+[ext_resource type="PackedScene" uid="uid://db6pcefep7vtr" path="res://assets/kaykit_platformer/gltf/blue/arch_tall_blue.gltf" id="2_0"]
+[ext_resource type="PackedScene" uid="uid://cxv6u06fgjgl6" path="res://assets/kaykit_platformer/gltf/blue/arch_wide_blue.gltf" id="3_0"]
+[ext_resource type="PackedScene" uid="uid://cia883tt4w6w7" path="res://assets/kaykit_platformer/gltf/blue/ball_blue.gltf" id="4_0"]
+[ext_resource type="PackedScene" uid="uid://cmuylk3ur8jci" path="res://assets/kaykit_platformer/gltf/blue/barrier_1x1x1_blue.gltf" id="5_0"]
+[ext_resource type="PackedScene" uid="uid://begdtjvc4ciqh" path="res://assets/kaykit_platformer/gltf/blue/barrier_1x1x2_blue.gltf" id="6_0"]
+[ext_resource type="PackedScene" uid="uid://cdhxsqgbmh406" path="res://assets/kaykit_platformer/gltf/blue/barrier_1x1x4_blue.gltf" id="7_0"]
+[ext_resource type="PackedScene" uid="uid://bwf1p2vcktswa" path="res://assets/kaykit_platformer/gltf/blue/barrier_2x1x1_blue.gltf" id="8_0"]
+[ext_resource type="PackedScene" uid="uid://s6ij8ygbjp6d" path="res://assets/kaykit_platformer/gltf/blue/barrier_2x1x2_blue.gltf" id="9_0"]
+[ext_resource type="PackedScene" uid="uid://ce8dy1py237f4" path="res://assets/kaykit_platformer/gltf/blue/barrier_2x1x4_blue.gltf" id="10_0"]
+[ext_resource type="PackedScene" uid="uid://bcd4ckyobaj17" path="res://assets/kaykit_platformer/gltf/blue/barrier_3x1x1_blue.gltf" id="11_0"]
+[ext_resource type="PackedScene" uid="uid://xg6md1sqvmf6" path="res://assets/kaykit_platformer/gltf/blue/barrier_3x1x2_blue.gltf" id="12_0"]
+[ext_resource type="PackedScene" uid="uid://branbca145o6c" path="res://assets/kaykit_platformer/gltf/blue/barrier_3x1x4_blue.gltf" id="13_0"]
+[ext_resource type="PackedScene" uid="uid://ccrcdeiydl77f" path="res://assets/kaykit_platformer/gltf-meshed/barrier_4x_1x_1_blue.tscn" id="14_mfr71"]
+[ext_resource type="PackedScene" uid="uid://bwumckiui8q7c" path="res://assets/kaykit_platformer/gltf/blue/barrier_4x1x2_blue.gltf" id="15_0"]
+[ext_resource type="PackedScene" uid="uid://dysdl518vw537" path="res://assets/kaykit_platformer/gltf/blue/barrier_4x1x4_blue.gltf" id="16_0"]
+[ext_resource type="PackedScene" uid="uid://bgi84td0kxouu" path="res://assets/kaykit_platformer/gltf/blue/bomb_A_blue.gltf" id="17_0"]
+[ext_resource type="PackedScene" uid="uid://ogcuu7kgiey3" path="res://assets/kaykit_platformer/gltf/blue/bomb_B_blue.gltf" id="18_0"]
+[ext_resource type="PackedScene" uid="uid://d37c14vly7ox4" path="res://assets/kaykit_platformer/gltf/blue/bracing_large_blue.gltf" id="19_0"]
+[ext_resource type="PackedScene" uid="uid://dbglivpw1gpv" path="res://assets/kaykit_platformer/gltf/blue/bracing_medium_blue.gltf" id="20_0"]
+[ext_resource type="PackedScene" uid="uid://d3fn53c2f5r3c" path="res://assets/kaykit_platformer/gltf/blue/bracing_small_blue.gltf" id="21_0"]
+[ext_resource type="PackedScene" uid="uid://2b74ohxv23fo" path="res://assets/kaykit_platformer/gltf/blue/button_base_blue.gltf" id="22_0"]
+[ext_resource type="PackedScene" uid="uid://bhg43ik0yfwrd" path="res://assets/kaykit_platformer/gltf/blue/cone_blue.gltf" id="23_0"]
+[ext_resource type="PackedScene" uid="uid://bpffkq4wtn7ht" path="res://assets/kaykit_platformer/gltf/blue/diamond_blue.gltf" id="24_0"]
+[ext_resource type="PackedScene" uid="uid://chvbrvuegdsen" path="res://assets/kaykit_platformer/gltf/blue/flag_A_blue.gltf" id="25_0"]
+[ext_resource type="PackedScene" uid="uid://bufao87ed263t" path="res://assets/kaykit_platformer/gltf/blue/flag_B_blue.gltf" id="26_0"]
+[ext_resource type="PackedScene" uid="uid://dalajmrjxe18n" path="res://assets/kaykit_platformer/gltf/blue/flag_C_blue.gltf" id="27_0"]
+[ext_resource type="PackedScene" uid="uid://cd6ehso3frobl" path="res://assets/kaykit_platformer/gltf/blue/heart_blue.gltf" id="28_0"]
+[ext_resource type="PackedScene" uid="uid://dqpm75sn3rgeu" path="res://assets/kaykit_platformer/gltf/blue/hoop_angled_blue.gltf" id="29_0"]
+[ext_resource type="PackedScene" uid="uid://cixxiplmcqbwo" path="res://assets/kaykit_platformer/gltf/blue/hoop_blue.gltf" id="30_0"]
+[ext_resource type="PackedScene" uid="uid://cj8sfmfu8t32e" path="res://assets/kaykit_platformer/gltf/blue/lever_floor_base_blue.gltf" id="31_0"]
+[ext_resource type="PackedScene" uid="uid://bpndd8ydaprqa" path="res://assets/kaykit_platformer/gltf/blue/lever_wall_base_A_blue.gltf" id="32_0"]
+[ext_resource type="PackedScene" uid="uid://dlknajnavdhux" path="res://assets/kaykit_platformer/gltf/blue/lever_wall_base_B_blue.gltf" id="33_0"]
+[ext_resource type="PackedScene" uid="uid://dxpuw4k05txh0" path="res://assets/kaykit_platformer/gltf/blue/pipe_180_A_blue.gltf" id="34_0"]
+[ext_resource type="PackedScene" uid="uid://bwmtkh11u5p52" path="res://assets/kaykit_platformer/gltf/blue/pipe_180_B_blue.gltf" id="35_0"]
+[ext_resource type="PackedScene" uid="uid://dml74n66qmuam" path="res://assets/kaykit_platformer/gltf/blue/pipe_90_A_blue.gltf" id="36_0"]
+[ext_resource type="PackedScene" uid="uid://ciw1w6nr6ndno" path="res://assets/kaykit_platformer/gltf/blue/pipe_90_B_blue.gltf" id="37_0"]
+[ext_resource type="PackedScene" uid="uid://bojlnoldu2mks" path="res://assets/kaykit_platformer/gltf/blue/pipe_end_blue.gltf" id="38_0"]
+[ext_resource type="PackedScene" uid="uid://crgu8yh2plnfx" path="res://assets/kaykit_platformer/gltf/blue/pipe_straight_A_blue.gltf" id="39_0"]
+[ext_resource type="PackedScene" uid="uid://bfrquqgl65b32" path="res://assets/kaykit_platformer/gltf/blue/pipe_straight_B_blue.gltf" id="40_0"]
+[ext_resource type="PackedScene" uid="uid://bleorv38hxcmc" path="res://assets/kaykit_platformer/gltf/blue/platform_1x1x1_blue.gltf" id="41_0"]
+[ext_resource type="PackedScene" uid="uid://dvh6nxyt5e4i3" path="res://assets/kaykit_platformer/gltf/blue/platform_2x2x1_blue.gltf" id="42_0"]
+[ext_resource type="PackedScene" uid="uid://cvscrq888f5bb" path="res://assets/kaykit_platformer/gltf/blue/platform_2x2x2_blue.gltf" id="43_0"]
+[ext_resource type="PackedScene" uid="uid://bq0e5itql3yyt" path="res://assets/kaykit_platformer/gltf/blue/platform_2x2x4_blue.gltf" id="44_0"]
+[ext_resource type="PackedScene" uid="uid://due37tsj4lqv5" path="res://assets/kaykit_platformer/gltf/blue/platform_4x2x1_blue.gltf" id="45_0"]
+[ext_resource type="PackedScene" uid="uid://olqp87np2vf0" path="res://assets/kaykit_platformer/gltf/blue/platform_4x2x2_blue.gltf" id="46_0"]
+[ext_resource type="PackedScene" uid="uid://cj5h2c3oex5uq" path="res://assets/kaykit_platformer/gltf/blue/platform_4x2x4_blue.gltf" id="47_0"]
+[ext_resource type="PackedScene" uid="uid://dq7hvxqwoetv" path="res://assets/kaykit_platformer/gltf-meshed/platform_4x_4x_1_blue.tscn" id="48_mfr71"]
+[ext_resource type="PackedScene" uid="uid://kuyn76uojdax" path="res://assets/kaykit_platformer/gltf/blue/platform_4x4x2_blue.gltf" id="49_0"]
+[ext_resource type="PackedScene" uid="uid://65v7mobtf4dw" path="res://assets/kaykit_platformer/gltf/blue/platform_4x4x4_blue.gltf" id="50_0"]
+[ext_resource type="PackedScene" uid="uid://eymef1wukr4c" path="res://assets/kaykit_platformer/gltf/blue/platform_6x2x1_blue.gltf" id="51_0"]
+[ext_resource type="PackedScene" uid="uid://b3d781g6ifm1g" path="res://assets/kaykit_platformer/gltf/blue/platform_6x2x2_blue.gltf" id="52_0"]
+[ext_resource type="PackedScene" uid="uid://c56mykk06tv8e" path="res://assets/kaykit_platformer/gltf/blue/platform_6x2x4_blue.gltf" id="53_0"]
+[ext_resource type="PackedScene" uid="uid://bscllgxh3j7at" path="res://assets/kaykit_platformer/gltf/blue/platform_6x6x1_blue.gltf" id="54_0"]
+[ext_resource type="PackedScene" uid="uid://b1qwkdtj2uabd" path="res://assets/kaykit_platformer/gltf/blue/platform_6x6x2_blue.gltf" id="55_0"]
+[ext_resource type="PackedScene" uid="uid://cvoftphn84jc0" path="res://assets/kaykit_platformer/gltf/blue/platform_6x6x4_blue.gltf" id="56_0"]
+[ext_resource type="PackedScene" uid="uid://dpcvryvuiwm6w" path="res://assets/kaykit_platformer/gltf/blue/platform_arrow_2x2x1_blue.gltf" id="57_0"]
+[ext_resource type="PackedScene" uid="uid://tvkk23yx7rb5" path="res://assets/kaykit_platformer/gltf/blue/platform_arrow_4x4x1_blue.gltf" id="58_0"]
+[ext_resource type="PackedScene" uid="uid://ca82wss7w65mm" path="res://assets/kaykit_platformer/gltf/blue/platform_decorative_1x1x1_blue.gltf" id="59_0"]
+[ext_resource type="PackedScene" uid="uid://diav0805f7s37" path="res://assets/kaykit_platformer/gltf/blue/platform_decorative_2x2x2_blue.gltf" id="60_0"]
+[ext_resource type="PackedScene" uid="uid://cbnns1nd4itq4" path="res://assets/kaykit_platformer/gltf/blue/platform_hole_6x6x1_blue.gltf" id="61_0"]
+[ext_resource type="PackedScene" uid="uid://cnnqpabu566qv" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_2x2x2_blue.gltf" id="62_0"]
+[ext_resource type="PackedScene" uid="uid://bspwmx6u27i64" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_2x4x4_blue.gltf" id="63_0"]
+[ext_resource type="PackedScene" uid="uid://bvdv4aq1qupwl" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_2x6x4_blue.gltf" id="64_0"]
+[ext_resource type="PackedScene" uid="uid://bqvg0gk7bwhow" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_4x2x2_blue.gltf" id="65_0"]
+[ext_resource type="PackedScene" uid="uid://h666yg6wveqf" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_4x4x4_blue.gltf" id="66_0"]
+[ext_resource type="PackedScene" uid="uid://xcdowgtfoayp" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_4x6x4_blue.gltf" id="67_0"]
+[ext_resource type="PackedScene" uid="uid://cbapgfeu63r4d" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_6x2x2_blue.gltf" id="68_0"]
+[ext_resource type="PackedScene" uid="uid://mfhkvuc0gvxw" path="res://assets/kaykit_platformer/gltf/blue/platform_slope_6x6x4_blue.gltf" id="69_0"]
+[ext_resource type="PackedScene" uid="uid://cwxf0lbk88770" path="res://assets/kaykit_platformer/gltf/blue/power_blue.gltf" id="70_0"]
+[ext_resource type="PackedScene" uid="uid://bl5ql0eh3i858" path="res://assets/kaykit_platformer/gltf/blue/railing_corner_double_blue.gltf" id="71_0"]
+[ext_resource type="PackedScene" uid="uid://b2jimnssjollk" path="res://assets/kaykit_platformer/gltf/blue/railing_corner_padded_blue.gltf" id="72_0"]
+[ext_resource type="PackedScene" uid="uid://c6tehrdoq71aj" path="res://assets/kaykit_platformer/gltf/blue/railing_corner_single_blue.gltf" id="73_0"]
+[ext_resource type="PackedScene" uid="uid://d20kx5lymxq8w" path="res://assets/kaykit_platformer/gltf/blue/railing_straight_double_blue.gltf" id="74_0"]
+[ext_resource type="PackedScene" uid="uid://b6x5y542ovkdu" path="res://assets/kaykit_platformer/gltf/blue/railing_straight_padded_blue.gltf" id="75_0"]
+[ext_resource type="PackedScene" uid="uid://b2dfdj0bechp8" path="res://assets/kaykit_platformer/gltf/blue/railing_straight_single_blue.gltf" id="76_0"]
+[ext_resource type="PackedScene" uid="uid://clije11er87nd" path="res://assets/kaykit_platformer/gltf/blue/signage_arrow_stand_blue.gltf" id="77_0"]
+[ext_resource type="PackedScene" uid="uid://cogmyt3i7yrcj" path="res://assets/kaykit_platformer/gltf/blue/signage_arrow_wall_blue.gltf" id="78_0"]
+[ext_resource type="PackedScene" uid="uid://cfaxy5qxjg01r" path="res://assets/kaykit_platformer/gltf/blue/signage_arrows_left_blue.gltf" id="79_0"]
+[ext_resource type="PackedScene" uid="uid://bp7aeawnte64h" path="res://assets/kaykit_platformer/gltf/blue/signage_arrows_right_blue.gltf" id="80_0"]
+[ext_resource type="PackedScene" uid="uid://c5ilmnnv4gsur" path="res://assets/kaykit_platformer/gltf/blue/spring_pad_blue.gltf" id="81_0"]
+[ext_resource type="PackedScene" uid="uid://d3dusvyu0uike" path="res://assets/kaykit_platformer/gltf/blue/star_blue.gltf" id="82_0"]
+
+[node name="MeshLibrary" type="Node3D"]
+
+[node name="arch_blue" parent="." instance=ExtResource("1_0")]
+
+[node name="arch_tall_blue" parent="." instance=ExtResource("2_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="arch_wide_blue" parent="." instance=ExtResource("3_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="ball_blue" parent="." instance=ExtResource("4_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="barrier_1x1x1_blue" parent="." instance=ExtResource("5_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="barrier_1x1x2_blue" parent="." instance=ExtResource("6_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="barrier_1x1x4_blue" parent="." instance=ExtResource("7_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="barrier_2x1x1_blue" parent="." instance=ExtResource("8_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="barrier_2x1x2_blue" parent="." instance=ExtResource("9_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="barrier_2x1x4_blue" parent="." instance=ExtResource("10_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="barrier_3x1x1_blue" parent="." instance=ExtResource("11_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="barrier_3x1x2_blue" parent="." instance=ExtResource("12_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="barrier_3x1x4_blue" parent="." instance=ExtResource("13_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 0)
+
+[node name="barrier_4x1x1_blue" parent="." instance=ExtResource("14_mfr71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+
+[node name="barrier_4x1x2_blue" parent="." instance=ExtResource("15_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
+
+[node name="barrier_4x1x4_blue" parent="." instance=ExtResource("16_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="bomb_A_blue" parent="." instance=ExtResource("17_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+
+[node name="bomb_B_blue" parent="." instance=ExtResource("18_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+
+[node name="bracing_large_blue" parent="." instance=ExtResource("19_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="bracing_medium_blue" parent="." instance=ExtResource("20_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 0)
+
+[node name="bracing_small_blue" parent="." instance=ExtResource("21_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="button_base_blue" parent="." instance=ExtResource("22_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+
+[node name="cone_blue" parent="." instance=ExtResource("23_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 0)
+
+[node name="diamond_blue" parent="." instance=ExtResource("24_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 0)
+
+[node name="flag_A_blue" parent="." instance=ExtResource("25_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 0)
+
+[node name="flag_B_blue" parent="." instance=ExtResource("26_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="flag_C_blue" parent="." instance=ExtResource("27_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 0)
+
+[node name="heart_blue" parent="." instance=ExtResource("28_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+
+[node name="hoop_angled_blue" parent="." instance=ExtResource("29_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 0, 0)
+
+[node name="hoop_blue" parent="." instance=ExtResource("30_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 0)
+
+[node name="lever_floor_base_blue" parent="." instance=ExtResource("31_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
+
+[node name="lever_wall_base_A_blue" parent="." instance=ExtResource("32_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 0)
+
+[node name="lever_wall_base_B_blue" parent="." instance=ExtResource("33_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 0)
+
+[node name="pipe_180_A_blue" parent="." instance=ExtResource("34_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 0)
+
+[node name="pipe_180_B_blue" parent="." instance=ExtResource("35_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 0)
+
+[node name="pipe_90_A_blue" parent="." instance=ExtResource("36_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
+
+[node name="pipe_90_B_blue" parent="." instance=ExtResource("37_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 0, 0)
+
+[node name="pipe_end_blue" parent="." instance=ExtResource("38_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 0)
+
+[node name="pipe_straight_A_blue" parent="." instance=ExtResource("39_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, 0)
+
+[node name="pipe_straight_B_blue" parent="." instance=ExtResource("40_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 0)
+
+[node name="platform_1x1x1_blue" parent="." instance=ExtResource("41_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+
+[node name="platform_2x2x1_blue" parent="." instance=ExtResource("42_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 0)
+
+[node name="platform_2x2x2_blue" parent="." instance=ExtResource("43_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84, 0, 0)
+
+[node name="platform_2x2x4_blue" parent="." instance=ExtResource("44_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 0)
+
+[node name="platform_4x2x1_blue" parent="." instance=ExtResource("45_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 0, 0)
+
+[node name="platform_4x2x2_blue" parent="." instance=ExtResource("46_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 0)
+
+[node name="platform_4x2x4_blue" parent="." instance=ExtResource("47_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, 0)
+
+[node name="platform_4x4x1_blue" parent="." instance=ExtResource("48_mfr71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 0)
+
+[node name="platform_4x4x2_blue" parent="." instance=ExtResource("49_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96, 0, 0)
+
+[node name="platform_4x4x4_blue" parent="." instance=ExtResource("50_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98, 0, 0)
+
+[node name="platform_6x2x1_blue" parent="." instance=ExtResource("51_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, 0)
+
+[node name="platform_6x2x2_blue" parent="." instance=ExtResource("52_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 0, 0)
+
+[node name="platform_6x2x4_blue" parent="." instance=ExtResource("53_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104, 0, 0)
+
+[node name="platform_6x6x1_blue" parent="." instance=ExtResource("54_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, 0, 0)
+
+[node name="platform_6x6x2_blue" parent="." instance=ExtResource("55_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 0, 0)
+
+[node name="platform_6x6x4_blue" parent="." instance=ExtResource("56_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 0, 0)
+
+[node name="platform_arrow_2x2x1_blue" parent="." instance=ExtResource("57_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 0, 0)
+
+[node name="platform_arrow_4x4x1_blue" parent="." instance=ExtResource("58_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114, 0, 0)
+
+[node name="platform_decorative_1x1x1_blue" parent="." instance=ExtResource("59_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116, 0, 0)
+
+[node name="platform_decorative_2x2x2_blue" parent="." instance=ExtResource("60_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118, 0, 0)
+
+[node name="platform_hole_6x6x1_blue" parent="." instance=ExtResource("61_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 0, 0)
+
+[node name="platform_slope_2x2x2_blue" parent="." instance=ExtResource("62_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 0, 0)
+
+[node name="platform_slope_2x4x4_blue" parent="." instance=ExtResource("63_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124, 0, 0)
+
+[node name="platform_slope_2x6x4_blue" parent="." instance=ExtResource("64_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126, 0, 0)
+
+[node name="platform_slope_4x2x2_blue" parent="." instance=ExtResource("65_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128, 0, 0)
+
+[node name="platform_slope_4x4x4_blue" parent="." instance=ExtResource("66_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 0, 0)
+
+[node name="platform_slope_4x6x4_blue" parent="." instance=ExtResource("67_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132, 0, 0)
+
+[node name="platform_slope_6x2x2_blue" parent="." instance=ExtResource("68_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134, 0, 0)
+
+[node name="platform_slope_6x6x4_blue" parent="." instance=ExtResource("69_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136, 0, 0)
+
+[node name="power_blue" parent="." instance=ExtResource("70_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138, 0, 0)
+
+[node name="railing_corner_double_blue" parent="." instance=ExtResource("71_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, 0)
+
+[node name="railing_corner_padded_blue" parent="." instance=ExtResource("72_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142, 0, 0)
+
+[node name="railing_corner_single_blue" parent="." instance=ExtResource("73_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144, 0, 0)
+
+[node name="railing_straight_double_blue" parent="." instance=ExtResource("74_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146, 0, 0)
+
+[node name="railing_straight_padded_blue" parent="." instance=ExtResource("75_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148, 0, 0)
+
+[node name="railing_straight_single_blue" parent="." instance=ExtResource("76_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 0)
+
+[node name="signage_arrow_stand_blue" parent="." instance=ExtResource("77_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152, 0, 0)
+
+[node name="signage_arrow_wall_blue" parent="." instance=ExtResource("78_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154, 0, 0)
+
+[node name="signage_arrows_left_blue" parent="." instance=ExtResource("79_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156, 0, 0)
+
+[node name="signage_arrows_right_blue" parent="." instance=ExtResource("80_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158, 0, 0)
+
+[node name="spring_pad_blue" parent="." instance=ExtResource("81_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160, 0, 0)
+
+[node name="star_blue" parent="." instance=ExtResource("82_0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162, 0, 0)
