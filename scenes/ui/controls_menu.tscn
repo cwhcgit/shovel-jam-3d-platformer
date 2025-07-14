@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7w2wros2b7x7"]
+[gd_scene load_steps=2 format=3 uid="uid://bhhdgwdifncxy"]
 
-[ext_resource type="Script" uid="uid://csr4p1ebnoiln" path="res://scripts/ui/game_over_screen.gd" id="1_go_script"]
+[ext_resource type="Script" uid="uid://cllr0x6xye0tm" path="res://scripts/ui/controls_menu.gd" id="1_cm_script"]
 
-[node name="GameOverScreen" type="Control"]
+[node name="ControlsMenu" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_go_script")
+script = ExtResource("1_cm_script")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.5)
+color = Color(0, 0, 0, 0.7)
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -28,17 +28,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -26.0
-offset_right = 100.0
-offset_bottom = 26.0
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "GAME OVER"
+text = "CONTROLS
+
+WASD/Arrow Keys - Move
+Space - Jump
+F - Interact
+Esc - Pause/Unpause"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="TryAgainButton" type="Button" parent="ColorRect"]
+[node name="BackButton" type="Button" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,9 +52,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = 40.0
+offset_top = 80.0
 offset_right = 60.0
-offset_bottom = 70.0
+offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Try Again"
+text = "Back"

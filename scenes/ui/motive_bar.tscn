@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6vte822t5e5u"]
 
-[ext_resource type="Script" uid="uid://c7xcpuu67xaab" path="res://scripts/motive_bar.gd" id="1_xlebs"]
+[ext_resource type="Script" uid="uid://c7xcpuu67xaab" path="res://scripts/ui/motive_bar.gd" id="1_xlebs"]
 
 [node name="MotiveBar" type="ProgressBar"]
 custom_minimum_size = Vector2(200, 27)

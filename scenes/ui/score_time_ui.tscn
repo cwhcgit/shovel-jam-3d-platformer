@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4l1rlkot52sd"]
 
-[ext_resource type="Script" uid="uid://c20vhgodai2qy" path="res://scripts/score_time_ui_controller.gd" id="1_st_ui"]
+[ext_resource type="Script" uid="uid://c20vhgodai2qy" path="res://scripts/ui/score_time_ui_controller.gd" id="1_st_ui"]
 
 [node name="ScoreTimeUI" type="Control"]
 layout_mode = 3

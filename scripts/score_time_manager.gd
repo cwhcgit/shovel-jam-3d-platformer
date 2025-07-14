@@ -4,7 +4,7 @@ signal score_updated(new_score)
 signal time_updated(new_time)
 signal game_over()
 
-const TIME_LEFT_CONST = 3
+const TIME_LEFT_CONST = 300
 var current_score = 0
 var time_left = TIME_LEFT_CONST # seconds
 var game_running = true
