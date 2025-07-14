@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7w2wros2b7x7"]
+
+[ext_resource type="Script" path="res://scripts/motive_ui_controller.gd" id="1_abcde"]
+
+[node name="MotiveUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abcde")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 2
+h_separation = 10
+v_separation = 10
