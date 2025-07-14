@@ -2,7 +2,6 @@ extends ProgressBar
 
 @export var motive_name: String = "Motive"
 
-# Define Colors
 const COLOR_HIGH = Color("28a745") # Green
 const COLOR_MEDIUM = Color("ffc107") # Orange
 const COLOR_LOW = Color("dc3545") # Red

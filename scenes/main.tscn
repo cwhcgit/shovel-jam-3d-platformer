@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=6 format=3 uid="uid://b5w2wros2b7x7"]
 
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
 [ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library.tres" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b7w2wros2b7x7" path="res://scenes/ui/motive_ui.tscn" id="3_ui"]
+[ext_resource type="PackedScene" uid="uid://b4l1rlkot52sd" path="res://scenes/ui/score_time_ui.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c7w2wros2b7x7" path="res://scenes/ui/game_over_screen.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node3D"]
 
@@ -22,3 +24,7 @@ data = {
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="MotiveUI" parent="UI" instance=ExtResource("3_ui")]
+
+[node name="ScoreTimeUI" parent="UI" instance=ExtResource("4_jyhfs")]
+
+[node name="GameOverScreen" parent="UI" instance=ExtResource("5_tbgi4")]
