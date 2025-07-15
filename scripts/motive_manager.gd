@@ -4,17 +4,24 @@ signal motives_initialized(motive_data)
 signal motive_updated(motive_name, new_value)
 signal game_over()
 
+const HUNGER = "Hunger"
+const THIRST = "Thirst"
+const FUN = "Fun"
+const BLADDER = "Bladder"
+const ENERGY = "Energy"
+const HYGIENE = "Hygiene"
+
 const HIGH_THRESHOLD = 0.6 # green
 const MEDIUM_THRESHOLD = 0.35 # orange
 const LOW_THRESHOLD = 0.2 # red
 
 var motive_data = {
-	"Hunger": { "value": 100, "depletion_rate": 0 },
-	"Thirst": { "value": 100, "depletion_rate": 0 },
-	"Fun": { "value": 100, "depletion_rate": 0 },
-	"Bladder": { "value": 100, "depletion_rate": 0 },
-	"Energy": { "value": 100, "depletion_rate": 0 },
-	"Hygiene": { "value": 100, "depletion_rate": 0 }
+	HUNGER: { "value": 100, "depletion_rate": 0, "modifiers": [] },
+	THIRST: { "value": 100, "depletion_rate": 0, "modifiers": [] },
+	FUN: { "value": 100, "depletion_rate": 0, "modifiers": [] },
+	BLADDER: { "value": 100, "depletion_rate": 0, "modifiers": [] },
+	ENERGY: { "value": 100, "depletion_rate": 0, "modifiers": [] },
+	HYGIENE: { "value": 100, "depletion_rate": 0, "modifiers": [] }
 }
 
 var random = RandomNumberGenerator.new()
@@ -30,15 +37,42 @@ func _process(delta):
 
 	for motive_name in motive_data:
 		var motive = motive_data[motive_name]
-		# randomize depletion rate so each run has different priorities user might have to do
-		motive.value -= motive.depletion_rate * delta * (random.randf() + 0.5)
-		motive.value = clamp(motive.value, 0, 100)
-		emit_signal("motive_updated", motive_name, motive.value)
+		
+		# Base depletion rate
+		var change = - motive.depletion_rate * delta * (random.randf() + 0.5)
+		
+		# Apply active modifiers
+		var remaining_modifiers = []
+		for modifier in motive.modifiers:
+			change += modifier.change_per_second * delta
+			modifier.duration -= delta
+			if modifier.duration > 0:
+				remaining_modifiers.append(modifier)
+		motive.modifiers = remaining_modifiers
+		
+		# Update value if there was any change
+		if change != 0:
+			motive.value += change
+			motive.value = clamp(motive.value, 0, 100)
+			emit_signal("motive_updated", motive_name, motive.value)
 
 		if motive.value <= 0:
 			game_is_over = true
 			emit_signal("game_over")
 			return # Stop processing motives if game is over
+
+
+# --- Timed Modifiers ---
+
+func apply_motive_modifier(motive_name, change_per_second, duration):
+	if motive_data.has(motive_name):
+		var modifier = {
+			"change_per_second": change_per_second,
+			"duration": duration
+		}
+		motive_data[motive_name].modifiers.append(modifier)
+
+# --- Getter/Setter and State Management ---
 
 func get_all_motives():
 	return motive_data
@@ -59,4 +93,5 @@ func reset_game_state():
 		var motive = motive_data[motive_name]
 		motive.depletion_rate = random.randf_range(0.3, 1.5)
 		motive.value = random.randi_range(60, 80)
+		motive.modifiers = [] # Reset modifiers
 	emit_signal("motives_initialized", motive_data)
