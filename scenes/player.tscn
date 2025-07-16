@@ -25,3 +25,5 @@ spring_length = 5.0
 
 [node name="PlayerActionHandler" type="Node" parent="."]
 script = ExtResource("3_qhqgy")
+
+[node name="DashTimer" type="Timer" parent="."]

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://branbca145o6c" path="res://assets/kaykit_platformer/gltf/blue/barrier_3x1x4_blue.gltf" id="13_0"]
 [ext_resource type="PackedScene" uid="uid://ccrcdeiydl77f" path="res://assets/kaykit_platformer/gltf-meshed/barrier_4x_1x_1_blue.tscn" id="14_mfr71"]
 [ext_resource type="PackedScene" uid="uid://bwumckiui8q7c" path="res://assets/kaykit_platformer/gltf/blue/barrier_4x1x2_blue.gltf" id="15_0"]
-[ext_resource type="PackedScene" uid="uid://dysdl518vw537" path="res://assets/kaykit_platformer/gltf/blue/barrier_4x1x4_blue.gltf" id="16_0"]
+[ext_resource type="PackedScene" uid="uid://d4fhbwfvxdul3" path="res://assets/kaykit_platformer/gltf-meshed/barrier_4x_1x_4_blue.tscn" id="16_mfr71"]
 [ext_resource type="PackedScene" uid="uid://bgi84td0kxouu" path="res://assets/kaykit_platformer/gltf/blue/bomb_A_blue.gltf" id="17_0"]
 [ext_resource type="PackedScene" uid="uid://ogcuu7kgiey3" path="res://assets/kaykit_platformer/gltf/blue/bomb_B_blue.gltf" id="18_0"]
 [ext_resource type="PackedScene" uid="uid://d37c14vly7ox4" path="res://assets/kaykit_platformer/gltf/blue/bracing_large_blue.gltf" id="19_0"]
@@ -129,7 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
 [node name="barrier_4x1x2_blue" parent="." instance=ExtResource("15_0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 0)
 
-[node name="barrier_4x1x4_blue" parent="." instance=ExtResource("16_0")]
+[node name="barrier_4x1x4_blue" parent="." instance=ExtResource("16_mfr71")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
 
 [node name="bomb_A_blue" parent="." instance=ExtResource("17_0")]
