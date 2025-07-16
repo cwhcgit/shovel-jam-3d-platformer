@@ -2,7 +2,8 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const ROTATION_SPEED = 10.0 # Camera always points towards where player faces; increase this for snappier camera
+const ROTATION_SPEED = 10.0 # Increased for snappier feel
+const IDLE_ROTATION_SPEED = 5.0 # Slower rotation when not moving
 const ANIM_JUMP_NAME = "Jump_Full_Short"
 const ANIM_WALK_NAME = "Walking_A"
 const ANIM_RUN_NAME = "Running_A"
@@ -93,6 +94,7 @@ func _handle_movement():
 func _update_rotation(delta):
 	var direction = Vector3.ZERO
 	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
+	var current_rotation_speed = ROTATION_SPEED # Default to fast rotation
 
 	if wall_jump_cooldown > 0:
 		direction = velocity
@@ -102,10 +104,13 @@ func _update_rotation(delta):
 		var cam_right = spring_arm.global_transform.basis.x
 		direction = (cam_forward * input_dir.y + cam_right * input_dir.x)
 		direction.y = 0
+		# If only rotating (A/D pressed, but no W/S), use idle speed
+		if abs(input_dir.y) < 0.1 and abs(input_dir.x) > 0.1:
+			current_rotation_speed = IDLE_ROTATION_SPEED
 
-	if direction.length() > 0.1:
+	if direction.length() > 0.1: # Only rotate if there's a direction to look at
 		var target_basis = Basis.looking_at(direction.normalized())
-		transform.basis = transform.basis.slerp(target_basis, delta * ROTATION_SPEED)
+		transform.basis = transform.basis.slerp(target_basis, delta * current_rotation_speed)
 
 func _get_wall_normal():
 	if get_slide_collision_count() > 0:

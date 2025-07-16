@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=10 format=3 uid="uid://b5w2wros2b7x7"]
 
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
-[ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library.tres" id="2_0wfyh"]
+[ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library_blue.tres" id="2_0wfyh"]
+[ext_resource type="MeshLibrary" uid="uid://bq5062ievn7p2" path="res://scenes/gridmap/platformer_mesh_library_green.tres" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://b7w2wros2b7x7" path="res://scenes/ui/motive_ui.tscn" id="3_ui"]
 [ext_resource type="PackedScene" uid="uid://b4l1rlkot52sd" path="res://scenes/ui/score_time_ui.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c7w2wros2b7x7" path="res://scenes/ui/game_over_screen.tscn" id="5_tbgi4"]
@@ -17,9 +18,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950635, 3.49386, 3.75546)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5, 0)
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMaps" type="Node" parent="."]
+
+[node name="GridMap" type="GridMap" parent="GridMaps"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267963, -9.53674e-07, -0.0300236)
 mesh_library = ExtResource("2_0wfyh")
+collision_mask = 3
+data = {
+"cells": PackedInt32Array(65535, 1, 47, 1, 3, 1441839, 65535, 3, 1441839, 65533, 3, 47, 65533, 1, 47, 65533, 65535, 47, 65535, 65535, 47, 1, 65535, 47, 3, 65535, 47, 3, 3, 47, 65533, 5, 47, 65535, 5, 47, 1, 5, 47, 3, 5, 47, 65531, 5, 47, 65531, 4, 47, 65531, 3, 47, 65531, 2, 47, 65531, 1, 47, 65531, 0, 47, 65531, 65535, 47, 65531, 65534, 47, 65531, 65533, 47, 65533, 65533, 47, 65535, 65533, 47, 1, 65533, 47, 3, 65533, 47, 5, 65533, 47, 5, 65535, 47, 5, 5, 47, 65531, 65532, 15, 65533, 65532, 15, 65535, 65532, 15, 1, 65532, 15, 3, 65532, 15, 5, 65532, 15, 1, 1, 47, 3, 1, 47, 5, 3, 47, 5, 1, 47)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMapGreen" type="GridMap" parent="GridMaps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267963, -9.53674e-07, -0.0300236)
+visible = false
+mesh_library = ExtResource("2_tipki")
 collision_mask = 3
 data = {
 "cells": PackedInt32Array(65535, 1, 47, 1, 3, 1441839, 65535, 3, 1441839, 65533, 3, 47, 65533, 1, 47, 65533, 65535, 47, 65535, 65535, 47, 1, 65535, 47, 3, 65535, 47, 3, 3, 47, 65533, 5, 47, 65535, 5, 47, 1, 5, 47, 3, 5, 47, 65531, 5, 47, 65531, 4, 47, 65531, 3, 47, 65531, 2, 47, 65531, 1, 47, 65531, 0, 47, 65531, 65535, 47, 65531, 65534, 47, 65531, 65533, 47, 65533, 65533, 47, 65535, 65533, 47, 1, 65533, 47, 3, 65533, 47, 5, 65533, 47, 5, 65535, 47, 5, 5, 47, 65531, 65532, 15, 65533, 65532, 15, 65535, 65532, 15, 1, 65532, 15, 3, 65532, 15, 5, 65532, 15, 1, 1, 47, 3, 1, 47, 5, 3, 47, 5, 1, 47)

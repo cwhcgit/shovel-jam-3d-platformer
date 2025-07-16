@@ -38,6 +38,7 @@ text = "CONTROLS
 
 WASD/Arrow Keys - Move
 Space - Jump
+C - Dash
 F - Interact
 Esc - Pause/Unpause"
 horizontal_alignment = 1
@@ -52,9 +53,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -60.0
-offset_top = 80.0
+offset_top = 121.5
 offset_right = 60.0
-offset_bottom = 110.0
+offset_bottom = 152.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Back"
