@@ -119,6 +119,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.487, 3, 6.434)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00566924, 0.141259, -0.00210571)
 shape = SubResource("BoxShape3D_jbj1t")
 
+[node name="PotionSmallBlue" type="MeshInstance3D" parent="Objects/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0836117, 3.93755, 6.91625)
+mesh = ExtResource("17_muem4")
+skeleton = NodePath("../../..")
+
 [node name="Bedroom" type="Node3D" parent="Objects"]
 
 [node name="bed_double_A_gltf" parent="Objects/Bedroom" instance=ExtResource("18_dp3eg")]
@@ -224,9 +229,5 @@ visible = false
 visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="PotionSmallBlue" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0836117, 3.93755, 6.91625)
-mesh = ExtResource("17_muem4")
 
 [editable path="Objects/WorldTree"]
