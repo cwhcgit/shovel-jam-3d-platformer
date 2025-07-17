@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=16 format=3 uid="uid://b5w2wros2b7x7"]
 
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
 [ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library_blue.tres" id="2_0wfyh"]
@@ -14,6 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://fi7cprkh4c7g" path="res://scenes/ui/how_to_play_menu.tscn" id="7_htp_ui"]
 [ext_resource type="PackedScene" uid="uid://bhhdgwdifncxy" path="res://scenes/ui/controls_menu.tscn" id="8_cm_ui"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
+size = Vector3(120, 100, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a8y0u"]
+size = Vector3(1, 100, 120)
+
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_wbyy2")]
@@ -28,7 +34,38 @@ shadow_enabled = true
 [node name="WorldBoundaryTrees" type="Node3D" parent="Objects"]
 
 [node name="TreeMultiMesh" parent="Objects/WorldBoundaryTrees" instance=ExtResource("2_ya4ey")]
-transform = Transform3D(3.45315, 0, 0, 0, 0.998478, 0, 0, 0, 0.998478, 4.72067, 4.37744, -61.0309)
+transform = Transform3D(2, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 3.5, 0)
+boundary_size = Vector2(150, 200)
+tree_count_per_side = 100
+wall_thickness = 100.0
+height_variation = 0.0
+scale_variation = 1.1
+
+[node name="Boundary" type="StaticBody3D" parent="Objects/WorldBoundaryTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22468, 0.155228, 55.8193)
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/WorldBoundaryTrees/Boundary"]
+shape = SubResource("BoxShape3D_trceg")
+
+[node name="Boundary2" type="StaticBody3D" parent="Objects/WorldBoundaryTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27827, 0.986031, -57.6766)
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/WorldBoundaryTrees/Boundary2"]
+shape = SubResource("BoxShape3D_trceg")
+
+[node name="Boundary3" type="StaticBody3D" parent="Objects/WorldBoundaryTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.4604, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/WorldBoundaryTrees/Boundary3"]
+shape = SubResource("BoxShape3D_a8y0u")
+
+[node name="Boundary4" type="StaticBody3D" parent="Objects/WorldBoundaryTrees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.6273, -4.04453, -2.59116)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/WorldBoundaryTrees/Boundary4"]
+shape = SubResource("BoxShape3D_a8y0u")
 
 [node name="Tree_3_C_Color1" parent="Objects" instance=ExtResource("3_eb6dy")]
 transform = Transform3D(12.5, 0, 0, 0, 12.5, 0, 0, 0, 12.5, 0, 7.68737, 0)

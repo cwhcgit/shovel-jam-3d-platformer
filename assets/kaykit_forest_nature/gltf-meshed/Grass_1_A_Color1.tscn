@@ -1,6 +1,5 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://cjltt3ef81ycj"]
 
 [ext_resource type="PackedScene" uid="uid://capgp5i0k0762" path="res://assets/kaykit_forest_nature/Assets/gltf/Grass_1_A_Color1.gltf" id="1"]
 
 [node name="Grass_1_A_Color1" instance=ExtResource("1")]
-

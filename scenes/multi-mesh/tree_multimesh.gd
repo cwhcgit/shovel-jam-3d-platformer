@@ -1,68 +1,101 @@
 extends Node3D
 
-# @onready var multimesh_instance: MultiMeshInstance3D = $MultiMeshInstance3D
+class_name TreeBoundaryWall
 
-# # The scene containing the tree mesh. Assign this in the Inspector.
-# @export var tree_scene: PackedScene
+@export var tree_scenes: Array[PackedScene] = []  # Array of different tree scenes
+@export var boundary_size: Vector2 = Vector2(100, 100)  # World boundary dimensions
+@export var tree_spacing: float = 5.0  # Distance between trees
+@export var tree_count_per_side: int = 20  # Trees per wall side
+@export var wall_thickness: float = 10.0  # How thick the tree wall is
+@export var height_variation: float = 2.0  # Random height offset
+@export var rotation_variation: float = 45.0  # Random rotation in degrees
+@export var scale_variation: float = 0.3  # Random scale variation (0.0 to 1.0)
 
-# # Define the area where trees should be placed
-# const SPREAD_X = 100.0
-# const SPREAD_Z = 100.0
-# const INSTANCE_COUNT = 100
+var tree_instances: Array[Node3D] = []
 
-# func _ready():
-# 	if not tree_scene:
-# 		printerr("Tree scene is not set in the inspector for TreeMultiMesh.")
-# 		return
+func _ready():
+	create_tree_boundary()
 
-# 	# 1. Create and configure a new MultiMesh resource
-# 	var multimesh = MultiMesh.new()
-# 	multimesh.transform_format = MultiMesh.TRANSFORM_3D
-# 	multimesh.instance_count = INSTANCE_COUNT
-
-# 	# 2. Get the mesh from the provided scene
-# 	var temp_instance = tree_scene.instantiate()
-# 	var mesh_instance = _find_first_node_of_type(temp_instance, MeshInstance3D)
-
-# 	if mesh_instance and mesh_instance.mesh:
-# 		multimesh.mesh = mesh_instance.mesh
-# 	else:
-# 		printerr("Could not find a MeshInstance3D with a valid mesh in the provided tree scene.")
-# 		temp_instance.free() # Clean up the unused instance
-# 		return
+func create_tree_boundary():
+	if tree_scenes.is_empty():
+		print("Warning: No tree scenes provided!")
+		return
 	
-# 	temp_instance.free() # Clean up the unused instance
+	# Generate tree positions and create instances
+	generate_tree_instances()
 
-# 	# 3. Assign the fully configured resource to the node
-# 	multimesh_instance.multimesh = multimesh
+func calculate_total_trees() -> int:
+	# Calculate trees for all four sides of the boundary
+	var trees_per_side = tree_count_per_side
+	var total_trees = 0
+	
+	# Add trees for each side
+	total_trees += trees_per_side * 4
+	
+	# Add trees for wall thickness (multiple rows)
+	var rows = max(1, int(wall_thickness / tree_spacing))
+	total_trees *= rows
+	
+	return total_trees
 
-# 	# 4. Populate the transforms
-# 	randomize()
-# 	for i in range(multimesh.instance_count):
-# 		# --- Position ---
-# 		var x_pos = randf_range(-SPREAD_X / 2.0, SPREAD_X / 2.0)
-# 		var z_pos = randf_range(-SPREAD_Z / 2.0, SPREAD_Z / 2.0)
-# 		var position = Vector3(x_pos, 0, z_pos)
+func generate_tree_instances():
+	var half_boundary = boundary_size / 2.0
+	
+	# Number of rows for wall thickness
+	var rows = max(1, int(wall_thickness / tree_spacing))
+	
+	# Generate trees for each row
+	for row in range(rows):
+		var row_offset = (row - rows / 2.0) * tree_spacing
 		
-# 		# --- Rotation ---
-# 		var y_rotation = randf_range(0, TAU)
+		# Top wall (Z positive)
+		for i in range(tree_count_per_side):
+			var x = lerp(-half_boundary.x, half_boundary.x, float(i) / (tree_count_per_side - 1))
+			var z = half_boundary.y + row_offset
+			create_tree_instance(Vector3(x, 0, z))
 		
-# 		# --- Scale ---
-# 		var scale_factor = randf_range(0.8, 1.2)
-# 		var scale = Vector3(scale_factor, scale_factor, scale_factor)
+		# Bottom wall (Z negative)
+		for i in range(tree_count_per_side):
+			var x = lerp(-half_boundary.x, half_boundary.x, float(i) / (tree_count_per_side - 1))
+			var z = -half_boundary.y + row_offset
+			create_tree_instance(Vector3(x, 0, z))
 		
-# 		# Create the transform with the random values
-# 		var transform = Transform3D(Basis.from_euler(Vector3(0, y_rotation, 0)), position).scaled(scale)
+		# Left wall (X negative)
+		for i in range(tree_count_per_side):
+			var x = -half_boundary.x + row_offset
+			var z = lerp(-half_boundary.y, half_boundary.y, float(i) / (tree_count_per_side - 1))
+			create_tree_instance(Vector3(x, 0, z))
 		
-# 		# Set the transform for the instance
-# 		multimesh.set_instance_transform(i, transform)
+		# Right wall (X positive)
+		for i in range(tree_count_per_side):
+			var x = half_boundary.x + row_offset
+			var z = lerp(-half_boundary.y, half_boundary.y, float(i) / (tree_count_per_side - 1))
+			create_tree_instance(Vector3(x, 0, z))
 
-# # Helper function to find the first node of a given type recursively
-# func _find_first_node_of_type(node, type):
-# 	if node is type:
-# 		return node
-# 	for child in node.get_children():
-# 		var result = _find_first_node_of_type(child, type)
-# 		if result:
-# 			return result
-# 	return null
+func create_tree_instance(base_position: Vector3):
+	# Randomly select a tree scene
+	var random_scene = tree_scenes[randi() % tree_scenes.size()]
+	var tree_instance = random_scene.instantiate() as Node3D
+	
+	if not tree_instance:
+		print("Error: Could not instantiate tree scene")
+		return
+	
+	# Add random variations
+	var height_offset = randf_range(-height_variation, height_variation)
+	var _position = base_position + Vector3(0, height_offset, 0)
+	
+	# Random rotation around Y axis
+	var rotation_y = deg_to_rad(randf_range(-rotation_variation, rotation_variation))
+	
+	# Random scale
+	var scale_factor = 1.0 + randf_range(-scale_variation, scale_variation)
+	
+	# Apply transform
+	tree_instance.position = _position
+	tree_instance.rotation.y = rotation_y
+	tree_instance.scale = Vector3.ONE * scale_factor
+	
+	# Add to scene
+	add_child(tree_instance)
+	tree_instances.append(tree_instance)

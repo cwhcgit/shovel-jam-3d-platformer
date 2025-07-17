@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 30.0
 const JUMP_VELOCITY = 4.5
 const ROTATION_SPEED = 10.0 # Increased for snappier feel
 const IDLE_ROTATION_SPEED = 5.0 # Slower rotation when not moving
