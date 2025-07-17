@@ -67,6 +67,10 @@ dash={
 ]
 }
 
+[input_devices]
+
+sensors/enable_gravity=true
+
 [layer_names]
 
 3d_physics/layer_1="Ground"

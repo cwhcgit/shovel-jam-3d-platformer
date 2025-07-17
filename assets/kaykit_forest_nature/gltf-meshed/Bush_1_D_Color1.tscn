@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" uid="uid://d3eb444muirig" path="res://assets/kaykit_forest_nature/Assets/gltf/Bush_1_D_Color1.gltf" id="1"]
+
+[node name="Bush_1_D_Color1" instance=ExtResource("1")]
+

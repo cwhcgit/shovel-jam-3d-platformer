@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=417 format=4 uid="uid://bq5062ievn7p2"]
+[gd_resource type="MeshLibrary" load_steps=419 format=4 uid="uid://bq5062ievn7p2"]
 
 [ext_resource type="Texture2D" uid="uid://dpym2q6ib401q" path="res://assets/kaykit_platformer/gltf/green/platformer_texture.png" id="1_h4y3w"]
 
@@ -22,7 +22,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0nsbw"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h4y3w"]
 resource_name = "arch_green_arch_green"
 _surfaces = [{
 "aabb": AABB(-1.875, 5.96046e-08, -0.375, 3.75, 3.7, 0.75),
@@ -50,7 +50,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_lemuw"]
+[sub_resource type="ImageTexture" id="ImageTexture_oa8p0"]
 image = SubResource("Image_h4y3w")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jv5tg"]
@@ -73,7 +73,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7qowy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lemuw"]
 resource_name = "arch_tall_green_arch_tall_green"
 _surfaces = [{
 "aabb": AABB(-1.875, 5.96046e-08, -0.375, 3.75, 4.7, 0.75),
@@ -101,7 +101,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_uvhp7"]
+[sub_resource type="ImageTexture" id="ImageTexture_sg3gr"]
 image = SubResource("Image_0nsbw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ftclt"]
@@ -124,7 +124,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_mb1ua"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uvhp7"]
 resource_name = "barrier_3x1x1_green_barrier_3x1x1_green"
 _surfaces = [{
 "aabb": AABB(-1.5, 0, -0.5, 3, 1, 1),
@@ -152,7 +152,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_f5vp7"]
+[sub_resource type="ImageTexture" id="ImageTexture_6n0y8"]
 image = SubResource("Image_oa8p0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qosc6"]
@@ -175,7 +175,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b233v"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_f5vp7"]
 resource_name = "barrier_3x1x2_green_barrier_3x1x2_green"
 _surfaces = [{
 "aabb": AABB(-1.5, 0, -0.5, 3, 2, 1),
@@ -203,7 +203,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_khkr1"]
+[sub_resource type="ImageTexture" id="ImageTexture_28w25"]
 image = SubResource("Image_lemuw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3goj"]
@@ -226,7 +226,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_t8uy0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_khkr1"]
 resource_name = "barrier_3x1x4_green_barrier_3x1x4_green"
 _surfaces = [{
 "aabb": AABB(-1.5, 0, -0.5, 3, 4, 1),
@@ -254,7 +254,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_d05jd"]
+[sub_resource type="ImageTexture" id="ImageTexture_y8ns6"]
 image = SubResource("Image_7qowy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp7qa"]
@@ -277,7 +277,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3hs3f"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_d05jd"]
 resource_name = "barrier_4x1x1_green_barrier_4x1x1_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -0.5, 4, 1, 1),
@@ -305,7 +305,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_1aden"]
+[sub_resource type="ImageTexture" id="ImageTexture_2e55o"]
 image = SubResource("Image_sg3gr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwk6i"]
@@ -328,7 +328,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vhs6k"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1aden"]
 resource_name = "barrier_4x1x2_green_barrier_4x1x2_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -0.5, 4, 2, 1),
@@ -356,8 +356,11 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_qutnc"]
+[sub_resource type="ImageTexture" id="ImageTexture_s6gnm"]
 image = SubResource("Image_uvhp7")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vrst7"]
+points = PackedVector3Array(1.79992, 1.9998, 0.299922, 1.79992, 1.9998, -0.30002, -1.80031, 1.9998, 0.299922, 1.79992, 1.94127, 0.441366, 1.91543, 1.91543, 0.415427, 1.94127, 1.94127, 0.299922, 1.79992, 1.94127, -0.441464, -1.80031, 1.9998, -0.30002, 1.94127, 1.94127, -0.30002, 1.91543, 1.91543, -0.415525, -1.94166, 1.94127, 0.299922, -1.91582, 1.91543, 0.415427, -1.80031, 1.94127, 0.441366, 1.79992, 1.79992, 0.499902, 1.94127, 1.79992, 0.441366, 1.99961, 1.79992, 0.299922, 1.79992, 1.79992, -0.5, -1.80031, 1.94127, -0.441464, -1.91582, 1.91543, -0.415525, -1.94166, 1.94127, -0.30002, 1.99961, 1.79992, -0.30002, 1.94127, 1.79992, -0.441464, -2, 1.79992, 0.299922, -1.80031, 1.79992, 0.499902, -1.94166, 1.79992, 0.441366, 1.79992, 0.199883, 0.499902, 2, 0.199883, 0.299922, 1.94127, 0.199883, 0.441366, 1.79992, 0.199883, -0.5, -1.80031, 1.79992, -0.5, -1.94166, 1.79992, -0.441464, -2, 1.79992, -0.30002, 2, 0.199883, -0.30002, 1.94127, 0.199883, -0.441464, -2, 0.199883, 0.299922, -1.80031, 0.199883, 0.499902, -1.94166, 0.199883, 0.441366, 1.79992, 0.0585356, 0.441366, 1.91543, 0.0843775, 0.415427, 1.94127, 0.0585356, 0.299922, 1.79992, 0.0585356, -0.441464, -1.80031, 0.199883, -0.5, 1.91543, 0.0843775, -0.415525, -1.94166, 0.199883, -0.441464, -2, 0.199883, -0.30002, 1.94127, 0.0585356, -0.30002, -1.94166, 0.0585356, 0.299922, -1.91582, 0.0843775, 0.415427, -1.80031, 0.0585356, 0.441366, 1.79992, 0, 0.299922, 1.79992, 0, -0.30002, -1.80031, 0.0585356, -0.441464, -1.91582, 0.0843775, -0.415525, -1.94166, 0.0585356, -0.30002, -1.80031, 0, 0.299922, -1.80031, 0, -0.30002)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtmkd"]
 resource_name = "platformer"
@@ -379,7 +382,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2mm6u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qutnc"]
 resource_name = "barrier_4x1x4_green_barrier_4x1x4_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -0.5, 4, 4, 1),
@@ -407,7 +410,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wvf0r"]
+[sub_resource type="ImageTexture" id="ImageTexture_6rxys"]
 image = SubResource("Image_mb1ua")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40f6y"]
@@ -430,7 +433,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hnhny"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wvf0r"]
 resource_name = "bomb_A_green_bomb_A_green"
 _surfaces = [{
 "aabb": AABB(-0.4, -0.4, -0.4, 0.8, 1.00892, 0.8),
@@ -458,7 +461,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_cjfd6"]
+[sub_resource type="ImageTexture" id="ImageTexture_1kfl1"]
 image = SubResource("Image_6n0y8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1ta7"]
@@ -481,7 +484,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5rix6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_cjfd6"]
 resource_name = "bomb_B_green_bomb_B_green"
 _surfaces = [{
 "aabb": AABB(-0.4, -0.4, -0.4, 0.8, 1.00892, 0.8),
@@ -509,7 +512,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wl05k"]
+[sub_resource type="ImageTexture" id="ImageTexture_ew3d6"]
 image = SubResource("Image_f5vp7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf8bs"]
@@ -532,7 +535,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l52px"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wl05k"]
 resource_name = "bracing_large_green_bracing_large_green"
 _surfaces = [{
 "aabb": AABB(-0.5, -0.5, -0.1, 1, 1, 0.2),
@@ -560,7 +563,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6ramj"]
+[sub_resource type="ImageTexture" id="ImageTexture_vum0c"]
 image = SubResource("Image_b233v")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cddh"]
@@ -583,7 +586,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_l3kev"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ramj"]
 resource_name = "bracing_medium_green_bracing_medium_green"
 _surfaces = [{
 "aabb": AABB(-0.3, -0.3, -0.1, 0.6, 0.6, 0.2),
@@ -611,7 +614,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_o5w2h"]
+[sub_resource type="ImageTexture" id="ImageTexture_vgfb6"]
 image = SubResource("Image_28w25")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nu2i"]
@@ -634,7 +637,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_451pd"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_o5w2h"]
 resource_name = "arch_wide_green_arch_wide_green"
 _surfaces = [{
 "aabb": AABB(-2.875, 5.96046e-08, -0.375, 5.75, 3.8, 0.75),
@@ -662,7 +665,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wjj0c"]
+[sub_resource type="ImageTexture" id="ImageTexture_605d4"]
 image = SubResource("Image_khkr1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rsynv"]
@@ -685,7 +688,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_maado"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wjj0c"]
 resource_name = "bracing_small_green_bracing_small_green"
 _surfaces = [{
 "aabb": AABB(-0.1, -0.3, -0.1, 0.2, 0.6, 0.2),
@@ -713,7 +716,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_36a0m"]
+[sub_resource type="ImageTexture" id="ImageTexture_spk2l"]
 image = SubResource("Image_t8uy0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3x84"]
@@ -736,7 +739,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_d1rxy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_36a0m"]
 resource_name = "button_base_green_button_base_green"
 _surfaces = [{
 "aabb": AABB(-0.875, 0, -0.875, 1.75, 0.2, 1.75),
@@ -764,7 +767,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_acij5"]
+[sub_resource type="ImageTexture" id="ImageTexture_wclbs"]
 image = SubResource("Image_y8ns6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7gei"]
@@ -787,7 +790,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3eqq3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_acij5"]
 resource_name = "cone_green_cone_green"
 _surfaces = [{
 "aabb": AABB(-0.25, 0, -0.25, 0.5, 0.65, 0.5),
@@ -815,7 +818,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_86tik"]
+[sub_resource type="ImageTexture" id="ImageTexture_bqc6j"]
 image = SubResource("Image_d05jd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpaa0"]
@@ -838,7 +841,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_uhc8x"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_86tik"]
 resource_name = "diamond_green_diamond_green"
 _surfaces = [{
 "aabb": AABB(-0.538264, -0.492089, -0.470226, 1.07653, 0.852231, 1.02864),
@@ -866,7 +869,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_5e020"]
+[sub_resource type="ImageTexture" id="ImageTexture_43euj"]
 image = SubResource("Image_3hs3f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n56ar"]
@@ -889,7 +892,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hl5xy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5e020"]
 resource_name = "flag_A_green_flag_A_green"
 _surfaces = [{
 "aabb": AABB(-0.3, -3.72529e-08, -1.32315, 0.6, 2.06422, 1.62315),
@@ -917,7 +920,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_8ylnj"]
+[sub_resource type="ImageTexture" id="ImageTexture_rba0q"]
 image = SubResource("Image_2e55o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yqnnp"]
@@ -940,7 +943,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7j48g"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8ylnj"]
 resource_name = "flag_B_green_flag_B_green"
 _surfaces = [{
 "aabb": AABB(-0.3, -3.72529e-08, -1.32315, 0.6, 3.06422, 1.62315),
@@ -968,7 +971,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_tcmgf"]
+[sub_resource type="ImageTexture" id="ImageTexture_fc4cd"]
 image = SubResource("Image_1aden")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g5nh5"]
@@ -991,7 +994,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_exjp2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_tcmgf"]
 resource_name = "flag_C_green_flag_C_green"
 _surfaces = [{
 "aabb": AABB(-0.3, -3.72529e-08, -1.32315, 0.6, 4.06422, 1.62315),
@@ -1019,7 +1022,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_an1i0"]
+[sub_resource type="ImageTexture" id="ImageTexture_35501"]
 image = SubResource("Image_vhs6k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co635"]
@@ -1042,7 +1045,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_f00ja"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_an1i0"]
 resource_name = "heart_green_heart_green"
 _surfaces = [{
 "aabb": AABB(-0.540033, -0.370854, -0.265237, 1.08007, 0.846551, 0.530475),
@@ -1070,7 +1073,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_nbx2v"]
+[sub_resource type="ImageTexture" id="ImageTexture_4lcji"]
 image = SubResource("Image_s6gnm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_haebk"]
@@ -1093,7 +1096,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lo08y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nbx2v"]
 resource_name = "hoop_angled_green_hoop_angled_green"
 _surfaces = [{
 "aabb": AABB(-1.875, 5.96046e-08, -1.25385, 3.75, 4.25385, 2.50769),
@@ -1121,7 +1124,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_5j5nd"]
+[sub_resource type="ImageTexture" id="ImageTexture_j5bds"]
 image = SubResource("Image_qutnc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67b05"]
@@ -1144,7 +1147,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w7e2p"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5j5nd"]
 resource_name = "hoop_green_hoop_green"
 _surfaces = [{
 "aabb": AABB(-1.7, 5.96046e-08, -0.375, 3.4, 4.7, 0.75),
@@ -1172,7 +1175,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_w2nl0"]
+[sub_resource type="ImageTexture" id="ImageTexture_3wpbk"]
 image = SubResource("Image_2mm6u")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kphhk"]
@@ -1195,7 +1198,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5xkoh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2nl0"]
 resource_name = "ball_green_ball_green"
 _surfaces = [{
 "aabb": AABB(-0.999999, -1, -0.999999, 2, 2, 2),
@@ -1223,7 +1226,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_2jl5o"]
+[sub_resource type="ImageTexture" id="ImageTexture_qv2rq"]
 image = SubResource("Image_6rxys")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21deo"]
@@ -1246,7 +1249,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4rvj1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2jl5o"]
 resource_name = "lever_floor_base_green_lever_floor_base_green"
 _surfaces = [{
 "aabb": AABB(-0.4, -2.62268e-08, -0.6, 0.8, 0.4, 1.2),
@@ -1274,7 +1277,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_y0nfe"]
+[sub_resource type="ImageTexture" id="ImageTexture_guupe"]
 image = SubResource("Image_wvf0r")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysqaj"]
@@ -1297,7 +1300,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4aowy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_y0nfe"]
 resource_name = "lever_wall_base_A_green_lever_wall_base_A_green"
 _surfaces = [{
 "aabb": AABB(-0.4, -0.6, 0, 0.8, 1.2, 0.4),
@@ -1325,7 +1328,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_5qr1o"]
+[sub_resource type="ImageTexture" id="ImageTexture_im4ix"]
 image = SubResource("Image_hnhny")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ole10"]
@@ -1348,7 +1351,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_u5k5f"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5qr1o"]
 resource_name = "lever_wall_base_B_green_lever_wall_base_B_green"
 _surfaces = [{
 "aabb": AABB(-0.5, -0.6, -8.88178e-15, 1, 1.2, 0.4),
@@ -1376,7 +1379,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_5qu8g"]
+[sub_resource type="ImageTexture" id="ImageTexture_s1778"]
 image = SubResource("Image_1kfl1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yqhi"]
@@ -1399,7 +1402,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lk0fy"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_5qu8g"]
 resource_name = "pipe_180_A_green_pipe_180_A_green"
 _surfaces = [{
 "aabb": AABB(-1, -4.58232e-08, -1, 2, 3, 6),
@@ -1427,7 +1430,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_wsdsh"]
+[sub_resource type="ImageTexture" id="ImageTexture_cl5vx"]
 image = SubResource("Image_cjfd6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kcksv"]
@@ -1450,7 +1453,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_r8l5l"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_wsdsh"]
 resource_name = "pipe_180_B_green_pipe_180_B_green"
 _surfaces = [{
 "aabb": AABB(-1, -4.58232e-08, -1, 2, 2.99018, 6),
@@ -1478,7 +1481,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_w1chs"]
+[sub_resource type="ImageTexture" id="ImageTexture_cvy7n"]
 image = SubResource("Image_5rix6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfbyl"]
@@ -1501,7 +1504,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_701id"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_w1chs"]
 resource_name = "pipe_90_A_green_pipe_90_A_green"
 _surfaces = [{
 "aabb": AABB(-1, 7.73498e-08, -1, 2, 3, 3),
@@ -1529,7 +1532,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_fsni7"]
+[sub_resource type="ImageTexture" id="ImageTexture_jkqun"]
 image = SubResource("Image_ew3d6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jofwt"]
@@ -1552,7 +1555,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_q4x0h"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fsni7"]
 resource_name = "pipe_90_B_green_pipe_90_B_green"
 _surfaces = [{
 "aabb": AABB(-1, 7.73498e-08, -1, 2, 3, 3),
@@ -1580,7 +1583,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_o5ns2"]
+[sub_resource type="ImageTexture" id="ImageTexture_royf1"]
 image = SubResource("Image_wl05k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m36yd"]
@@ -1603,7 +1606,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0ya2n"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_o5ns2"]
 resource_name = "pipe_end_green_pipe_end_green"
 _surfaces = [{
 "aabb": AABB(-1.2, 0, -1.2, 2.4, 1, 2.4),
@@ -1631,7 +1634,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_q8n52"]
+[sub_resource type="ImageTexture" id="ImageTexture_e8que"]
 image = SubResource("Image_l52px")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oxg7"]
@@ -1654,7 +1657,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_s736a"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q8n52"]
 resource_name = "pipe_straight_A_green_pipe_straight_A_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 2, 2),
@@ -1682,7 +1685,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_vnh4c"]
+[sub_resource type="ImageTexture" id="ImageTexture_wq7ii"]
 image = SubResource("Image_vum0c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gp8qr"]
@@ -1705,7 +1708,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ai3ut"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vnh4c"]
 resource_name = "pipe_straight_B_green_pipe_straight_B_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 2, 2),
@@ -1733,7 +1736,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_8mf31"]
+[sub_resource type="ImageTexture" id="ImageTexture_8kka4"]
 image = SubResource("Image_6ramj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amyge"]
@@ -1756,7 +1759,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_sbsuo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8mf31"]
 resource_name = "barrier_1x1x1_green_barrier_1x1x1_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -1784,7 +1787,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_7r1u4"]
+[sub_resource type="ImageTexture" id="ImageTexture_khhtx"]
 image = SubResource("Image_l3kev")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ug5yr"]
@@ -1806,7 +1809,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3gwrj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_7r1u4"]
 resource_name = "platform_1x1x1_green_platform_1x1x1_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -1833,7 +1836,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_hxbsp"]
+[sub_resource type="ImageTexture" id="ImageTexture_abgfl"]
 image = SubResource("Image_vgfb6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaydr"]
@@ -1855,7 +1858,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lcu8x"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_hxbsp"]
 resource_name = "platform_2x2x1_green_platform_2x2x1_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1, 2),
@@ -1882,7 +1885,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_1xqk0"]
+[sub_resource type="ImageTexture" id="ImageTexture_5e5ik"]
 image = SubResource("Image_o5w2h")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ocmo"]
@@ -1904,7 +1907,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_f4hn7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_1xqk0"]
 resource_name = "platform_2x2x2_green_platform_2x2x2_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 2, 2),
@@ -1931,7 +1934,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6yudr"]
+[sub_resource type="ImageTexture" id="ImageTexture_q2vyl"]
 image = SubResource("Image_451pd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpg43"]
@@ -1953,7 +1956,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_w1clg"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6yudr"]
 resource_name = "platform_2x2x4_green_platform_2x2x4_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 4, 2),
@@ -1980,7 +1983,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_o16i0"]
+[sub_resource type="ImageTexture" id="ImageTexture_vvqyn"]
 image = SubResource("Image_605d4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yu2f"]
@@ -2002,7 +2005,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_g2jad"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_o16i0"]
 resource_name = "platform_4x2x1_green_platform_4x2x1_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -1, 4, 1, 2),
@@ -2029,7 +2032,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_sa86l"]
+[sub_resource type="ImageTexture" id="ImageTexture_677l5"]
 image = SubResource("Image_wjj0c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndah8"]
@@ -2051,7 +2054,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_fa8xt"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_sa86l"]
 resource_name = "platform_4x2x2_green_platform_4x2x2_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -1, 4, 2, 2),
@@ -2078,7 +2081,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_vmh5q"]
+[sub_resource type="ImageTexture" id="ImageTexture_g0q51"]
 image = SubResource("Image_maado")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_apmbx"]
@@ -2100,7 +2103,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_41pkc"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_vmh5q"]
 resource_name = "platform_4x2x4_green_platform_4x2x4_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -1, 4, 4, 2),
@@ -2127,7 +2130,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_x80ra"]
+[sub_resource type="ImageTexture" id="ImageTexture_kfyoc"]
 image = SubResource("Image_spk2l")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0ntl"]
@@ -2149,7 +2152,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bvnb5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_x80ra"]
 resource_name = "platform_4x4x1_green_platform_4x4x1_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 1, 4),
@@ -2176,7 +2179,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_42aik"]
+[sub_resource type="ImageTexture" id="ImageTexture_wllwk"]
 image = SubResource("Image_36a0m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ero8m"]
@@ -2198,7 +2201,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8as46"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_42aik"]
 resource_name = "platform_4x4x2_green_platform_4x4x2_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 2, 4),
@@ -2225,8 +2228,11 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_3jjxb"]
+[sub_resource type="ImageTexture" id="ImageTexture_2wvp7"]
 image = SubResource("Image_d1rxy")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ndx0n"]
+points = PackedVector3Array(-1.95027, 0.0499217, -2, -2, 0.0499217, -1.95027, -1.95027, 1.94988, -2, 1.94988, 0.0499217, -2, -1.95027, 0, -1.95027, -2, 1.94988, -1.95027, -2, 0.0499217, 1.94988, -1.95027, 2, -1.95027, 1.94988, 1.94988, -2, 2, 0.0499217, -1.95027, 1.94988, 0, -1.95027, -1.95027, 0, 1.94988, -2, 1.94988, 1.94988, -1.95027, 0.0499217, 2, -1.95027, 2, 1.94988, 1.94988, 2, -1.95027, 2, 1.94988, -1.95027, 2, 0.0499217, 1.94988, 1.94988, 0, 1.94988, -1.95027, 1.94988, 2, 1.94988, 0.0499217, 2, 1.94988, 2, 1.94988, 2, 1.94988, 1.94988, 1.94988, 1.94988, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc1av"]
 resource_name = "platformer"
@@ -2247,7 +2253,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vlc4u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3jjxb"]
 resource_name = "platform_4x4x4_green_platform_4x4x4_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 4, 4),
@@ -2274,7 +2280,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_oxrdr"]
+[sub_resource type="ImageTexture" id="ImageTexture_owbe5"]
 image = SubResource("Image_wclbs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j35hl"]
@@ -2297,7 +2303,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jt7xi"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oxrdr"]
 resource_name = "barrier_1x1x2_green_barrier_1x1x2_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 2, 1),
@@ -2325,7 +2331,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_fh8hb"]
+[sub_resource type="ImageTexture" id="ImageTexture_giqmy"]
 image = SubResource("Image_acij5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v50ak"]
@@ -2347,7 +2353,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7j583"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_fh8hb"]
 resource_name = "platform_6x2x1_green_platform_6x2x1_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -1, 6, 1, 2),
@@ -2374,7 +2380,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_3enrq"]
+[sub_resource type="ImageTexture" id="ImageTexture_gtx6a"]
 image = SubResource("Image_3eqq3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8cl0"]
@@ -2396,7 +2402,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_02ly5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_3enrq"]
 resource_name = "platform_6x2x2_green_platform_6x2x2_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -1, 6, 2, 2),
@@ -2423,7 +2429,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_ns62c"]
+[sub_resource type="ImageTexture" id="ImageTexture_rffeh"]
 image = SubResource("Image_bqc6j")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebmm2"]
@@ -2445,7 +2451,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_3vhm8"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ns62c"]
 resource_name = "platform_6x2x4_green_platform_6x2x4_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -1, 6, 4, 2),
@@ -2472,7 +2478,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_a5g71"]
+[sub_resource type="ImageTexture" id="ImageTexture_ci8yg"]
 image = SubResource("Image_86tik")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h2nf"]
@@ -2494,7 +2500,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e7vdh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_a5g71"]
 resource_name = "platform_6x6x1_green_platform_6x6x1_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -3, 6, 1, 6),
@@ -2521,7 +2527,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_4m3pm"]
+[sub_resource type="ImageTexture" id="ImageTexture_8lcmk"]
 image = SubResource("Image_uhc8x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce5s6"]
@@ -2543,7 +2549,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_2t6i3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4m3pm"]
 resource_name = "platform_6x6x2_green_platform_6x6x2_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -3, 6, 2, 6),
@@ -2570,7 +2576,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_uhsdq"]
+[sub_resource type="ImageTexture" id="ImageTexture_qa7gq"]
 image = SubResource("Image_43euj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgrpq"]
@@ -2592,7 +2598,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_th20c"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_uhsdq"]
 resource_name = "platform_6x6x4_green_platform_6x6x4_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -3, 6, 4, 6),
@@ -2619,7 +2625,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_qo60g"]
+[sub_resource type="ImageTexture" id="ImageTexture_qsqdc"]
 image = SubResource("Image_5e020")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_suapb"]
@@ -2642,7 +2648,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_4h16y"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_qo60g"]
 resource_name = "platform_arrow_2x2x1_green_platform_arrow_2x2x1_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 1, 2),
@@ -2670,7 +2676,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_bt85i"]
+[sub_resource type="ImageTexture" id="ImageTexture_aexk6"]
 image = SubResource("Image_hl5xy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4fcus"]
@@ -2693,7 +2699,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pdonq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_bt85i"]
 resource_name = "platform_arrow_4x4x1_green_platform_arrow_4x4x1_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 1, 4),
@@ -2721,7 +2727,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_oqb1f"]
+[sub_resource type="ImageTexture" id="ImageTexture_4eukp"]
 image = SubResource("Image_rba0q")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcvf8"]
@@ -2744,7 +2750,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qx4f6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_oqb1f"]
 resource_name = "platform_decorative_1x1x1_green_platform_decorative_1x1x1_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
@@ -2772,7 +2778,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_i1s6k"]
+[sub_resource type="ImageTexture" id="ImageTexture_iegs3"]
 image = SubResource("Image_8ylnj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cppt0"]
@@ -2795,7 +2801,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oxmyo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_i1s6k"]
 resource_name = "platform_decorative_2x2x2_green_platform_decorative_2x2x2_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 2, 2),
@@ -2823,7 +2829,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_k54v6"]
+[sub_resource type="ImageTexture" id="ImageTexture_opcjp"]
 image = SubResource("Image_7j48g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wbgl"]
@@ -2846,7 +2852,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_t4s5t"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_k54v6"]
 resource_name = "barrier_1x1x4_green_barrier_1x1x4_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.5, 1, 4, 1),
@@ -2874,7 +2880,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_kxjac"]
+[sub_resource type="ImageTexture" id="ImageTexture_b7240"]
 image = SubResource("Image_fc4cd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ag00r"]
@@ -2897,7 +2903,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yv5h3"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_kxjac"]
 resource_name = "platform_hole_6x6x1_green_platform_hole_6x6x1_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -3, 6, 1, 6),
@@ -2925,7 +2931,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_e4s3g"]
+[sub_resource type="ImageTexture" id="ImageTexture_06bnw"]
 image = SubResource("Image_tcmgf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_170qo"]
@@ -2947,7 +2953,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_oo3s4"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_e4s3g"]
 resource_name = "platform_slope_2x2x2_green_platform_slope_2x2x2_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1, 2, 2, 2),
@@ -2974,7 +2980,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_nvngo"]
+[sub_resource type="ImageTexture" id="ImageTexture_4mojs"]
 image = SubResource("Image_exjp2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ncae"]
@@ -2996,7 +3002,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_5vpnq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_nvngo"]
 resource_name = "platform_slope_2x4x4_green_platform_slope_2x4x4_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -2, 2, 4, 4),
@@ -3023,7 +3029,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_q1n5c"]
+[sub_resource type="ImageTexture" id="ImageTexture_me36l"]
 image = SubResource("Image_35501")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v00jn"]
@@ -3045,7 +3051,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jnkej"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q1n5c"]
 resource_name = "platform_slope_2x6x4_green_platform_slope_2x6x4_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -3, 2, 4, 6),
@@ -3072,7 +3078,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_rusow"]
+[sub_resource type="ImageTexture" id="ImageTexture_ykqho"]
 image = SubResource("Image_an1i0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gsem"]
@@ -3094,7 +3100,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_f3tih"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_rusow"]
 resource_name = "platform_slope_4x2x2_green_platform_slope_4x2x2_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -1, 4, 2, 2),
@@ -3121,7 +3127,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_g2nrh"]
+[sub_resource type="ImageTexture" id="ImageTexture_7rwkl"]
 image = SubResource("Image_f00ja")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvcub"]
@@ -3143,7 +3149,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cten7"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_g2nrh"]
 resource_name = "platform_slope_4x4x4_green_platform_slope_4x4x4_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -2, 4, 4, 4),
@@ -3170,7 +3176,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_4i2ws"]
+[sub_resource type="ImageTexture" id="ImageTexture_quase"]
 image = SubResource("Image_4lcji")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gov1x"]
@@ -3192,7 +3198,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_6t3lh"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4i2ws"]
 resource_name = "platform_slope_4x6x4_green_platform_slope_4x6x4_green"
 _surfaces = [{
 "aabb": AABB(-2, 0, -3, 4, 4, 6),
@@ -3219,7 +3225,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_t2jat"]
+[sub_resource type="ImageTexture" id="ImageTexture_3tbg2"]
 image = SubResource("Image_nbx2v")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cukv"]
@@ -3241,7 +3247,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bdsnq"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_t2jat"]
 resource_name = "platform_slope_6x2x2_green_platform_slope_6x2x2_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -1, 6, 2, 2),
@@ -3268,7 +3274,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_8x2v7"]
+[sub_resource type="ImageTexture" id="ImageTexture_otlt1"]
 image = SubResource("Image_lo08y")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8mn0d"]
@@ -3290,7 +3296,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7e64u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_8x2v7"]
 resource_name = "platform_slope_6x4x4_green_platform_slope_6x4x4_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -2, 6, 4, 4),
@@ -3317,7 +3323,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_sxf41"]
+[sub_resource type="ImageTexture" id="ImageTexture_fgk80"]
 image = SubResource("Image_j5bds")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0bjr"]
@@ -3339,7 +3345,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_lsr6g"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_sxf41"]
 resource_name = "platform_slope_6x6x4_green_platform_slope_6x6x4_green"
 _surfaces = [{
 "aabb": AABB(-3, 0, -3, 6, 4, 6),
@@ -3366,7 +3372,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_82g0b"]
+[sub_resource type="ImageTexture" id="ImageTexture_ahsyt"]
 image = SubResource("Image_5j5nd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2p18"]
@@ -3389,7 +3395,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0gipv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_82g0b"]
 resource_name = "barrier_2x1x1_green_barrier_2x1x1_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.5, 2, 1, 1),
@@ -3417,7 +3423,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_pgqgs"]
+[sub_resource type="ImageTexture" id="ImageTexture_2n8ln"]
 image = SubResource("Image_w7e2p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fyv8w"]
@@ -3440,7 +3446,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8exkj"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_pgqgs"]
 resource_name = "power_green_power_green"
 _surfaces = [{
 "aabb": AABB(-0.421262, -0.587301, -0.2, 0.890724, 1.20381, 0.4),
@@ -3468,7 +3474,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_lqeg2"]
+[sub_resource type="ImageTexture" id="ImageTexture_vcxiu"]
 image = SubResource("Image_3wpbk")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tywdx"]
@@ -3491,7 +3497,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_pgs0b"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lqeg2"]
 resource_name = "railing_corner_double_green_railing_corner_double_green"
 _surfaces = [{
 "aabb": AABB(-0.999999, 0, -0.999999, 2, 1.2, 2),
@@ -3519,7 +3525,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6wec5"]
+[sub_resource type="ImageTexture" id="ImageTexture_d54jx"]
 image = SubResource("Image_w2nl0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u830v"]
@@ -3542,7 +3548,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_0u184"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6wec5"]
 resource_name = "railing_corner_padded_green_railing_corner_padded_green"
 _surfaces = [{
 "aabb": AABB(-1.10142, 0, -1.10142, 2.10142, 1.2, 2.10142),
@@ -3570,7 +3576,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_0lgio"]
+[sub_resource type="ImageTexture" id="ImageTexture_fldr1"]
 image = SubResource("Image_5xkoh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of55s"]
@@ -3593,7 +3599,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_8b6le"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_0lgio"]
 resource_name = "railing_corner_single_green_railing_corner_single_green"
 _surfaces = [{
 "aabb": AABB(-0.999999, 0, -0.999999, 2, 1.2, 2),
@@ -3621,7 +3627,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_o607p"]
+[sub_resource type="ImageTexture" id="ImageTexture_egdb7"]
 image = SubResource("Image_qv2rq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbwn0"]
@@ -3644,7 +3650,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yjg0r"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_o607p"]
 resource_name = "railing_straight_double_green_railing_straight_double_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.999999, 2, 1.2, 0.4),
@@ -3672,7 +3678,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6wxhx"]
+[sub_resource type="ImageTexture" id="ImageTexture_lmhpl"]
 image = SubResource("Image_2jl5o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcmrr"]
@@ -3695,7 +3701,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yllt5"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6wxhx"]
 resource_name = "railing_straight_padded_green_railing_straight_padded_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -1.10142, 2, 1.2, 0.602843),
@@ -3723,7 +3729,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_j8kpt"]
+[sub_resource type="ImageTexture" id="ImageTexture_mmdmb"]
 image = SubResource("Image_4rvj1")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw2dk"]
@@ -3746,7 +3752,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_hxy5u"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_j8kpt"]
 resource_name = "railing_straight_single_green_railing_straight_single_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.999999, 2, 1.2, 0.4),
@@ -3774,7 +3780,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_4n6w2"]
+[sub_resource type="ImageTexture" id="ImageTexture_rh8pc"]
 image = SubResource("Image_guupe")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utqto"]
@@ -3797,7 +3803,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_yirj2"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_4n6w2"]
 resource_name = "signage_arrow_stand_green_signage_arrow_stand_green"
 _surfaces = [{
 "aabb": AABB(-0.5, 0, -0.124994, 1, 2, 0.399998),
@@ -3825,7 +3831,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_u8p27"]
+[sub_resource type="ImageTexture" id="ImageTexture_eqbyy"]
 image = SubResource("Image_y0nfe")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nc53y"]
@@ -3848,7 +3854,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_jdl78"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_u8p27"]
 resource_name = "signage_arrow_wall_green_signage_arrow_wall_green"
 _surfaces = [{
 "aabb": AABB(-0.5, -0.5, -0.1, 1, 1, 0.2),
@@ -3876,7 +3882,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_v0nxp"]
+[sub_resource type="ImageTexture" id="ImageTexture_ouc6y"]
 image = SubResource("Image_4aowy")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rkil"]
@@ -3899,7 +3905,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qu1ic"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_v0nxp"]
 resource_name = "signage_arrows_left_green_signage_arrows_left_green"
 _surfaces = [{
 "aabb": AABB(-2.7, -4.85579e-07, -0.270831, 5.4, 1.5, 0.677078),
@@ -3927,7 +3933,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_ypjkm"]
+[sub_resource type="ImageTexture" id="ImageTexture_5w3i6"]
 image = SubResource("Image_im4ix")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tlyp"]
@@ -3950,7 +3956,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_n31w1"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_ypjkm"]
 resource_name = "barrier_2x1x2_green_barrier_2x1x2_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.5, 2, 2, 1),
@@ -3978,7 +3984,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_npgji"]
+[sub_resource type="ImageTexture" id="ImageTexture_sys6f"]
 image = SubResource("Image_5qr1o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2xk2"]
@@ -4001,7 +4007,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_vpuwx"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_npgji"]
 resource_name = "signage_arrows_right_green_signage_arrows_right_green"
 _surfaces = [{
 "aabb": AABB(-2.7, -4.85579e-07, -0.270831, 5.4, 1.5, 0.677078),
@@ -4029,7 +4035,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_2vex7"]
+[sub_resource type="ImageTexture" id="ImageTexture_de5i6"]
 image = SubResource("Image_u5k5f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vx2k"]
@@ -4052,7 +4058,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_gvuai"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2vex7"]
 resource_name = "spring_pad_green_spring_pad_green"
 _surfaces = [{
 "aabb": AABB(-0.75, 0, -0.75, 1.5, 1, 1.5),
@@ -4080,7 +4086,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_6ixd2"]
+[sub_resource type="ImageTexture" id="ImageTexture_2vgdb"]
 image = SubResource("Image_s1778")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o074k"]
@@ -4103,7 +4109,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_daw25"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ixd2"]
 resource_name = "star_green_star_green"
 _surfaces = [{
 "aabb": AABB(-0.5828, -0.495759, -0.224467, 1.1656, 1.10855, 0.448935),
@@ -4131,7 +4137,7 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_iom7t"]
+[sub_resource type="ImageTexture" id="ImageTexture_i43xs"]
 image = SubResource("Image_5qu8g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7gow"]
@@ -4154,7 +4160,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p7urm"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_iom7t"]
 resource_name = "barrier_2x1x4_green_barrier_2x1x4_green"
 _surfaces = [{
 "aabb": AABB(-1, 0, -0.5, 2, 4, 1),
@@ -4182,671 +4188,671 @@ data = {
 "width": 64
 }
 
-[sub_resource type="ImageTexture" id="ImageTexture_ypdj1"]
+[sub_resource type="ImageTexture" id="ImageTexture_r4i2n"]
 image = SubResource("Image_lk0fy")
 
 [resource]
 item/0/name = "arch_green"
-item/0/mesh = SubResource("ArrayMesh_0nsbw")
+item/0/mesh = SubResource("ArrayMesh_h4y3w")
 item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/mesh_cast_shadow = 1
 item/0/shapes = []
 item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/0/navigation_layers = 1
-item/0/preview = SubResource("ImageTexture_lemuw")
+item/0/preview = SubResource("ImageTexture_oa8p0")
 item/1/name = "arch_tall_green"
-item/1/mesh = SubResource("ArrayMesh_7qowy")
+item/1/mesh = SubResource("ArrayMesh_lemuw")
 item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/mesh_cast_shadow = 1
 item/1/shapes = []
 item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/1/navigation_layers = 1
-item/1/preview = SubResource("ImageTexture_uvhp7")
+item/1/preview = SubResource("ImageTexture_sg3gr")
 item/2/name = "arch_wide_green"
-item/2/mesh = SubResource("ArrayMesh_451pd")
+item/2/mesh = SubResource("ArrayMesh_o5w2h")
 item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/mesh_cast_shadow = 1
 item/2/shapes = []
 item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/2/navigation_layers = 1
-item/2/preview = SubResource("ImageTexture_wjj0c")
+item/2/preview = SubResource("ImageTexture_605d4")
 item/3/name = "ball_green"
-item/3/mesh = SubResource("ArrayMesh_5xkoh")
+item/3/mesh = SubResource("ArrayMesh_w2nl0")
 item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/mesh_cast_shadow = 1
 item/3/shapes = []
 item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/3/navigation_layers = 1
-item/3/preview = SubResource("ImageTexture_2jl5o")
+item/3/preview = SubResource("ImageTexture_qv2rq")
 item/4/name = "barrier_1x1x1_green"
-item/4/mesh = SubResource("ArrayMesh_sbsuo")
+item/4/mesh = SubResource("ArrayMesh_8mf31")
 item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/4/mesh_cast_shadow = 1
 item/4/shapes = []
 item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/4/navigation_layers = 1
-item/4/preview = SubResource("ImageTexture_7r1u4")
+item/4/preview = SubResource("ImageTexture_khhtx")
 item/5/name = "barrier_1x1x2_green"
-item/5/mesh = SubResource("ArrayMesh_jt7xi")
+item/5/mesh = SubResource("ArrayMesh_oxrdr")
 item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/5/mesh_cast_shadow = 1
 item/5/shapes = []
 item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/5/navigation_layers = 1
-item/5/preview = SubResource("ImageTexture_fh8hb")
+item/5/preview = SubResource("ImageTexture_giqmy")
 item/6/name = "barrier_1x1x4_green"
-item/6/mesh = SubResource("ArrayMesh_t4s5t")
+item/6/mesh = SubResource("ArrayMesh_k54v6")
 item/6/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/6/mesh_cast_shadow = 1
 item/6/shapes = []
 item/6/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/6/navigation_layers = 1
-item/6/preview = SubResource("ImageTexture_kxjac")
+item/6/preview = SubResource("ImageTexture_b7240")
 item/7/name = "barrier_2x1x1_green"
-item/7/mesh = SubResource("ArrayMesh_0gipv")
+item/7/mesh = SubResource("ArrayMesh_82g0b")
 item/7/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/7/mesh_cast_shadow = 1
 item/7/shapes = []
 item/7/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/7/navigation_layers = 1
-item/7/preview = SubResource("ImageTexture_pgqgs")
+item/7/preview = SubResource("ImageTexture_2n8ln")
 item/8/name = "barrier_2x1x2_green"
-item/8/mesh = SubResource("ArrayMesh_n31w1")
+item/8/mesh = SubResource("ArrayMesh_ypjkm")
 item/8/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/8/mesh_cast_shadow = 1
 item/8/shapes = []
 item/8/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/8/navigation_layers = 1
-item/8/preview = SubResource("ImageTexture_npgji")
+item/8/preview = SubResource("ImageTexture_sys6f")
 item/9/name = "barrier_2x1x4_green"
-item/9/mesh = SubResource("ArrayMesh_p7urm")
+item/9/mesh = SubResource("ArrayMesh_iom7t")
 item/9/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/9/mesh_cast_shadow = 1
 item/9/shapes = []
 item/9/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/9/navigation_layers = 1
-item/9/preview = SubResource("ImageTexture_ypdj1")
+item/9/preview = SubResource("ImageTexture_r4i2n")
 item/10/name = "barrier_3x1x1_green"
-item/10/mesh = SubResource("ArrayMesh_mb1ua")
+item/10/mesh = SubResource("ArrayMesh_uvhp7")
 item/10/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/10/mesh_cast_shadow = 1
 item/10/shapes = []
 item/10/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/10/navigation_layers = 1
-item/10/preview = SubResource("ImageTexture_f5vp7")
+item/10/preview = SubResource("ImageTexture_6n0y8")
 item/11/name = "barrier_3x1x2_green"
-item/11/mesh = SubResource("ArrayMesh_b233v")
+item/11/mesh = SubResource("ArrayMesh_f5vp7")
 item/11/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/11/mesh_cast_shadow = 1
 item/11/shapes = []
 item/11/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/11/navigation_layers = 1
-item/11/preview = SubResource("ImageTexture_khkr1")
+item/11/preview = SubResource("ImageTexture_28w25")
 item/12/name = "barrier_3x1x4_green"
-item/12/mesh = SubResource("ArrayMesh_t8uy0")
+item/12/mesh = SubResource("ArrayMesh_khkr1")
 item/12/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/12/mesh_cast_shadow = 1
 item/12/shapes = []
 item/12/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/12/navigation_layers = 1
-item/12/preview = SubResource("ImageTexture_d05jd")
+item/12/preview = SubResource("ImageTexture_y8ns6")
 item/13/name = "barrier_4x1x1_green"
-item/13/mesh = SubResource("ArrayMesh_3hs3f")
+item/13/mesh = SubResource("ArrayMesh_d05jd")
 item/13/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/13/mesh_cast_shadow = 1
 item/13/shapes = []
 item/13/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/13/navigation_layers = 1
-item/13/preview = SubResource("ImageTexture_1aden")
+item/13/preview = SubResource("ImageTexture_2e55o")
 item/14/name = "barrier_4x1x2_green"
-item/14/mesh = SubResource("ArrayMesh_vhs6k")
+item/14/mesh = SubResource("ArrayMesh_1aden")
 item/14/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/14/mesh_cast_shadow = 1
-item/14/shapes = []
+item/14/shapes = [SubResource("ConvexPolygonShape3D_vrst7"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/14/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/14/navigation_layers = 1
-item/14/preview = SubResource("ImageTexture_qutnc")
+item/14/preview = SubResource("ImageTexture_s6gnm")
 item/15/name = "barrier_4x1x4_green"
-item/15/mesh = SubResource("ArrayMesh_2mm6u")
+item/15/mesh = SubResource("ArrayMesh_qutnc")
 item/15/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/15/mesh_cast_shadow = 1
 item/15/shapes = []
 item/15/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/15/navigation_layers = 1
-item/15/preview = SubResource("ImageTexture_wvf0r")
+item/15/preview = SubResource("ImageTexture_6rxys")
 item/16/name = "bomb_A_green"
-item/16/mesh = SubResource("ArrayMesh_hnhny")
+item/16/mesh = SubResource("ArrayMesh_wvf0r")
 item/16/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/16/mesh_cast_shadow = 1
 item/16/shapes = []
 item/16/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/16/navigation_layers = 1
-item/16/preview = SubResource("ImageTexture_cjfd6")
+item/16/preview = SubResource("ImageTexture_1kfl1")
 item/17/name = "bomb_B_green"
-item/17/mesh = SubResource("ArrayMesh_5rix6")
+item/17/mesh = SubResource("ArrayMesh_cjfd6")
 item/17/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/17/mesh_cast_shadow = 1
 item/17/shapes = []
 item/17/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/17/navigation_layers = 1
-item/17/preview = SubResource("ImageTexture_wl05k")
+item/17/preview = SubResource("ImageTexture_ew3d6")
 item/18/name = "bracing_large_green"
-item/18/mesh = SubResource("ArrayMesh_l52px")
+item/18/mesh = SubResource("ArrayMesh_wl05k")
 item/18/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/18/mesh_cast_shadow = 1
 item/18/shapes = []
 item/18/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/18/navigation_layers = 1
-item/18/preview = SubResource("ImageTexture_6ramj")
+item/18/preview = SubResource("ImageTexture_vum0c")
 item/19/name = "bracing_medium_green"
-item/19/mesh = SubResource("ArrayMesh_l3kev")
+item/19/mesh = SubResource("ArrayMesh_6ramj")
 item/19/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/19/mesh_cast_shadow = 1
 item/19/shapes = []
 item/19/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/19/navigation_layers = 1
-item/19/preview = SubResource("ImageTexture_o5w2h")
+item/19/preview = SubResource("ImageTexture_vgfb6")
 item/20/name = "bracing_small_green"
-item/20/mesh = SubResource("ArrayMesh_maado")
+item/20/mesh = SubResource("ArrayMesh_wjj0c")
 item/20/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/20/mesh_cast_shadow = 1
 item/20/shapes = []
 item/20/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/20/navigation_layers = 1
-item/20/preview = SubResource("ImageTexture_36a0m")
+item/20/preview = SubResource("ImageTexture_spk2l")
 item/21/name = "button_base_green"
-item/21/mesh = SubResource("ArrayMesh_d1rxy")
+item/21/mesh = SubResource("ArrayMesh_36a0m")
 item/21/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/21/mesh_cast_shadow = 1
 item/21/shapes = []
 item/21/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/21/navigation_layers = 1
-item/21/preview = SubResource("ImageTexture_acij5")
+item/21/preview = SubResource("ImageTexture_wclbs")
 item/22/name = "cone_green"
-item/22/mesh = SubResource("ArrayMesh_3eqq3")
+item/22/mesh = SubResource("ArrayMesh_acij5")
 item/22/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/22/mesh_cast_shadow = 1
 item/22/shapes = []
 item/22/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/22/navigation_layers = 1
-item/22/preview = SubResource("ImageTexture_86tik")
+item/22/preview = SubResource("ImageTexture_bqc6j")
 item/23/name = "diamond_green"
-item/23/mesh = SubResource("ArrayMesh_uhc8x")
+item/23/mesh = SubResource("ArrayMesh_86tik")
 item/23/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/23/mesh_cast_shadow = 1
 item/23/shapes = []
 item/23/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/23/navigation_layers = 1
-item/23/preview = SubResource("ImageTexture_5e020")
+item/23/preview = SubResource("ImageTexture_43euj")
 item/24/name = "flag_A_green"
-item/24/mesh = SubResource("ArrayMesh_hl5xy")
+item/24/mesh = SubResource("ArrayMesh_5e020")
 item/24/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/24/mesh_cast_shadow = 1
 item/24/shapes = []
 item/24/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/24/navigation_layers = 1
-item/24/preview = SubResource("ImageTexture_8ylnj")
+item/24/preview = SubResource("ImageTexture_rba0q")
 item/25/name = "flag_B_green"
-item/25/mesh = SubResource("ArrayMesh_7j48g")
+item/25/mesh = SubResource("ArrayMesh_8ylnj")
 item/25/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/25/mesh_cast_shadow = 1
 item/25/shapes = []
 item/25/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/25/navigation_layers = 1
-item/25/preview = SubResource("ImageTexture_tcmgf")
+item/25/preview = SubResource("ImageTexture_fc4cd")
 item/26/name = "flag_C_green"
-item/26/mesh = SubResource("ArrayMesh_exjp2")
+item/26/mesh = SubResource("ArrayMesh_tcmgf")
 item/26/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/26/mesh_cast_shadow = 1
 item/26/shapes = []
 item/26/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/26/navigation_layers = 1
-item/26/preview = SubResource("ImageTexture_an1i0")
+item/26/preview = SubResource("ImageTexture_35501")
 item/27/name = "heart_green"
-item/27/mesh = SubResource("ArrayMesh_f00ja")
+item/27/mesh = SubResource("ArrayMesh_an1i0")
 item/27/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/27/mesh_cast_shadow = 1
 item/27/shapes = []
 item/27/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/27/navigation_layers = 1
-item/27/preview = SubResource("ImageTexture_nbx2v")
+item/27/preview = SubResource("ImageTexture_4lcji")
 item/28/name = "hoop_angled_green"
-item/28/mesh = SubResource("ArrayMesh_lo08y")
+item/28/mesh = SubResource("ArrayMesh_nbx2v")
 item/28/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/28/mesh_cast_shadow = 1
 item/28/shapes = []
 item/28/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/28/navigation_layers = 1
-item/28/preview = SubResource("ImageTexture_5j5nd")
+item/28/preview = SubResource("ImageTexture_j5bds")
 item/29/name = "hoop_green"
-item/29/mesh = SubResource("ArrayMesh_w7e2p")
+item/29/mesh = SubResource("ArrayMesh_5j5nd")
 item/29/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/29/mesh_cast_shadow = 1
 item/29/shapes = []
 item/29/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/29/navigation_layers = 1
-item/29/preview = SubResource("ImageTexture_w2nl0")
+item/29/preview = SubResource("ImageTexture_3wpbk")
 item/30/name = "lever_floor_base_green"
-item/30/mesh = SubResource("ArrayMesh_4rvj1")
+item/30/mesh = SubResource("ArrayMesh_2jl5o")
 item/30/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/30/mesh_cast_shadow = 1
 item/30/shapes = []
 item/30/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/30/navigation_layers = 1
-item/30/preview = SubResource("ImageTexture_y0nfe")
+item/30/preview = SubResource("ImageTexture_guupe")
 item/31/name = "lever_wall_base_A_green"
-item/31/mesh = SubResource("ArrayMesh_4aowy")
+item/31/mesh = SubResource("ArrayMesh_y0nfe")
 item/31/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/31/mesh_cast_shadow = 1
 item/31/shapes = []
 item/31/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/31/navigation_layers = 1
-item/31/preview = SubResource("ImageTexture_5qr1o")
+item/31/preview = SubResource("ImageTexture_im4ix")
 item/32/name = "lever_wall_base_B_green"
-item/32/mesh = SubResource("ArrayMesh_u5k5f")
+item/32/mesh = SubResource("ArrayMesh_5qr1o")
 item/32/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/32/mesh_cast_shadow = 1
 item/32/shapes = []
 item/32/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/32/navigation_layers = 1
-item/32/preview = SubResource("ImageTexture_5qu8g")
+item/32/preview = SubResource("ImageTexture_s1778")
 item/33/name = "pipe_180_A_green"
-item/33/mesh = SubResource("ArrayMesh_lk0fy")
+item/33/mesh = SubResource("ArrayMesh_5qu8g")
 item/33/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/33/mesh_cast_shadow = 1
 item/33/shapes = []
 item/33/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/33/navigation_layers = 1
-item/33/preview = SubResource("ImageTexture_wsdsh")
+item/33/preview = SubResource("ImageTexture_cl5vx")
 item/34/name = "pipe_180_B_green"
-item/34/mesh = SubResource("ArrayMesh_r8l5l")
+item/34/mesh = SubResource("ArrayMesh_wsdsh")
 item/34/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/34/mesh_cast_shadow = 1
 item/34/shapes = []
 item/34/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/34/navigation_layers = 1
-item/34/preview = SubResource("ImageTexture_w1chs")
+item/34/preview = SubResource("ImageTexture_cvy7n")
 item/35/name = "pipe_90_A_green"
-item/35/mesh = SubResource("ArrayMesh_701id")
+item/35/mesh = SubResource("ArrayMesh_w1chs")
 item/35/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/35/mesh_cast_shadow = 1
 item/35/shapes = []
 item/35/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/35/navigation_layers = 1
-item/35/preview = SubResource("ImageTexture_fsni7")
+item/35/preview = SubResource("ImageTexture_jkqun")
 item/36/name = "pipe_90_B_green"
-item/36/mesh = SubResource("ArrayMesh_q4x0h")
+item/36/mesh = SubResource("ArrayMesh_fsni7")
 item/36/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/36/mesh_cast_shadow = 1
 item/36/shapes = []
 item/36/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/36/navigation_layers = 1
-item/36/preview = SubResource("ImageTexture_o5ns2")
+item/36/preview = SubResource("ImageTexture_royf1")
 item/37/name = "pipe_end_green"
-item/37/mesh = SubResource("ArrayMesh_0ya2n")
+item/37/mesh = SubResource("ArrayMesh_o5ns2")
 item/37/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/37/mesh_cast_shadow = 1
 item/37/shapes = []
 item/37/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/37/navigation_layers = 1
-item/37/preview = SubResource("ImageTexture_q8n52")
+item/37/preview = SubResource("ImageTexture_e8que")
 item/38/name = "pipe_straight_A_green"
-item/38/mesh = SubResource("ArrayMesh_s736a")
+item/38/mesh = SubResource("ArrayMesh_q8n52")
 item/38/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/38/mesh_cast_shadow = 1
 item/38/shapes = []
 item/38/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/38/navigation_layers = 1
-item/38/preview = SubResource("ImageTexture_vnh4c")
+item/38/preview = SubResource("ImageTexture_wq7ii")
 item/39/name = "pipe_straight_B_green"
-item/39/mesh = SubResource("ArrayMesh_ai3ut")
+item/39/mesh = SubResource("ArrayMesh_vnh4c")
 item/39/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/39/mesh_cast_shadow = 1
 item/39/shapes = []
 item/39/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/39/navigation_layers = 1
-item/39/preview = SubResource("ImageTexture_8mf31")
+item/39/preview = SubResource("ImageTexture_8kka4")
 item/40/name = "platform_1x1x1_green"
-item/40/mesh = SubResource("ArrayMesh_3gwrj")
+item/40/mesh = SubResource("ArrayMesh_7r1u4")
 item/40/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/40/mesh_cast_shadow = 1
 item/40/shapes = []
 item/40/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/40/navigation_layers = 1
-item/40/preview = SubResource("ImageTexture_hxbsp")
+item/40/preview = SubResource("ImageTexture_abgfl")
 item/41/name = "platform_2x2x1_green"
-item/41/mesh = SubResource("ArrayMesh_lcu8x")
+item/41/mesh = SubResource("ArrayMesh_hxbsp")
 item/41/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/41/mesh_cast_shadow = 1
 item/41/shapes = []
 item/41/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/41/navigation_layers = 1
-item/41/preview = SubResource("ImageTexture_1xqk0")
+item/41/preview = SubResource("ImageTexture_5e5ik")
 item/42/name = "platform_2x2x2_green"
-item/42/mesh = SubResource("ArrayMesh_f4hn7")
+item/42/mesh = SubResource("ArrayMesh_1xqk0")
 item/42/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/42/mesh_cast_shadow = 1
 item/42/shapes = []
 item/42/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/42/navigation_layers = 1
-item/42/preview = SubResource("ImageTexture_6yudr")
+item/42/preview = SubResource("ImageTexture_q2vyl")
 item/43/name = "platform_2x2x4_green"
-item/43/mesh = SubResource("ArrayMesh_w1clg")
+item/43/mesh = SubResource("ArrayMesh_6yudr")
 item/43/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/43/mesh_cast_shadow = 1
 item/43/shapes = []
 item/43/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/43/navigation_layers = 1
-item/43/preview = SubResource("ImageTexture_o16i0")
+item/43/preview = SubResource("ImageTexture_vvqyn")
 item/44/name = "platform_4x2x1_green"
-item/44/mesh = SubResource("ArrayMesh_g2jad")
+item/44/mesh = SubResource("ArrayMesh_o16i0")
 item/44/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/44/mesh_cast_shadow = 1
 item/44/shapes = []
 item/44/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/44/navigation_layers = 1
-item/44/preview = SubResource("ImageTexture_sa86l")
+item/44/preview = SubResource("ImageTexture_677l5")
 item/45/name = "platform_4x2x2_green"
-item/45/mesh = SubResource("ArrayMesh_fa8xt")
+item/45/mesh = SubResource("ArrayMesh_sa86l")
 item/45/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/45/mesh_cast_shadow = 1
 item/45/shapes = []
 item/45/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/45/navigation_layers = 1
-item/45/preview = SubResource("ImageTexture_vmh5q")
+item/45/preview = SubResource("ImageTexture_g0q51")
 item/46/name = "platform_4x2x4_green"
-item/46/mesh = SubResource("ArrayMesh_41pkc")
+item/46/mesh = SubResource("ArrayMesh_vmh5q")
 item/46/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/46/mesh_cast_shadow = 1
 item/46/shapes = []
 item/46/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/46/navigation_layers = 1
-item/46/preview = SubResource("ImageTexture_x80ra")
+item/46/preview = SubResource("ImageTexture_kfyoc")
 item/47/name = "platform_4x4x1_green"
-item/47/mesh = SubResource("ArrayMesh_bvnb5")
+item/47/mesh = SubResource("ArrayMesh_x80ra")
 item/47/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/47/mesh_cast_shadow = 1
 item/47/shapes = []
 item/47/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/47/navigation_layers = 1
-item/47/preview = SubResource("ImageTexture_42aik")
+item/47/preview = SubResource("ImageTexture_wllwk")
 item/48/name = "platform_4x4x2_green"
-item/48/mesh = SubResource("ArrayMesh_8as46")
+item/48/mesh = SubResource("ArrayMesh_42aik")
 item/48/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/48/mesh_cast_shadow = 1
-item/48/shapes = []
+item/48/shapes = [SubResource("ConvexPolygonShape3D_ndx0n"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)]
 item/48/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/48/navigation_layers = 1
-item/48/preview = SubResource("ImageTexture_3jjxb")
+item/48/preview = SubResource("ImageTexture_2wvp7")
 item/49/name = "platform_4x4x4_green"
-item/49/mesh = SubResource("ArrayMesh_vlc4u")
+item/49/mesh = SubResource("ArrayMesh_3jjxb")
 item/49/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/49/mesh_cast_shadow = 1
 item/49/shapes = []
 item/49/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/49/navigation_layers = 1
-item/49/preview = SubResource("ImageTexture_oxrdr")
+item/49/preview = SubResource("ImageTexture_owbe5")
 item/50/name = "platform_6x2x1_green"
-item/50/mesh = SubResource("ArrayMesh_7j583")
+item/50/mesh = SubResource("ArrayMesh_fh8hb")
 item/50/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/50/mesh_cast_shadow = 1
 item/50/shapes = []
 item/50/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/50/navigation_layers = 1
-item/50/preview = SubResource("ImageTexture_3enrq")
+item/50/preview = SubResource("ImageTexture_gtx6a")
 item/51/name = "platform_6x2x2_green"
-item/51/mesh = SubResource("ArrayMesh_02ly5")
+item/51/mesh = SubResource("ArrayMesh_3enrq")
 item/51/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/51/mesh_cast_shadow = 1
 item/51/shapes = []
 item/51/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/51/navigation_layers = 1
-item/51/preview = SubResource("ImageTexture_ns62c")
+item/51/preview = SubResource("ImageTexture_rffeh")
 item/52/name = "platform_6x2x4_green"
-item/52/mesh = SubResource("ArrayMesh_3vhm8")
+item/52/mesh = SubResource("ArrayMesh_ns62c")
 item/52/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/52/mesh_cast_shadow = 1
 item/52/shapes = []
 item/52/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/52/navigation_layers = 1
-item/52/preview = SubResource("ImageTexture_a5g71")
+item/52/preview = SubResource("ImageTexture_ci8yg")
 item/53/name = "platform_6x6x1_green"
-item/53/mesh = SubResource("ArrayMesh_e7vdh")
+item/53/mesh = SubResource("ArrayMesh_a5g71")
 item/53/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/53/mesh_cast_shadow = 1
 item/53/shapes = []
 item/53/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/53/navigation_layers = 1
-item/53/preview = SubResource("ImageTexture_4m3pm")
+item/53/preview = SubResource("ImageTexture_8lcmk")
 item/54/name = "platform_6x6x2_green"
-item/54/mesh = SubResource("ArrayMesh_2t6i3")
+item/54/mesh = SubResource("ArrayMesh_4m3pm")
 item/54/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/54/mesh_cast_shadow = 1
 item/54/shapes = []
 item/54/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/54/navigation_layers = 1
-item/54/preview = SubResource("ImageTexture_uhsdq")
+item/54/preview = SubResource("ImageTexture_qa7gq")
 item/55/name = "platform_6x6x4_green"
-item/55/mesh = SubResource("ArrayMesh_th20c")
+item/55/mesh = SubResource("ArrayMesh_uhsdq")
 item/55/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/55/mesh_cast_shadow = 1
 item/55/shapes = []
 item/55/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/55/navigation_layers = 1
-item/55/preview = SubResource("ImageTexture_qo60g")
+item/55/preview = SubResource("ImageTexture_qsqdc")
 item/56/name = "platform_arrow_2x2x1_green"
-item/56/mesh = SubResource("ArrayMesh_4h16y")
+item/56/mesh = SubResource("ArrayMesh_qo60g")
 item/56/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/56/mesh_cast_shadow = 1
 item/56/shapes = []
 item/56/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/56/navigation_layers = 1
-item/56/preview = SubResource("ImageTexture_bt85i")
+item/56/preview = SubResource("ImageTexture_aexk6")
 item/57/name = "platform_arrow_4x4x1_green"
-item/57/mesh = SubResource("ArrayMesh_pdonq")
+item/57/mesh = SubResource("ArrayMesh_bt85i")
 item/57/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/57/mesh_cast_shadow = 1
 item/57/shapes = []
 item/57/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/57/navigation_layers = 1
-item/57/preview = SubResource("ImageTexture_oqb1f")
+item/57/preview = SubResource("ImageTexture_4eukp")
 item/58/name = "platform_decorative_1x1x1_green"
-item/58/mesh = SubResource("ArrayMesh_qx4f6")
+item/58/mesh = SubResource("ArrayMesh_oqb1f")
 item/58/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/58/mesh_cast_shadow = 1
 item/58/shapes = []
 item/58/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/58/navigation_layers = 1
-item/58/preview = SubResource("ImageTexture_i1s6k")
+item/58/preview = SubResource("ImageTexture_iegs3")
 item/59/name = "platform_decorative_2x2x2_green"
-item/59/mesh = SubResource("ArrayMesh_oxmyo")
+item/59/mesh = SubResource("ArrayMesh_i1s6k")
 item/59/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/59/mesh_cast_shadow = 1
 item/59/shapes = []
 item/59/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/59/navigation_layers = 1
-item/59/preview = SubResource("ImageTexture_k54v6")
+item/59/preview = SubResource("ImageTexture_opcjp")
 item/60/name = "platform_hole_6x6x1_green"
-item/60/mesh = SubResource("ArrayMesh_yv5h3")
+item/60/mesh = SubResource("ArrayMesh_kxjac")
 item/60/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/60/mesh_cast_shadow = 1
 item/60/shapes = []
 item/60/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/60/navigation_layers = 1
-item/60/preview = SubResource("ImageTexture_e4s3g")
+item/60/preview = SubResource("ImageTexture_06bnw")
 item/61/name = "platform_slope_2x2x2_green"
-item/61/mesh = SubResource("ArrayMesh_oo3s4")
+item/61/mesh = SubResource("ArrayMesh_e4s3g")
 item/61/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/61/mesh_cast_shadow = 1
 item/61/shapes = []
 item/61/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/61/navigation_layers = 1
-item/61/preview = SubResource("ImageTexture_nvngo")
+item/61/preview = SubResource("ImageTexture_4mojs")
 item/62/name = "platform_slope_2x4x4_green"
-item/62/mesh = SubResource("ArrayMesh_5vpnq")
+item/62/mesh = SubResource("ArrayMesh_nvngo")
 item/62/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/62/mesh_cast_shadow = 1
 item/62/shapes = []
 item/62/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/62/navigation_layers = 1
-item/62/preview = SubResource("ImageTexture_q1n5c")
+item/62/preview = SubResource("ImageTexture_me36l")
 item/63/name = "platform_slope_2x6x4_green"
-item/63/mesh = SubResource("ArrayMesh_jnkej")
+item/63/mesh = SubResource("ArrayMesh_q1n5c")
 item/63/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/63/mesh_cast_shadow = 1
 item/63/shapes = []
 item/63/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/63/navigation_layers = 1
-item/63/preview = SubResource("ImageTexture_rusow")
+item/63/preview = SubResource("ImageTexture_ykqho")
 item/64/name = "platform_slope_4x2x2_green"
-item/64/mesh = SubResource("ArrayMesh_f3tih")
+item/64/mesh = SubResource("ArrayMesh_rusow")
 item/64/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/64/mesh_cast_shadow = 1
 item/64/shapes = []
 item/64/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/64/navigation_layers = 1
-item/64/preview = SubResource("ImageTexture_g2nrh")
+item/64/preview = SubResource("ImageTexture_7rwkl")
 item/65/name = "platform_slope_4x4x4_green"
-item/65/mesh = SubResource("ArrayMesh_cten7")
+item/65/mesh = SubResource("ArrayMesh_g2nrh")
 item/65/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/65/mesh_cast_shadow = 1
 item/65/shapes = []
 item/65/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/65/navigation_layers = 1
-item/65/preview = SubResource("ImageTexture_4i2ws")
+item/65/preview = SubResource("ImageTexture_quase")
 item/66/name = "platform_slope_4x6x4_green"
-item/66/mesh = SubResource("ArrayMesh_6t3lh")
+item/66/mesh = SubResource("ArrayMesh_4i2ws")
 item/66/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/66/mesh_cast_shadow = 1
 item/66/shapes = []
 item/66/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/66/navigation_layers = 1
-item/66/preview = SubResource("ImageTexture_t2jat")
+item/66/preview = SubResource("ImageTexture_3tbg2")
 item/67/name = "platform_slope_6x2x2_green"
-item/67/mesh = SubResource("ArrayMesh_bdsnq")
+item/67/mesh = SubResource("ArrayMesh_t2jat")
 item/67/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/67/mesh_cast_shadow = 1
 item/67/shapes = []
 item/67/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/67/navigation_layers = 1
-item/67/preview = SubResource("ImageTexture_8x2v7")
+item/67/preview = SubResource("ImageTexture_otlt1")
 item/68/name = "platform_slope_6x4x4_green"
-item/68/mesh = SubResource("ArrayMesh_7e64u")
+item/68/mesh = SubResource("ArrayMesh_8x2v7")
 item/68/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/68/mesh_cast_shadow = 1
 item/68/shapes = []
 item/68/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/68/navigation_layers = 1
-item/68/preview = SubResource("ImageTexture_sxf41")
+item/68/preview = SubResource("ImageTexture_fgk80")
 item/69/name = "platform_slope_6x6x4_green"
-item/69/mesh = SubResource("ArrayMesh_lsr6g")
+item/69/mesh = SubResource("ArrayMesh_sxf41")
 item/69/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/69/mesh_cast_shadow = 1
 item/69/shapes = []
 item/69/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/69/navigation_layers = 1
-item/69/preview = SubResource("ImageTexture_82g0b")
+item/69/preview = SubResource("ImageTexture_ahsyt")
 item/70/name = "power_green"
-item/70/mesh = SubResource("ArrayMesh_8exkj")
+item/70/mesh = SubResource("ArrayMesh_pgqgs")
 item/70/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/70/mesh_cast_shadow = 1
 item/70/shapes = []
 item/70/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/70/navigation_layers = 1
-item/70/preview = SubResource("ImageTexture_lqeg2")
+item/70/preview = SubResource("ImageTexture_vcxiu")
 item/71/name = "railing_corner_double_green"
-item/71/mesh = SubResource("ArrayMesh_pgs0b")
+item/71/mesh = SubResource("ArrayMesh_lqeg2")
 item/71/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/71/mesh_cast_shadow = 1
 item/71/shapes = []
 item/71/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/71/navigation_layers = 1
-item/71/preview = SubResource("ImageTexture_6wec5")
+item/71/preview = SubResource("ImageTexture_d54jx")
 item/72/name = "railing_corner_padded_green"
-item/72/mesh = SubResource("ArrayMesh_0u184")
+item/72/mesh = SubResource("ArrayMesh_6wec5")
 item/72/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/72/mesh_cast_shadow = 1
 item/72/shapes = []
 item/72/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/72/navigation_layers = 1
-item/72/preview = SubResource("ImageTexture_0lgio")
+item/72/preview = SubResource("ImageTexture_fldr1")
 item/73/name = "railing_corner_single_green"
-item/73/mesh = SubResource("ArrayMesh_8b6le")
+item/73/mesh = SubResource("ArrayMesh_0lgio")
 item/73/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/73/mesh_cast_shadow = 1
 item/73/shapes = []
 item/73/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/73/navigation_layers = 1
-item/73/preview = SubResource("ImageTexture_o607p")
+item/73/preview = SubResource("ImageTexture_egdb7")
 item/74/name = "railing_straight_double_green"
-item/74/mesh = SubResource("ArrayMesh_yjg0r")
+item/74/mesh = SubResource("ArrayMesh_o607p")
 item/74/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/74/mesh_cast_shadow = 1
 item/74/shapes = []
 item/74/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/74/navigation_layers = 1
-item/74/preview = SubResource("ImageTexture_6wxhx")
+item/74/preview = SubResource("ImageTexture_lmhpl")
 item/75/name = "railing_straight_padded_green"
-item/75/mesh = SubResource("ArrayMesh_yllt5")
+item/75/mesh = SubResource("ArrayMesh_6wxhx")
 item/75/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/75/mesh_cast_shadow = 1
 item/75/shapes = []
 item/75/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/75/navigation_layers = 1
-item/75/preview = SubResource("ImageTexture_j8kpt")
+item/75/preview = SubResource("ImageTexture_mmdmb")
 item/76/name = "railing_straight_single_green"
-item/76/mesh = SubResource("ArrayMesh_hxy5u")
+item/76/mesh = SubResource("ArrayMesh_j8kpt")
 item/76/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/76/mesh_cast_shadow = 1
 item/76/shapes = []
 item/76/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/76/navigation_layers = 1
-item/76/preview = SubResource("ImageTexture_4n6w2")
+item/76/preview = SubResource("ImageTexture_rh8pc")
 item/77/name = "signage_arrow_stand_green"
-item/77/mesh = SubResource("ArrayMesh_yirj2")
+item/77/mesh = SubResource("ArrayMesh_4n6w2")
 item/77/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/77/mesh_cast_shadow = 1
 item/77/shapes = []
 item/77/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/77/navigation_layers = 1
-item/77/preview = SubResource("ImageTexture_u8p27")
+item/77/preview = SubResource("ImageTexture_eqbyy")
 item/78/name = "signage_arrow_wall_green"
-item/78/mesh = SubResource("ArrayMesh_jdl78")
+item/78/mesh = SubResource("ArrayMesh_u8p27")
 item/78/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/78/mesh_cast_shadow = 1
 item/78/shapes = []
 item/78/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/78/navigation_layers = 1
-item/78/preview = SubResource("ImageTexture_v0nxp")
+item/78/preview = SubResource("ImageTexture_ouc6y")
 item/79/name = "signage_arrows_left_green"
-item/79/mesh = SubResource("ArrayMesh_qu1ic")
+item/79/mesh = SubResource("ArrayMesh_v0nxp")
 item/79/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/79/mesh_cast_shadow = 1
 item/79/shapes = []
 item/79/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/79/navigation_layers = 1
-item/79/preview = SubResource("ImageTexture_ypjkm")
+item/79/preview = SubResource("ImageTexture_5w3i6")
 item/80/name = "signage_arrows_right_green"
-item/80/mesh = SubResource("ArrayMesh_vpuwx")
+item/80/mesh = SubResource("ArrayMesh_npgji")
 item/80/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/80/mesh_cast_shadow = 1
 item/80/shapes = []
 item/80/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/80/navigation_layers = 1
-item/80/preview = SubResource("ImageTexture_2vex7")
+item/80/preview = SubResource("ImageTexture_de5i6")
 item/81/name = "spring_pad_green"
-item/81/mesh = SubResource("ArrayMesh_gvuai")
+item/81/mesh = SubResource("ArrayMesh_2vex7")
 item/81/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/81/mesh_cast_shadow = 1
 item/81/shapes = []
 item/81/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/81/navigation_layers = 1
-item/81/preview = SubResource("ImageTexture_6ixd2")
+item/81/preview = SubResource("ImageTexture_2vgdb")
 item/82/name = "star_green"
-item/82/mesh = SubResource("ArrayMesh_daw25")
+item/82/mesh = SubResource("ArrayMesh_6ixd2")
 item/82/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/82/mesh_cast_shadow = 1
 item/82/shapes = []
 item/82/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 item/82/navigation_layers = 1
-item/82/preview = SubResource("ImageTexture_iom7t")
+item/82/preview = SubResource("ImageTexture_i43xs")

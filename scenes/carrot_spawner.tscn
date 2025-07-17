@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ktv8022nlm54"]
+
+[ext_resource type="Script" uid="uid://djslwe2hvylcb" path="res://scripts/carrot_spawner.gd" id="1_clyaj"]
+[ext_resource type="PackedScene" uid="uid://dtm2kk1otrl4d" path="res://assets/kaykit_kitchen_free/gltf-meshed/carrot.tscn" id="2_tst1d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_abdht"]
+
+[node name="CarrotSpawner" type="Node3D" node_paths=PackedStringArray("spawn_area")]
+script = ExtResource("1_clyaj")
+item_to_spawn = ExtResource("2_tst1d")
+spawn_area = NodePath("Area3D")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_abdht")
+
+[node name="SpawnTimer" type="Timer" parent="."]

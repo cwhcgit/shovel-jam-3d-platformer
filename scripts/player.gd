@@ -96,6 +96,11 @@ func _update_rotation(delta):
 	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
 	var current_rotation_speed = ROTATION_SPEED # Default to fast rotation
 
+	# If moving straight back, don't rotate the character.
+	# Let them walk backward while facing the camera's direction.
+	if input_dir.y > 0.5 and abs(input_dir.x) < 0.1:
+		return
+
 	if wall_jump_cooldown > 0:
 		direction = velocity
 		direction.y = 0
@@ -105,7 +110,7 @@ func _update_rotation(delta):
 		direction = (cam_forward * input_dir.y + cam_right * input_dir.x)
 		direction.y = 0
 		# If only rotating (A/D pressed, but no W/S), use idle speed
-		if abs(input_dir.y) < 0.1 and abs(input_dir.x) > 0.1:
+		if abs(input_dir.x) > 0.1:
 			current_rotation_speed = IDLE_ROTATION_SPEED
 
 	if direction.length() > 0.1: # Only rotate if there's a direction to look at
@@ -117,7 +122,7 @@ func _get_wall_normal():
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
 			if collision.get_normal().y < 0.1:
-				print("Wall detected! Normal: ", collision.get_normal())
+				print_debug("Wall detected! Normal: ", collision.get_normal())
 				return collision.get_normal()
 	return Vector3.ZERO
 

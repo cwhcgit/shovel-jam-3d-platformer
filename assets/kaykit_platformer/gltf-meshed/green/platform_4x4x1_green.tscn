@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8t1w2q8k7v6y"]
 
-[ext_resource type="PackedScene" uid="uid://your_uid_here" path="res://assets/kaykit_platformer/gltf/green/platform_4x4x1_green.gltf" id="1_dsr3c"]
+[ext_resource type="PackedScene" uid="uid://cpjxrre7hxajo" path="res://assets/kaykit_platformer/gltf/green/platform_4x4x1_green.gltf" id="1_dsr3c"]
 
 [node name="platform_4x4x1_green" instance=ExtResource("1_dsr3c")]
 

@@ -1,0 +1,322 @@
+[gd_scene load_steps=107 format=3 uid="uid://dxeums44g2it1"]
+
+[ext_resource type="PackedScene" uid="uid://cq5k0xqfi7w3x" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_A_Color1.tscn" id="1_5obpp"]
+[ext_resource type="PackedScene" uid="uid://brcj0sd0liice" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_A_Color_12.tscn" id="2_d7lqo"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_B_Color1.tscn" id="3_vppoa"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_C_Color1.tscn" id="4_ijuhn"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_D_Color1.tscn" id="5_tfjft"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_E_Color1.tscn" id="6_fx7kq"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_F_Color1.tscn" id="7_28xhb"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_1_G_Color1.tscn" id="8_huu46"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_A_Color1.tscn" id="9_c3f70"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_B_Color1.tscn" id="10_8d1xq"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_C_Color1.tscn" id="11_x3r5o"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_D_Color1.tscn" id="12_hkuv8"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_E_Color1.tscn" id="13_x04ej"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_2_F_Color1.tscn" id="14_pvp3o"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_3_A_Color1.tscn" id="15_1k7m8"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_3_B_Color1.tscn" id="16_64m07"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_3_C_Color1.tscn" id="17_ekrdg"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_A_Color1.tscn" id="18_t81jd"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_B_Color1.tscn" id="19_wit4i"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_C_Color1.tscn" id="20_1cxbx"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_D_Color1.tscn" id="21_67d86"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_E_Color1.tscn" id="22_lootp"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Bush_4_F_Color1.tscn" id="23_efv8j"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_A_Color1.tscn" id="24_tg0nh"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_A_Singlesided_Color1.tscn" id="25_2bv25"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_B_Color1.tscn" id="26_36x1e"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_B_Singlesided_Color1.tscn" id="27_kyut6"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_C_Color1.tscn" id="28_h8pux"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_C_Singlesided_Color1.tscn" id="29_71o1d"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_D_Color1.tscn" id="30_bdvu6"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_D_Singlesided_Color1.tscn" id="31_1c7w0"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_Mesh.tscn" id="32_8eob6"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_1_SingleSided_Mesh.tscn" id="33_0kk6i"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_A_Color1.tscn" id="34_a8hvx"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_A_Singlesided_Color1.tscn" id="35_hcevv"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_B_Color1.tscn" id="36_7nstg"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_B_Singlesided_Color1.tscn" id="37_sgd4u"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_C_Color1.tscn" id="38_pnwpe"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_C_Singlesided_Color1.tscn" id="39_hdtgv"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_D_Color1.tscn" id="40_dgxmw"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_D_Singlesided_Color1.tscn" id="41_5g12c"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_Mesh.tscn" id="42_gp4bg"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Grass_2_SingleSided_Mesh.tscn" id="43_ssbft"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_A_Color1.tscn" id="44_wqrf1"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_B_Color1.tscn" id="45_kugtr"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_C_Color1.tscn" id="46_8dvl2"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_D_Color1.tscn" id="47_i0pw2"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_E_Color1.tscn" id="48_d2d7i"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_F_Color1.tscn" id="49_egink"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_G_Color1.tscn" id="50_wsuj3"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_H_Color1.tscn" id="51_58xuh"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_I_Color1.tscn" id="52_26fg1"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_J_Color1.tscn" id="53_vqy0c"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_K_Color1.tscn" id="54_7lgbq"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_L_Color1.tscn" id="55_ftlnv"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_M_Color1.tscn" id="56_iub47"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_N_Color1.tscn" id="57_dnywb"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_O_Color1.tscn" id="58_x31k2"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_P_Color1.tscn" id="59_ns4f0"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_1_Q_Color1.tscn" id="60_aal8s"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_A_Color1.tscn" id="61_jktnb"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_B_Color1.tscn" id="62_4bs4i"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_C_Color1.tscn" id="63_u2een"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_D_Color1.tscn" id="64_va102"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_E_Color1.tscn" id="65_6f3wu"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_F_Color1.tscn" id="66_4l4wu"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_G_Color1.tscn" id="67_2nbvs"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_2_H_Color1.tscn" id="68_ohnqg"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_A_Color1.tscn" id="69_oa2wv"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_B_Color1.tscn" id="70_8kdxr"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_C_Color1.tscn" id="71_ovvd1"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_D_Color1.tscn" id="72_se82f"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_E_Color1.tscn" id="73_f8c2y"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_F_Color1.tscn" id="74_ur8vj"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_G_Color1.tscn" id="75_h5uaj"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_H_Color1.tscn" id="76_r7hw4"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_I_Color1.tscn" id="77_qgw3w"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_J_Color1.tscn" id="78_ddyjk"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_K_Color1.tscn" id="79_bu84d"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_L_Color1.tscn" id="80_8ivu4"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_M_Color1.tscn" id="81_cso00"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_N_Color1.tscn" id="82_c8qmd"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_O_Color1.tscn" id="83_yeah4"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_P_Color1.tscn" id="84_frtck"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_Q_Color1.tscn" id="85_8dtgh"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Rock_3_R_Color1.tscn" id="86_tlreo"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_1_A_Color1.tscn" id="87_ufvjx"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_1_B_Color1.tscn" id="88_vq843"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_1_C_Color1.tscn" id="89_87pli"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_A_Color1.tscn" id="90_ka8ut"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_B_Color1.tscn" id="91_my6a8"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_C_Color1.tscn" id="92_1t5m7"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_D_Color1.tscn" id="93_mggng"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_E_Color1.tscn" id="94_s8thu"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_3_A_Color1.tscn" id="95_kjj56"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_3_B_Color1.tscn" id="96_fj6us"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_3_C_Color1.tscn" id="97_61hur"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_4_A_Color1.tscn" id="98_nyt3h"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_4_B_Color1.tscn" id="99_c4ioa"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_4_C_Color1.tscn" id="100_t4oo5"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_1_A_Color1.tscn" id="101_tebuf"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_1_B_Color1.tscn" id="102_xw32w"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_1_C_Color1.tscn" id="103_iqxi0"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_2_A_Color1.tscn" id="104_qkdl8"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_2_B_Color1.tscn" id="105_jmnnx"]
+[ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_Bare_2_C_Color1.tscn" id="106_q8in3"]
+
+[node name="PlatformerMeshLibraryObjects" type="Node3D"]
+
+[node name="Bush_1_A_Color1" parent="." instance=ExtResource("1_5obpp")]
+
+[node name="Bush_1_A_Color12" parent="." instance=ExtResource("2_d7lqo")]
+
+[node name="Bush_1_B_Color1" parent="." instance=ExtResource("3_vppoa")]
+
+[node name="Bush_1_C_Color1" parent="." instance=ExtResource("4_ijuhn")]
+
+[node name="Bush_1_D_Color1" parent="." instance=ExtResource("5_tfjft")]
+
+[node name="Bush_1_E_Color1" parent="." instance=ExtResource("6_fx7kq")]
+
+[node name="Bush_1_F_Color1" parent="." instance=ExtResource("7_28xhb")]
+
+[node name="Bush_1_G_Color1" parent="." instance=ExtResource("8_huu46")]
+
+[node name="Bush_2_A_Color1" parent="." instance=ExtResource("9_c3f70")]
+
+[node name="Bush_2_B_Color1" parent="." instance=ExtResource("10_8d1xq")]
+
+[node name="Bush_2_C_Color1" parent="." instance=ExtResource("11_x3r5o")]
+
+[node name="Bush_2_D_Color1" parent="." instance=ExtResource("12_hkuv8")]
+
+[node name="Bush_2_E_Color1" parent="." instance=ExtResource("13_x04ej")]
+
+[node name="Bush_2_F_Color1" parent="." instance=ExtResource("14_pvp3o")]
+
+[node name="Bush_3_A_Color1" parent="." instance=ExtResource("15_1k7m8")]
+
+[node name="Bush_3_B_Color1" parent="." instance=ExtResource("16_64m07")]
+
+[node name="Bush_3_C_Color1" parent="." instance=ExtResource("17_ekrdg")]
+
+[node name="Bush_4_A_Color1" parent="." instance=ExtResource("18_t81jd")]
+
+[node name="Bush_4_B_Color1" parent="." instance=ExtResource("19_wit4i")]
+
+[node name="Bush_4_C_Color1" parent="." instance=ExtResource("20_1cxbx")]
+
+[node name="Bush_4_D_Color1" parent="." instance=ExtResource("21_67d86")]
+
+[node name="Bush_4_E_Color1" parent="." instance=ExtResource("22_lootp")]
+
+[node name="Bush_4_F_Color1" parent="." instance=ExtResource("23_efv8j")]
+
+[node name="Grass_1_A_Color1" parent="." instance=ExtResource("24_tg0nh")]
+
+[node name="Grass_1_A_Singlesided_Color1" parent="." instance=ExtResource("25_2bv25")]
+
+[node name="Grass_1_B_Color1" parent="." instance=ExtResource("26_36x1e")]
+
+[node name="Grass_1_B_Singlesided_Color1" parent="." instance=ExtResource("27_kyut6")]
+
+[node name="Grass_1_C_Color1" parent="." instance=ExtResource("28_h8pux")]
+
+[node name="Grass_1_C_Singlesided_Color1" parent="." instance=ExtResource("29_71o1d")]
+
+[node name="Grass_1_D_Color1" parent="." instance=ExtResource("30_bdvu6")]
+
+[node name="Grass_1_D_Singlesided_Color1" parent="." instance=ExtResource("31_1c7w0")]
+
+[node name="Grass_1_Mesh" parent="." instance=ExtResource("32_8eob6")]
+
+[node name="Grass_1_SingleSided_Mesh" parent="." instance=ExtResource("33_0kk6i")]
+
+[node name="Grass_2_A_Color1" parent="." instance=ExtResource("34_a8hvx")]
+
+[node name="Grass_2_A_Singlesided_Color1" parent="." instance=ExtResource("35_hcevv")]
+
+[node name="Grass_2_B_Color1" parent="." instance=ExtResource("36_7nstg")]
+
+[node name="Grass_2_B_Singlesided_Color1" parent="." instance=ExtResource("37_sgd4u")]
+
+[node name="Grass_2_C_Color1" parent="." instance=ExtResource("38_pnwpe")]
+
+[node name="Grass_2_C_Singlesided_Color1" parent="." instance=ExtResource("39_hdtgv")]
+
+[node name="Grass_2_D_Color1" parent="." instance=ExtResource("40_dgxmw")]
+
+[node name="Grass_2_D_Singlesided_Color1" parent="." instance=ExtResource("41_5g12c")]
+
+[node name="Grass_2_Mesh" parent="." instance=ExtResource("42_gp4bg")]
+
+[node name="Grass_2_SingleSided_Mesh" parent="." instance=ExtResource("43_ssbft")]
+
+[node name="Rock_1_A_Color1" parent="." instance=ExtResource("44_wqrf1")]
+
+[node name="Rock_1_B_Color1" parent="." instance=ExtResource("45_kugtr")]
+
+[node name="Rock_1_C_Color1" parent="." instance=ExtResource("46_8dvl2")]
+
+[node name="Rock_1_D_Color1" parent="." instance=ExtResource("47_i0pw2")]
+
+[node name="Rock_1_E_Color1" parent="." instance=ExtResource("48_d2d7i")]
+
+[node name="Rock_1_F_Color1" parent="." instance=ExtResource("49_egink")]
+
+[node name="Rock_1_G_Color1" parent="." instance=ExtResource("50_wsuj3")]
+
+[node name="Rock_1_H_Color1" parent="." instance=ExtResource("51_58xuh")]
+
+[node name="Rock_1_I_Color1" parent="." instance=ExtResource("52_26fg1")]
+
+[node name="Rock_1_J_Color1" parent="." instance=ExtResource("53_vqy0c")]
+
+[node name="Rock_1_K_Color1" parent="." instance=ExtResource("54_7lgbq")]
+
+[node name="Rock_1_L_Color1" parent="." instance=ExtResource("55_ftlnv")]
+
+[node name="Rock_1_M_Color1" parent="." instance=ExtResource("56_iub47")]
+
+[node name="Rock_1_N_Color1" parent="." instance=ExtResource("57_dnywb")]
+
+[node name="Rock_1_O_Color1" parent="." instance=ExtResource("58_x31k2")]
+
+[node name="Rock_1_P_Color1" parent="." instance=ExtResource("59_ns4f0")]
+
+[node name="Rock_1_Q_Color1" parent="." instance=ExtResource("60_aal8s")]
+
+[node name="Rock_2_A_Color1" parent="." instance=ExtResource("61_jktnb")]
+
+[node name="Rock_2_B_Color1" parent="." instance=ExtResource("62_4bs4i")]
+
+[node name="Rock_2_C_Color1" parent="." instance=ExtResource("63_u2een")]
+
+[node name="Rock_2_D_Color1" parent="." instance=ExtResource("64_va102")]
+
+[node name="Rock_2_E_Color1" parent="." instance=ExtResource("65_6f3wu")]
+
+[node name="Rock_2_F_Color1" parent="." instance=ExtResource("66_4l4wu")]
+
+[node name="Rock_2_G_Color1" parent="." instance=ExtResource("67_2nbvs")]
+
+[node name="Rock_2_H_Color1" parent="." instance=ExtResource("68_ohnqg")]
+
+[node name="Rock_3_A_Color1" parent="." instance=ExtResource("69_oa2wv")]
+
+[node name="Rock_3_B_Color1" parent="." instance=ExtResource("70_8kdxr")]
+
+[node name="Rock_3_C_Color1" parent="." instance=ExtResource("71_ovvd1")]
+
+[node name="Rock_3_D_Color1" parent="." instance=ExtResource("72_se82f")]
+
+[node name="Rock_3_E_Color1" parent="." instance=ExtResource("73_f8c2y")]
+
+[node name="Rock_3_F_Color1" parent="." instance=ExtResource("74_ur8vj")]
+
+[node name="Rock_3_G_Color1" parent="." instance=ExtResource("75_h5uaj")]
+
+[node name="Rock_3_H_Color1" parent="." instance=ExtResource("76_r7hw4")]
+
+[node name="Rock_3_I_Color1" parent="." instance=ExtResource("77_qgw3w")]
+
+[node name="Rock_3_J_Color1" parent="." instance=ExtResource("78_ddyjk")]
+
+[node name="Rock_3_K_Color1" parent="." instance=ExtResource("79_bu84d")]
+
+[node name="Rock_3_L_Color1" parent="." instance=ExtResource("80_8ivu4")]
+
+[node name="Rock_3_M_Color1" parent="." instance=ExtResource("81_cso00")]
+
+[node name="Rock_3_N_Color1" parent="." instance=ExtResource("82_c8qmd")]
+
+[node name="Rock_3_O_Color1" parent="." instance=ExtResource("83_yeah4")]
+
+[node name="Rock_3_P_Color1" parent="." instance=ExtResource("84_frtck")]
+
+[node name="Rock_3_Q_Color1" parent="." instance=ExtResource("85_8dtgh")]
+
+[node name="Rock_3_R_Color1" parent="." instance=ExtResource("86_tlreo")]
+
+[node name="Tree_1_A_Color1" parent="." instance=ExtResource("87_ufvjx")]
+
+[node name="Tree_1_B_Color1" parent="." instance=ExtResource("88_vq843")]
+
+[node name="Tree_1_C_Color1" parent="." instance=ExtResource("89_87pli")]
+
+[node name="Tree_2_A_Color1" parent="." instance=ExtResource("90_ka8ut")]
+
+[node name="Tree_2_B_Color1" parent="." instance=ExtResource("91_my6a8")]
+
+[node name="Tree_2_C_Color1" parent="." instance=ExtResource("92_1t5m7")]
+
+[node name="Tree_2_D_Color1" parent="." instance=ExtResource("93_mggng")]
+
+[node name="Tree_2_E_Color1" parent="." instance=ExtResource("94_s8thu")]
+
+[node name="Tree_3_A_Color1" parent="." instance=ExtResource("95_kjj56")]
+
+[node name="Tree_3_B_Color1" parent="." instance=ExtResource("96_fj6us")]
+
+[node name="Tree_3_C_Color1" parent="." instance=ExtResource("97_61hur")]
+
+[node name="Tree_4_A_Color1" parent="." instance=ExtResource("98_nyt3h")]
+
+[node name="Tree_4_B_Color1" parent="." instance=ExtResource("99_c4ioa")]
+
+[node name="Tree_4_C_Color1" parent="." instance=ExtResource("100_t4oo5")]
+
+[node name="Tree_Bare_1_A_Color1" parent="." instance=ExtResource("101_tebuf")]
+
+[node name="Tree_Bare_1_B_Color1" parent="." instance=ExtResource("102_xw32w")]
+
+[node name="Tree_Bare_1_C_Color1" parent="." instance=ExtResource("103_iqxi0")]
+
+[node name="Tree_Bare_2_A_Color1" parent="." instance=ExtResource("104_qkdl8")]
+
+[node name="Tree_Bare_2_B_Color1" parent="." instance=ExtResource("105_jmnnx")]
+
+[node name="Tree_Bare_2_C_Color1" parent="." instance=ExtResource("106_q8in3")]
