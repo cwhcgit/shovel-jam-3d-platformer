@@ -228,6 +228,4 @@ visible = false
 [node name="ControlsMenu" parent="UI" instance=ExtResource("8_cm_ui")]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
 [editable path="Objects/WorldTree"]

@@ -1,48 +1,96 @@
 extends CharacterBody3D
 
-const SPEED = 30.0
+const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const ROTATION_SPEED = 10.0 # Increased for snappier feel
-const IDLE_ROTATION_SPEED = 5.0 # Slower rotation when not moving
+const SENSITIVITY = 0.003
+
 const ANIM_JUMP_NAME = "Jump_Full_Short"
 const ANIM_WALK_NAME = "Walking_A"
 const ANIM_RUN_NAME = "Running_A"
 const ANIM_INTERACT_NAME = "Interact"
 const ANIM_IDLE_NAME = "Idle"
 const ANIM_DASH_NAME = "Dodge_Forward"
-
-var jump_count = 0
 const MAX_JUMPS = 2
 const WALL_JUMP_FORCE = 7.0
-var wall_jump_cooldown = 0.0
 const WALL_JUMP_COOLDOWN_TIME = 0.3
-
 const DASH_SPEED = 25.0
-var dash_duration = 0.2
-var dash_cooldown = 1.0
-enum { DASH_READY, DASHING, DASH_COOLDOWN }
-var dash_state = DASH_READY
+const DASH_DURATION = 0.2
+const DASH_COOLDOWN_TIME = 1.0
 
+# State and variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var jump_count = 0
+var wall_jump_cooldown = 0.0
+enum DashState { READY, DASHING, COOLDOWN }
+var dash_state = DashState.READY
 
-@onready var spring_arm: SpringArm3D = $SpringArm3D
 @onready var animation_player: AnimationPlayer = $Barbarian/AnimationPlayer
+@onready var twist_pivot: Node3D = $TwistPivot
+@onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
+@onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
+var camera_default_distance: float
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Store the camera's initial Z position as its default resting distance.
+	camera_default_distance = camera.position.z
+
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		# Store the original rotation in case we need to revert it.
+		var original_rotation = pitch_pivot.rotation.x
+		
+		# Apply the rotation from mouse input.
+		twist_pivot.rotate_y(-event.relative.x * SENSITIVITY)
+		pitch_pivot.rotate_x(-event.relative.y * SENSITIVITY)
+		
+		# Clamp the angle to a reasonable range.
+		pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+
+		# Clamp the rotation of the camera such that it's never lower than the player's feet
+		if camera.global_position.y < global_position.y:
+			pitch_pivot.rotation.x = original_rotation
 
 func _physics_process(delta):
 	_handle_gravity(delta)
-	_handle_cooldowns(delta)
-	_handle_input()
+	if wall_jump_cooldown > 0:
+		wall_jump_cooldown -= delta
 
-	if dash_state == DASHING:
-		move_and_slide()
-		return
+	# Handle user input for actions
+	if Input.is_action_just_pressed("jump"):
+		_handle_jump()
+	if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
+		_perform_dash()
 
-	if wall_jump_cooldown <= 0:
-		_handle_movement()
+	# Handle movement if not dashing
+	if dash_state != DashState.DASHING:
+		_handle_movement(delta)
 
-	_update_rotation(delta)
-	_update_animation()
+	# Apply movement
 	move_and_slide()
+	
+	# After moving, check for and resolve camera collisions.
+	_update_camera_collision(delta)
+	
+	# Update animations
+	_update_animation()
+
+func _update_camera_collision(delta):
+	var space_state = get_world_3d().direct_space_state
+	var cam_global_pos = camera.global_position
+	var pivot_global_pos = pitch_pivot.global_position
+
+	var query = PhysicsRayQueryParameters3D.create(pivot_global_pos, cam_global_pos, collision_mask, [self])
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		# Collision detected. Position the camera just in front of the collision point.
+		# The negative sign is because the camera's "forward" is its local -Z axis.
+		camera.position.z = -(pivot_global_pos.distance_to(result.position) - 0.5)
+	else:
+		# No collision. Only lerp back if the camera is not already at its default distance.
+		if not is_equal_approx(camera.position.z, camera_default_distance):
+			camera.position.z = lerp(camera.position.z, camera_default_distance, delta * 8.0)
 
 func _handle_gravity(delta):
 	if not is_on_floor():
@@ -50,92 +98,59 @@ func _handle_gravity(delta):
 	else:
 		jump_count = 0
 
-func _handle_cooldowns(delta):
-	if wall_jump_cooldown > 0:
-		wall_jump_cooldown -= delta
+func _handle_jump():
+	var wall_normal = _get_wall_normal()
+	if wall_normal != Vector3.ZERO and not is_on_floor():
+		velocity = velocity.bounce(wall_normal)
+		velocity += wall_normal * WALL_JUMP_FORCE
+		velocity.y = JUMP_VELOCITY
+		wall_jump_cooldown = WALL_JUMP_COOLDOWN_TIME
+		jump_count = 1
+	elif jump_count < MAX_JUMPS:
+		velocity.y = JUMP_VELOCITY
+		jump_count += 1
 
-func _handle_input():
-	if Input.is_action_just_pressed("jump"):
-		var wall_normal = _get_wall_normal()
-		if wall_normal != Vector3.ZERO and not is_on_floor():
-			_perform_wall_jump(wall_normal)
-		elif jump_count < MAX_JUMPS:
-			_perform_regular_jump()
-	
-	if Input.is_action_just_pressed("dash") and dash_state == DASH_READY:
-		dash()
-
-func _perform_wall_jump(wall_normal):
-	velocity = velocity.bounce(wall_normal)
-	velocity += wall_normal * WALL_JUMP_FORCE
-	velocity.y = JUMP_VELOCITY
-	wall_jump_cooldown = WALL_JUMP_COOLDOWN_TIME
-	jump_count = 1 # Reset jump count to allow a double jump after the wall jump
-
-func _perform_regular_jump():
-	velocity.y = JUMP_VELOCITY
-	jump_count += 1
-
-func _handle_movement():
+func _handle_movement(_delta):
 	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
-	var cam_forward = spring_arm.global_transform.basis.z
-	var cam_right = spring_arm.global_transform.basis.x
-	var direction = (cam_forward * input_dir.y + cam_right * input_dir.x)
-	direction.y = 0
-	direction = direction.normalized()
+	
+	# Calculate the intended direction in world space based on camera orientation.
+	var move_direction = (twist_pivot.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	if move_direction.length() > 0.01: # Only handle rotations when there's input
+		# Move direction is the reverse of input direction due to model facing
+		velocity.x = -move_direction.x * SPEED
+		velocity.z = -move_direction.z * SPEED
+
+		# Rotate the model to face the true movement direction (-move_direction), 
+		# necessary because velocity direction is now reversed, and unusable with facing direction
+		# Because the model's front is +Z, we need its -Z to point toward the opposite of our goal.
+		# Use Basis.looking_at() to prevent the model from tilting up or down.
+		$Barbarian.transform.basis = Basis.looking_at(move_direction, Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-func _update_rotation(delta):
-	var direction = Vector3.ZERO
-	var input_dir = Input.get_vector("left_move", "right_move", "up_move", "down_move")
-	var current_rotation_speed = ROTATION_SPEED # Default to fast rotation
-
-	# If moving straight back, don't rotate the character.
-	# Let them walk backward while facing the camera's direction.
-	if input_dir.y > 0.5 and abs(input_dir.x) < 0.1:
-		return
-
-	if wall_jump_cooldown > 0:
-		direction = velocity
-		direction.y = 0
-	else:
-		var cam_forward = spring_arm.global_transform.basis.z
-		var cam_right = spring_arm.global_transform.basis.x
-		direction = (cam_forward * input_dir.y + cam_right * input_dir.x)
-		direction.y = 0
-		# If only rotating (A/D pressed, but no W/S), use idle speed
-		if abs(input_dir.x) > 0.1:
-			current_rotation_speed = IDLE_ROTATION_SPEED
-
-	if direction.length() > 0.1: # Only rotate if there's a direction to look at
-		var target_basis = Basis.looking_at(direction.normalized())
-		transform.basis = transform.basis.slerp(target_basis, delta * current_rotation_speed)
 
 func _get_wall_normal():
 	if get_slide_collision_count() > 0:
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
 			if collision.get_normal().y < 0.1:
-				print_debug("Wall detected! Normal: ", collision.get_normal())
 				return collision.get_normal()
 	return Vector3.ZERO
 
-func dash():
-	dash_state = DASHING
-	var dash_direction = -transform.basis.z.normalized()
-	if velocity.length() > 0:
+func _perform_dash():
+	dash_state = DashState.DASHING
+	var dash_direction = -twist_pivot.global_transform.basis.z.normalized()
+	if velocity.length() > 0.1:
 		dash_direction = velocity.normalized()
+	
 	velocity = dash_direction * DASH_SPEED
-	await get_tree().create_timer(dash_duration).timeout
-	dash_state = DASH_COOLDOWN
-	await get_tree().create_timer(dash_cooldown).timeout
-	dash_state = DASH_READY
+	
+	await get_tree().create_timer(DASH_DURATION).timeout
+	dash_state = DashState.COOLDOWN
+	
+	await get_tree().create_timer(DASH_COOLDOWN_TIME).timeout
+	dash_state = DashState.READY
 
 func _update_animation():
 	var anim_to_play = ""
@@ -144,9 +159,9 @@ func _update_animation():
 	else:
 		if Input.is_action_just_pressed("interact"):
 			anim_to_play = ANIM_INTERACT_NAME
-		elif dash_state == DASHING:
+		elif dash_state == DashState.DASHING:
 			anim_to_play = ANIM_DASH_NAME
-		elif velocity.length() > 0.1:
+		elif velocity.length_squared() > 0.1:
 			anim_to_play = ANIM_RUN_NAME
 		else:
 			anim_to_play = ANIM_IDLE_NAME
