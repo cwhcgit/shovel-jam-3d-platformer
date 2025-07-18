@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0vss2bwbisdl"]
+[gd_scene load_steps=7 format=3 uid="uid://b0vss2bwbisdl"]
 
-[ext_resource type="Script" path="res://scripts/poop.gd" id="1_ymlmb"]
+[ext_resource type="Script" uid="uid://bbp308t7sgpay" path="res://scripts/poop.gd" id="1_ymlmb"]
+[ext_resource type="PackedScene" uid="uid://c6gq7x8f3w8w" path="res://scenes/effects/explosion.tscn" id="2_nra6b"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_12ti8"]
 
@@ -10,12 +11,23 @@ albedo_color = Color(0.435294, 0.305882, 0.215686, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ymlmb"]
 material = SubResource("StandardMaterial3D_12ti8")
 
-[node name="Poop" type="Area3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ymlmb"]
+radius = 3.0
+
+[node name="RigidBody3D" type="RigidBody3D" groups=["poop"]]
+collision_mask = 7
 script = ExtResource("1_ymlmb")
+explosion_scene = ExtResource("2_nra6b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_12ti8")
-disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_ymlmb")
+skeleton = NodePath("")
+
+[node name="ExplosionRadius" type="Area3D" parent="."]
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExplosionRadius"]
+shape = SubResource("SphereShape3D_ymlmb")

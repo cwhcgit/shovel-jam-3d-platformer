@@ -162,29 +162,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.420792, -0.243561)
 shape = SubResource("BoxShape3D_pm3ni")
 
 [node name="BirdPoopArea" type="Area3D" parent="Objects/PetArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43405, 3.65514, -4.11882)
 collision_layer = 4
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/PetArea/BirdPoopArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.23872, 3.61711, -4.11936)
 shape = SubResource("BoxShape3D_y6deb")
 
 [node name="BirdFeedArea" type="Area3D" parent="Objects/PetArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23146, 5.45872, 7.24431)
 collision_layer = 4
 collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/PetArea/BirdFeedArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.30884, 5.62119, 7.08948)
 shape = SubResource("BoxShape3D_og1vs")
 
 [node name="Greg" parent="Objects/PetArea" node_paths=PackedStringArray("birdhouse_area", "poop_area", "feed_area", "player") instance=ExtResource("10_y6deb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.1679, 12.4422, -2.26659)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2174, 12.4422, -2.26659)
 motion_mode = 0
 birdhouse_area = NodePath("../BirdHouseArea")
 poop_area = NodePath("../BirdPoopArea")
 feed_area = NodePath("../BirdFeedArea")
 player = NodePath("../../../Player")
 poop_scene = ExtResource("11_og1vs")
+
+[node name="RigidBody3D" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49338, 3.5, -3.79315)
+
+[node name="RigidBody3D2" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97245, 3.5, -5.52231)
+
+[node name="RigidBody3D3" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05469, 3.5, -3.42577)
 
 [node name="StorageRoomArea" type="Node3D" parent="Objects"]
 
@@ -250,7 +259,7 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 top_level = true
 mesh_library = ExtResource("4_choun")
 data = {
-"cells": PackedInt32Array(65539, 65534, 1441830, 65539, 65533, 1441830, 65540, 65534, 1441830, 65540, 65533, 1441830, 65539, 3, 1441876)
+"cells": PackedInt32Array(65539, 65534, 1441830, 65539, 65533, 1441830, 65540, 65534, 1441830, 65540, 65533, 1441830, 65539, 3, 83)
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 

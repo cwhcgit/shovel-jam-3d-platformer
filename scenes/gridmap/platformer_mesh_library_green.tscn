@@ -1,253 +1,172 @@
-[gd_scene load_steps=84 format=3 uid="uid://wgugwvm6sw1p"]
+[gd_scene load_steps=3 format=3 uid="uid://wgugwvm6sw1p"]
 
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/arch_green.tscn" id="1_arch_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/arch_tall_green.tscn" id="2_arch_tall_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/arch_wide_green.tscn" id="3_arch_wide_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/ball_green.tscn" id="4_ball_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_1x1x1_green.tscn" id="5_barrier_1x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_1x1x2_green.tscn" id="6_barrier_1x1x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_1x1x4_green.tscn" id="7_barrier_1x1x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_2x1x1_green.tscn" id="8_barrier_2x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_2x1x2_green.tscn" id="9_barrier_2x1x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_2x1x4_green.tscn" id="10_barrier_2x1x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_3x1x1_green.tscn" id="11_barrier_3x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_3x1x2_green.tscn" id="12_barrier_3x1x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_3x1x4_green.tscn" id="13_barrier_3x1x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_4x1x1_green.tscn" id="14_barrier_4x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_4x1x2_green.tscn" id="15_barrier_4x1x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/barrier_4x1x4_green.tscn" id="16_barrier_4x1x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/bomb_A_green.tscn" id="17_bomb_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/bomb_B_green.tscn" id="18_bomb_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/bracing_large_green.tscn" id="19_bracing_large_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/bracing_medium_green.tscn" id="20_bracing_medium_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/bracing_small_green.tscn" id="21_bracing_small_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/button_base_green.tscn" id="22_button_base_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/cone_green.tscn" id="23_cone_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/diamond_green.tscn" id="24_diamond_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/flag_A_green.tscn" id="25_flag_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/flag_B_green.tscn" id="26_flag_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/flag_C_green.tscn" id="27_flag_C_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/heart_green.tscn" id="28_heart_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/hoop_angled_green.tscn" id="29_hoop_angled_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/hoop_green.tscn" id="30_hoop_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/lever_floor_base_green.tscn" id="31_lever_floor_base_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/lever_wall_base_A_green.tscn" id="32_lever_wall_base_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/lever_wall_base_B_green.tscn" id="33_lever_wall_base_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_180_A_green.tscn" id="34_pipe_180_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_180_B_green.tscn" id="35_pipe_180_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_90_A_green.tscn" id="36_pipe_90_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_90_B_green.tscn" id="37_pipe_90_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_end_green.tscn" id="38_pipe_end_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_straight_A_green.tscn" id="39_pipe_straight_A_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/pipe_straight_B_green.tscn" id="40_pipe_straight_B_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_1x1x1_green.tscn" id="41_platform_1x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_2x2x1_green.tscn" id="42_platform_2x2x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_2x2x2_green.tscn" id="43_platform_2x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_2x2x4_green.tscn" id="44_platform_2x2x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x2x1_green.tscn" id="45_platform_4x2x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x2x2_green.tscn" id="46_platform_4x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x2x4_green.tscn" id="47_platform_4x2x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x4x1_green.tscn" id="48_platform_4x4x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x4x2_green.tscn" id="49_platform_4x4x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_4x4x4_green.tscn" id="50_platform_4x4x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x2x1_green.tscn" id="51_platform_6x2x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x2x2_green.tscn" id="52_platform_6x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x2x4_green.tscn" id="53_platform_6x2x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x6x1_green.tscn" id="54_platform_6x6x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x6x2_green.tscn" id="55_platform_6x6x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_6x6x4_green.tscn" id="56_platform_6x6x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_arrow_2x2x1_green.tscn" id="57_platform_arrow_2x2x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_arrow_4x4x1_green.tscn" id="58_platform_arrow_4x4x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_decorative_1x1x1_green.tscn" id="59_platform_decorative_1x1x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_decorative_2x2x2_green.tscn" id="60_platform_decorative_2x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_hole_6x6x1_green.tscn" id="61_platform_hole_6x6x1_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_2x2x2_green.tscn" id="62_platform_slope_2x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_2x4x4_green.tscn" id="63_platform_slope_2x4x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_2x6x4_green.tscn" id="64_platform_slope_2x6x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_4x2x2_green.tscn" id="65_platform_slope_4x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_4x4x4_green.tscn" id="66_platform_slope_4x4x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_4x6x4_green.tscn" id="67_platform_slope_4x6x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_6x2x2_green.tscn" id="68_platform_slope_6x2x2_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_6x4x4_green.tscn" id="69_platform_slope_6x4x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/platform_slope_6x6x4_green.tscn" id="70_platform_slope_6x6x4_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/power_green.tscn" id="71_power_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_corner_double_green.tscn" id="72_railing_corner_double_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_corner_padded_green.tscn" id="73_railing_corner_padded_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_corner_single_green.tscn" id="74_railing_corner_single_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_straight_double_green.tscn" id="75_railing_straight_double_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_straight_padded_green.tscn" id="76_railing_straight_padded_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/railing_straight_single_green.tscn" id="77_railing_straight_single_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/signage_arrow_stand_green.tscn" id="78_signage_arrow_stand_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/signage_arrow_wall_green.tscn" id="79_signage_arrow_wall_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/signage_arrows_left_green.tscn" id="80_signage_arrows_left_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/signage_arrows_right_green.tscn" id="81_signage_arrows_right_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/spring_pad_green.tscn" id="82_spring_pad_green"]
-[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/star_green.tscn" id="83_star_green"]
+[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/arch_wide_green.tscn" id="2_p2en5"]
+[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/neutral/strut_vertical.tscn" id="83_star_green"]
 
 [node name="platformer_mesh_library_green" type="Node3D"]
 
-[node name="arch_green" parent="." instance=ExtResource("1_arch_green")]
+[node name="arch_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="arch_tall_green" parent="." instance=ExtResource("2_arch_tall_green")]
+[node name="arch_tall_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="arch_wide_green" parent="." instance=ExtResource("3_arch_wide_green")]
+[node name="arch_wide_green" parent="." instance=ExtResource("2_p2en5")]
 
-[node name="ball_green" parent="." instance=ExtResource("4_ball_green")]
+[node name="ball_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_1x1x1_green" parent="." instance=ExtResource("5_barrier_1x1x1_green")]
+[node name="barrier_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_1x1x2_green" parent="." instance=ExtResource("6_barrier_1x1x2_green")]
+[node name="barrier_1x1x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_1x1x4_green" parent="." instance=ExtResource("7_barrier_1x1x4_green")]
+[node name="barrier_1x1x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_2x1x1_green" parent="." instance=ExtResource("8_barrier_2x1x1_green")]
+[node name="barrier_2x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_2x1x2_green" parent="." instance=ExtResource("9_barrier_2x1x2_green")]
+[node name="barrier_2x1x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_2x1x4_green" parent="." instance=ExtResource("10_barrier_2x1x4_green")]
+[node name="barrier_2x1x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_3x1x1_green" parent="." instance=ExtResource("11_barrier_3x1x1_green")]
+[node name="barrier_3x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_3x1x2_green" parent="." instance=ExtResource("12_barrier_3x1x2_green")]
+[node name="barrier_3x1x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_3x1x4_green" parent="." instance=ExtResource("13_barrier_3x1x4_green")]
+[node name="barrier_3x1x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_4x1x1_green" parent="." instance=ExtResource("14_barrier_4x1x1_green")]
+[node name="barrier_4x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_4x1x2_green" parent="." instance=ExtResource("15_barrier_4x1x2_green")]
+[node name="barrier_4x1x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="barrier_4x1x4_green" parent="." instance=ExtResource("16_barrier_4x1x4_green")]
+[node name="barrier_4x1x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="bomb_A_green" parent="." instance=ExtResource("17_bomb_A_green")]
+[node name="bomb_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="bomb_B_green" parent="." instance=ExtResource("18_bomb_B_green")]
+[node name="bomb_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="bracing_large_green" parent="." instance=ExtResource("19_bracing_large_green")]
+[node name="bracing_large_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="bracing_medium_green" parent="." instance=ExtResource("20_bracing_medium_green")]
+[node name="bracing_medium_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="bracing_small_green" parent="." instance=ExtResource("21_bracing_small_green")]
+[node name="bracing_small_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="button_base_green" parent="." instance=ExtResource("22_button_base_green")]
+[node name="button_base_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="cone_green" parent="." instance=ExtResource("23_cone_green")]
+[node name="cone_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="diamond_green" parent="." instance=ExtResource("24_diamond_green")]
+[node name="diamond_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="flag_A_green" parent="." instance=ExtResource("25_flag_A_green")]
+[node name="flag_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="flag_B_green" parent="." instance=ExtResource("26_flag_B_green")]
+[node name="flag_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="flag_C_green" parent="." instance=ExtResource("27_flag_C_green")]
+[node name="flag_C_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="heart_green" parent="." instance=ExtResource("28_heart_green")]
+[node name="heart_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="hoop_angled_green" parent="." instance=ExtResource("29_hoop_angled_green")]
+[node name="hoop_angled_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="hoop_green" parent="." instance=ExtResource("30_hoop_green")]
+[node name="hoop_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="lever_floor_base_green" parent="." instance=ExtResource("31_lever_floor_base_green")]
+[node name="lever_floor_base_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="lever_wall_base_A_green" parent="." instance=ExtResource("32_lever_wall_base_A_green")]
+[node name="lever_wall_base_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="lever_wall_base_B_green" parent="." instance=ExtResource("33_lever_wall_base_B_green")]
+[node name="lever_wall_base_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_180_A_green" parent="." instance=ExtResource("34_pipe_180_A_green")]
+[node name="pipe_180_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_180_B_green" parent="." instance=ExtResource("35_pipe_180_B_green")]
+[node name="pipe_180_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_90_A_green" parent="." instance=ExtResource("36_pipe_90_A_green")]
+[node name="pipe_90_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_90_B_green" parent="." instance=ExtResource("37_pipe_90_B_green")]
+[node name="pipe_90_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_end_green" parent="." instance=ExtResource("38_pipe_end_green")]
+[node name="pipe_end_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_straight_A_green" parent="." instance=ExtResource("39_pipe_straight_A_green")]
+[node name="pipe_straight_A_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="pipe_straight_B_green" parent="." instance=ExtResource("40_pipe_straight_B_green")]
+[node name="pipe_straight_B_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_1x1x1_green" parent="." instance=ExtResource("41_platform_1x1x1_green")]
+[node name="platform_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_2x2x1_green" parent="." instance=ExtResource("42_platform_2x2x1_green")]
+[node name="platform_2x2x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_2x2x2_green" parent="." instance=ExtResource("43_platform_2x2x2_green")]
+[node name="platform_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_2x2x4_green" parent="." instance=ExtResource("44_platform_2x2x4_green")]
+[node name="platform_2x2x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x2x1_green" parent="." instance=ExtResource("45_platform_4x2x1_green")]
+[node name="platform_4x2x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x2x2_green" parent="." instance=ExtResource("46_platform_4x2x2_green")]
+[node name="platform_4x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x2x4_green" parent="." instance=ExtResource("47_platform_4x2x4_green")]
+[node name="platform_4x2x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x4x1_green" parent="." instance=ExtResource("48_platform_4x4x1_green")]
+[node name="platform_4x4x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x4x2_green" parent="." instance=ExtResource("49_platform_4x4x2_green")]
+[node name="platform_4x4x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_4x4x4_green" parent="." instance=ExtResource("50_platform_4x4x4_green")]
+[node name="platform_4x4x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x2x1_green" parent="." instance=ExtResource("51_platform_6x2x1_green")]
+[node name="platform_6x2x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x2x2_green" parent="." instance=ExtResource("52_platform_6x2x2_green")]
+[node name="platform_6x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x2x4_green" parent="." instance=ExtResource("53_platform_6x2x4_green")]
+[node name="platform_6x2x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x6x1_green" parent="." instance=ExtResource("54_platform_6x6x1_green")]
+[node name="platform_6x6x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x6x2_green" parent="." instance=ExtResource("55_platform_6x6x2_green")]
+[node name="platform_6x6x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_6x6x4_green" parent="." instance=ExtResource("56_platform_6x6x4_green")]
+[node name="platform_6x6x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_arrow_2x2x1_green" parent="." instance=ExtResource("57_platform_arrow_2x2x1_green")]
+[node name="platform_arrow_2x2x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_arrow_4x4x1_green" parent="." instance=ExtResource("58_platform_arrow_4x4x1_green")]
+[node name="platform_arrow_4x4x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_decorative_1x1x1_green" parent="." instance=ExtResource("59_platform_decorative_1x1x1_green")]
+[node name="platform_decorative_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_decorative_2x2x2_green" parent="." instance=ExtResource("60_platform_decorative_2x2x2_green")]
+[node name="platform_decorative_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_hole_6x6x1_green" parent="." instance=ExtResource("61_platform_hole_6x6x1_green")]
+[node name="platform_hole_6x6x1_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_2x2x2_green" parent="." instance=ExtResource("62_platform_slope_2x2x2_green")]
+[node name="platform_slope_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_2x4x4_green" parent="." instance=ExtResource("63_platform_slope_2x4x4_green")]
+[node name="platform_slope_2x4x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_2x6x4_green" parent="." instance=ExtResource("64_platform_slope_2x6x4_green")]
+[node name="platform_slope_2x6x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_4x2x2_green" parent="." instance=ExtResource("65_platform_slope_4x2x2_green")]
+[node name="platform_slope_4x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_4x4x4_green" parent="." instance=ExtResource("66_platform_slope_4x4x4_green")]
+[node name="platform_slope_4x4x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_4x6x4_green" parent="." instance=ExtResource("67_platform_slope_4x6x4_green")]
+[node name="platform_slope_4x6x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_6x2x2_green" parent="." instance=ExtResource("68_platform_slope_6x2x2_green")]
+[node name="platform_slope_6x2x2_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_6x4x4_green" parent="." instance=ExtResource("69_platform_slope_6x4x4_green")]
+[node name="platform_slope_6x4x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="platform_slope_6x6x4_green" parent="." instance=ExtResource("70_platform_slope_6x6x4_green")]
+[node name="platform_slope_6x6x4_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="power_green" parent="." instance=ExtResource("71_power_green")]
+[node name="power_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_corner_double_green" parent="." instance=ExtResource("72_railing_corner_double_green")]
+[node name="railing_corner_double_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_corner_padded_green" parent="." instance=ExtResource("73_railing_corner_padded_green")]
+[node name="railing_corner_padded_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_corner_single_green" parent="." instance=ExtResource("74_railing_corner_single_green")]
+[node name="railing_corner_single_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_straight_double_green" parent="." instance=ExtResource("75_railing_straight_double_green")]
+[node name="railing_straight_double_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_straight_padded_green" parent="." instance=ExtResource("76_railing_straight_padded_green")]
+[node name="railing_straight_padded_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="railing_straight_single_green" parent="." instance=ExtResource("77_railing_straight_single_green")]
+[node name="railing_straight_single_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="signage_arrow_stand_green" parent="." instance=ExtResource("78_signage_arrow_stand_green")]
+[node name="signage_arrow_stand_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="signage_arrow_wall_green" parent="." instance=ExtResource("79_signage_arrow_wall_green")]
+[node name="signage_arrow_wall_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="signage_arrows_left_green" parent="." instance=ExtResource("80_signage_arrows_left_green")]
+[node name="signage_arrows_left_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="signage_arrows_right_green" parent="." instance=ExtResource("81_signage_arrows_right_green")]
+[node name="signage_arrows_right_green" parent="." instance=ExtResource("83_star_green")]
 
-[node name="spring_pad_green" parent="." instance=ExtResource("82_spring_pad_green")]
+[node name="spring_pad_green" parent="." instance=ExtResource("83_star_green")]
 
 [node name="star_green" parent="." instance=ExtResource("83_star_green")]

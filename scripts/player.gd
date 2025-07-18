@@ -10,17 +10,20 @@ const ANIM_RUN_NAME = "Running_A"
 const ANIM_INTERACT_NAME = "Interact"
 const ANIM_IDLE_NAME = "Idle"
 const ANIM_DASH_NAME = "Dodge_Forward"
+const ANIM_ATTACK_NAME = "1H_Melee_Attack_Chop"
 const MAX_JUMPS = 2
 const WALL_JUMP_FORCE = 7.0
 const WALL_JUMP_COOLDOWN_TIME = 0.3
 const DASH_SPEED = 25.0
 const DASH_DURATION = 0.2
 const DASH_COOLDOWN_TIME = 1.0
+const ATTACK_COOLDOWN_TIME = 0.8
 
 # State and variables
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var jump_count = 0
 var wall_jump_cooldown = 0.0
+var attack_cooldown = 0.0
 enum DashState { READY, DASHING, COOLDOWN }
 var dash_state = DashState.READY
 
@@ -28,6 +31,7 @@ var dash_state = DashState.READY
 @onready var twist_pivot: Node3D = $TwistPivot
 @onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
 @onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
+@onready var attack_shape_cast: ShapeCast3D = $AttackShapeCast
 var camera_default_distance: float
 
 func _ready():
@@ -56,12 +60,16 @@ func _physics_process(delta):
 	_handle_gravity(delta)
 	if wall_jump_cooldown > 0:
 		wall_jump_cooldown -= delta
+	if attack_cooldown > 0:
+		attack_cooldown -= delta
 
 	# Handle user input for actions
 	if Input.is_action_just_pressed("jump"):
 		_handle_jump()
 	if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
 		_perform_dash()
+	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
+		_handle_attack()
 
 	# Handle movement if not dashing
 	if dash_state != DashState.DASHING:
@@ -128,6 +136,20 @@ func _handle_movement(_delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
+func _handle_attack():
+	attack_cooldown = ATTACK_COOLDOWN_TIME
+	animation_player.play(ANIM_ATTACK_NAME)
+	
+	# Force the shape cast to update its collision information
+	attack_shape_cast.force_shapecast_update()
+	
+	# Check for collisions
+	for i in range(attack_shape_cast.get_collision_count()):
+		var collider = attack_shape_cast.get_collider(i)
+		if collider and collider.has_method("take_damage"):
+			# Assuming the enemy has a 'take_damage' method
+			collider.call("take_damage", 10) # Deal 10 damage
+
 func _get_wall_normal():
 	if get_slide_collision_count() > 0:
 		for i in range(get_slide_collision_count()):
@@ -152,7 +174,10 @@ func _perform_dash():
 
 func _update_animation():
 	var anim_to_play = ""
-	if not is_on_floor():
+	
+	if attack_cooldown > 0:
+		anim_to_play = ANIM_ATTACK_NAME
+	elif not is_on_floor():
 		anim_to_play = ANIM_JUMP_NAME
 	else:
 		if Input.is_action_just_pressed("interact"):
