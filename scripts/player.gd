@@ -83,11 +83,8 @@ func _update_camera_collision(delta):
 	var query = PhysicsRayQueryParameters3D.create(pivot_global_pos, cam_global_pos, collision_mask, [self])
 	var result = space_state.intersect_ray(query)
 
-	if result:
-		# Collision detected. Position the camera just in front of the collision point.
-		# The negative sign is because the camera's "forward" is its local -Z axis.
-		camera.position.z = -(pivot_global_pos.distance_to(result.position) - 0.5)
-	else:
+	# Always set camera at default distance, other collision objects that's not the player will be 'seen through'
+	if not result:
 		# No collision. Only lerp back if the camera is not already at its default distance.
 		if not is_equal_approx(camera.position.z, camera_default_distance):
 			camera.position.z = lerp(camera.position.z, camera_default_distance, delta * 8.0)
