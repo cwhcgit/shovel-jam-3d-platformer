@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 MotiveManager="*res://scripts/motive_manager.gd"
 ScoreTimeManager="*res://scripts/score_time_manager.gd"
 
+[global_group]
+
+player=""
+
 [input]
 
 jump={
@@ -67,12 +71,9 @@ dash={
 ]
 }
 
-[input_devices]
-
-sensors/enable_gravity=true
-
 [layer_names]
 
 3d_physics/layer_1="Ground"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Objects"
+3d_physics/layer_4="Greg"

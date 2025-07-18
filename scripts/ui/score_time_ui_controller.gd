@@ -24,5 +24,6 @@ func on_time_updated(new_time):
 
 func on_game_over():
 	print("Game Over! Your score: ", ScoreTimeManager.get_score())
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	game_over_screen.show()
 	get_tree().paused = true # Pause the game

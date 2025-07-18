@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0vss2bwbisdl"]
+
+[ext_resource type="Script" path="res://scripts/poop.gd" id="1_ymlmb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_12ti8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12ti8"]
+albedo_color = Color(0.435294, 0.305882, 0.215686, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ymlmb"]
+material = SubResource("StandardMaterial3D_12ti8")
+
+[node name="Poop" type="Area3D"]
+script = ExtResource("1_ymlmb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_12ti8")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ymlmb")

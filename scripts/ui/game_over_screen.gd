@@ -6,6 +6,7 @@ func _ready():
 
 func _on_try_again_button_pressed():
 	print("Try Again button pressed!")
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ScoreTimeManager.reset_game_state()
 	MotiveManager.reset_game_state()
 	get_tree().paused = false

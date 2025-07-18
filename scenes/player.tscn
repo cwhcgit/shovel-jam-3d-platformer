@@ -14,7 +14,7 @@ script = ExtResource("1_f8w1j")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_v813g")
 
-[node name="Barbarian" parent="." instance=ExtResource("2_wbyy2")]
+[node name="Barbarian" parent="." groups=["player"] instance=ExtResource("2_wbyy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="PlayerActionHandler" type="Node" parent="."]
