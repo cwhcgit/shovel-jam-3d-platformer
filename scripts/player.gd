@@ -36,20 +36,21 @@ func _ready():
 	camera_default_distance = camera.position.z
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		# Store the original rotation in case we need to revert it.
-		var original_rotation = pitch_pivot.rotation.x
-		
-		# Apply the rotation from mouse input.
-		twist_pivot.rotate_y(-event.relative.x * SENSITIVITY)
-		pitch_pivot.rotate_x(-event.relative.y * SENSITIVITY)
-		
-		# Clamp the angle to a reasonable range.
-		pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseMotion:
+			# Store the original rotation in case we need to revert it.
+			var original_rotation = pitch_pivot.rotation.x
+			
+			# Apply the rotation from mouse input.
+			twist_pivot.rotate_y(-event.relative.x * SENSITIVITY)
+			pitch_pivot.rotate_x(-event.relative.y * SENSITIVITY)
+			
+			# Clamp the angle to a reasonable range.
+			pitch_pivot.rotation.x = clamp(pitch_pivot.rotation.x, deg_to_rad(-30), deg_to_rad(30))
 
-		# Clamp the rotation of the camera such that it's never lower than the player's feet
-		if camera.global_position.y < global_position.y:
-			pitch_pivot.rotation.x = original_rotation
+			# Clamp the rotation of the camera such that it's never lower than the player's feet
+			if camera.global_position.y < global_position.y:
+				pitch_pivot.rotation.x = original_rotation
 
 func _physics_process(delta):
 	_handle_gravity(delta)
