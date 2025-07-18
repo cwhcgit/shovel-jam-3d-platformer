@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+var speed = 5.0
+const BASE_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 
@@ -26,6 +27,7 @@ var wall_jump_cooldown = 0.0
 var attack_cooldown = 0.0
 enum DashState { READY, DASHING, COOLDOWN }
 var dash_state = DashState.READY
+var movement_restricted: bool = false
 
 @onready var animation_player: AnimationPlayer = $Barbarian/AnimationPlayer
 @onready var twist_pivot: Node3D = $TwistPivot
@@ -64,10 +66,11 @@ func _physics_process(delta):
 		attack_cooldown -= delta
 
 	# Handle user input for actions
-	if Input.is_action_just_pressed("jump"):
-		_handle_jump()
-	if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
-		_perform_dash()
+	if not movement_restricted:
+		if Input.is_action_just_pressed("jump"):
+			_handle_jump()
+		if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
+			_perform_dash()
 	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
 		_handle_attack()
 
@@ -124,8 +127,8 @@ func _handle_movement(_delta):
 
 	if move_direction.length() > 0.01: # Only handle rotations when there's input
 		# Move direction is the reverse of input direction due to model facing
-		velocity.x = -move_direction.x * SPEED
-		velocity.z = -move_direction.z * SPEED
+		velocity.x = -move_direction.x * speed
+		velocity.z = -move_direction.z * speed
 
 		# Rotate the model to face the true movement direction (-move_direction), 
 		# necessary because velocity direction is now reversed, and unusable with facing direction
@@ -133,8 +136,8 @@ func _handle_movement(_delta):
 		# Use Basis.looking_at() to prevent the model from tilting up or down.
 		$Barbarian.transform.basis = Basis.looking_at(move_direction, Vector3.UP)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 
 func _handle_attack():
 	attack_cooldown = ATTACK_COOLDOWN_TIME
@@ -191,3 +194,10 @@ func _update_animation():
 
 	if animation_player.current_animation != anim_to_play:
 		animation_player.play(anim_to_play)
+
+func set_movement_restricted(is_restricted: bool):
+	movement_restricted = is_restricted
+	if is_restricted:
+		speed = BASE_SPEED * 0.75
+	else:
+		speed = BASE_SPEED

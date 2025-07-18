@@ -185,6 +185,7 @@ poop_area = NodePath("../BirdPoopArea")
 feed_area = NodePath("../BirdFeedArea")
 player = NodePath("../../../Player")
 poop_scene = ExtResource("11_og1vs")
+player_collision_layer = 2
 
 [node name="RigidBody3D" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49338, 3.5, -3.79315)

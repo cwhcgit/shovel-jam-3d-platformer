@@ -7,8 +7,9 @@ const FLIGHT_HEIGHT_OFFSET = 0.6 # How high Greg flies above his targets
 
 # Collision avoidance settings
 const AVOIDANCE_DISTANCE = 2.0 # How far ahead to check for obstacles
-const AVOIDANCE_FORCE = 1.5 # How strong the avoidance steering is
-const RAYCAST_COUNT = 5 # Number of raycasts in a fan pattern
+const AVOIDANCE_FORCE = 5.0 # How strong the avoidance steering is
+const RAYCAST_COUNT = 9 # Number of raycasts in a fan pattern
+const AVOIDANCE_ANGLE = 90 # The angle of the fan in degrees
 
 # Animation names
 const ANIM_IDLE = "greg_idle"
@@ -26,7 +27,6 @@ enum State {
 	EXPLORING_WORLD
 }
 
-# Public variables that can be set in the editor
 @export var birdhouse_area: Area3D
 @export var poop_area: Area3D
 @export var feed_area: Area3D
@@ -37,7 +37,6 @@ enum State {
 @onready var animation_player: AnimationPlayer = $bird/AnimationPlayer
 @onready var world_space: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
 
-# Greg's internal state
 var current_state = State.GOING_TO_BIRDHOUSE
 var hunger = 0.0
 var poop_urgency = 0.0
@@ -47,7 +46,7 @@ var desired_velocity: Vector3 = Vector3.ZERO
 var avoidance_velocity: Vector3 = Vector3.ZERO
 var poop_delay_timer: Timer
 var has_started_pooping: bool = false
-
+var current_fly_speed: float = 0.0
 
 func _ready():
 	motion_mode = MOTION_MODE_FLOATING
@@ -58,11 +57,23 @@ func _ready():
 	add_child(poop_delay_timer)
 
 func _physics_process(delta):
+	print_debug("Current state:", State.keys()[current_state])
 	# Update needs over time
 	hunger += delta
 	poop_urgency += delta
 
-	# State machine logic
+	# 1. Hunger is the highest priority. If Greg is hungry, he must follow the player.
+	if hunger > 50 and current_state != State.FOLLOWING_PLAYER and current_state != State.EATING:
+		# Stop any ongoing pooping timers if we are interrupted by hunger
+		poop_delay_timer.stop()
+		current_state = State.FOLLOWING_PLAYER
+		current_fly_speed = FLY_SPEED # Reset speed when starting to follow
+
+	# 2. If not hungry, check for pooping needs.
+	elif hunger <= 50 and poop_urgency > 30 and not _is_pooping_state(current_state):
+		_initiate_pooping_sequence()
+
+	# 3. If not hungry and not pooping, do rest of behavior
 	match current_state:
 		State.GOING_TO_BIRDHOUSE:
 			_go_to_birdhouse_state(delta)
@@ -79,68 +90,62 @@ func _physics_process(delta):
 		State.POOPING_ON_MAP:
 			_pooping_on_map_state(delta)
 
-	# Check if Greg needs to poop
-	if poop_urgency > 1 and current_state != State.POOPING_IN_TOILET and current_state != State.POOPING_ON_MAP:
-		_initiate_pooping_sequence()
-
 	# Apply collision avoidance
 	_apply_collision_avoidance()
 
-	# Orient the bird model to face the direction of movement.
+	# Orient Greg's model to face the direction of movement.
 	if velocity.length_squared() > 0.01:
-		# The model's front is +Z, but looking_at points -Z.
-		# So, we point the back of the model (-Z) to the opposite of the velocity.
 		$bird.transform.basis = Basis.looking_at(-velocity.normalized(), Vector3.UP)
 
 	# Basic movement and animation
 	move_and_slide()
 	_update_animation()
 
+func _is_pooping_state(state):
+	return state == State.POOPING_IN_TOILET or state == State.POOPING_ON_MAP
+
 func _apply_collision_avoidance():
-	avoidance_velocity = Vector3.ZERO
-	
-	# Only apply avoidance if we're moving
 	if desired_velocity.length_squared() < 0.01:
 		velocity = desired_velocity
 		return
+
+	var forward_direction = desired_velocity.normalized()
 	
-	# Create multiple raycasts in a fan pattern
-	var forward = desired_velocity.normalized()
-	var right = forward.cross(Vector3.UP).normalized()
-	
-	var obstacles_detected = false
-	var avoidance_direction = Vector3.ZERO
-	
+	# Start rays from in front of Greg
+	var ray_start_position = global_position + forward_direction * 0.5
+
+	var query = PhysicsRayQueryParameters3D.create(ray_start_position, Vector3.ZERO)
+	query.collision_mask = 0xFFFFFFFF & ~(1 << (player_collision_layer - 1))
+	query.exclude = [self]
+
+	# Check for obstacles and find the best clear direction
+	var best_direction = forward_direction
+	var max_dot_product = -1.0
+	var clear_path_found = false
+
 	for i in range(RAYCAST_COUNT):
-		# Create rays in a fan pattern
-		var angle = deg_to_rad(lerp(-45.0, 45.0, float(i) / float(RAYCAST_COUNT - 1)))
-		var ray_direction = forward.rotated(Vector3.UP, angle)
+		var angle = deg_to_rad(lerp(-AVOIDANCE_ANGLE, AVOIDANCE_ANGLE, float(i) / (RAYCAST_COUNT - 1)))
+		var ray_direction = forward_direction.rotated(Vector3.UP, angle)
 		
-		var ray_start = global_position
-		var ray_end = global_position + ray_direction * AVOIDANCE_DISTANCE
-		
-		# Create the raycast query
-		var query = PhysicsRayQueryParameters3D.create(ray_start, ray_end)
-		# Exclude the player collision layer
-		query.collision_mask = 0xFFFFFFFF & ~(1 << (player_collision_layer - 1))
-		query.exclude = [self] # Don't collide with self
-		
+		query.to = ray_start_position + ray_direction * AVOIDANCE_DISTANCE
 		var result = world_space.intersect_ray(query)
-		
-		if result:
-			obstacles_detected = true
-			# Calculate avoidance direction (perpendicular to the obstacle)
-			var obstacle_normal = result.normal
-			var avoidance_force = (1.0 - (ray_start.distance_to(result.position) / AVOIDANCE_DISTANCE))
-			avoidance_direction += obstacle_normal * avoidance_force
-	
-	if obstacles_detected:
-		# Apply avoidance steering
-		avoidance_velocity = avoidance_direction.normalized() * AVOIDANCE_FORCE
-		# Combine desired velocity with avoidance
-		velocity = (desired_velocity + avoidance_velocity).normalized() * desired_velocity.length()
-	else:
-		velocity = desired_velocity
+
+		if not result:
+			# This path is clear. Check if it's the most forward-facing clear path.
+			var dot_product = ray_direction.dot(forward_direction)
+			if dot_product > max_dot_product:
+				max_dot_product = dot_product
+				best_direction = ray_direction
+				clear_path_found = true
+
+	# If no clear path was found at all, reverse direction
+	if not clear_path_found:
+		best_direction = - forward_direction
+
+	# Smoothly steer towards the best direction
+	var new_velocity = best_direction * desired_velocity.length()
+	velocity = velocity.lerp(new_velocity, AVOIDANCE_FORCE * get_physics_process_delta_time())
+
 
 func _update_animation():
 	if velocity.length_squared() > 0.1:
@@ -162,11 +167,9 @@ func _go_to_birdhouse_state(delta):
 		desired_velocity = direction * SPEED
 	
 	# If there's food in the feed area, go eat it
-	if feed_area and not feed_area.get_overlapping_bodies().is_empty():
+	if _get_available_food():
 		current_state = State.GOING_TO_FOOD
-	# If Greg gets too hungry, he starts following the player
-	elif hunger > 50:
-		current_state = State.FOLLOWING_PLAYER
+
 
 func _idle_behavior_state(delta):
 	idle_behavior_timer -= delta
@@ -175,9 +178,8 @@ func _idle_behavior_state(delta):
 		idle_behavior_timer = 0
 		return
 	
+	# Timer is up. First, check if we've left the birdhouse area.
 	if idle_behavior_timer <= 0:
-		# Timer is up. First, check if we've left the birdhouse area.
-		
 		# Get the collision shape to calculate random points within its bounds
 		var shape_owner = birdhouse_area.get_children().filter(func(c): return c is CollisionShape3D)[0]
 		if shape_owner and shape_owner.shape is BoxShape3D:
@@ -214,34 +216,64 @@ func _idle_behavior_state(delta):
 		desired_velocity = Vector3.ZERO
 
 func _going_to_food_state(delta):
-	if feed_area:
-		var target_pos = feed_area.global_position + Vector3.UP * FLIGHT_HEIGHT_OFFSET
+	var food_item = _get_available_food()
+	if food_item:
+		var target_pos = food_item.global_position + Vector3.UP * FLIGHT_HEIGHT_OFFSET
 		var direction = (target_pos - global_position).normalized()
 		desired_velocity = direction * SPEED
 		
 		# If close enough, eat the food
 		if global_position.distance_to(target_pos) < 1.5:
-			# Consume the food (for now, just destroy the first food item found)
-			var food = feed_area.get_overlapping_bodies()[0]
-			food.queue_free()
+			food_item.queue_free()
 			current_state = State.EATING
+	else:
+		# If food disappears while on the way, go back to the birdhouse
+		current_state = State.GOING_TO_BIRDHOUSE
+
 
 func _following_player_state(delta):
 	# In this state, Greg follows the player
 	if player:
 		var target_pos = player.global_position + Vector3.UP * FLIGHT_HEIGHT_OFFSET
 		var direction = (target_pos - global_position).normalized()
-		desired_velocity = direction * SPEED
+		
+		# Increase speed over time
+		current_fly_speed += delta / 2.0
+		desired_velocity = direction * current_fly_speed
 		
 		# If Greg is close enough to the player, he "sits" on their head
 		if global_position.distance_to(target_pos) < 1.5:
 			global_position = player.global_position + Vector3(0, 1, 0) # Sit on head
 			desired_velocity = Vector3.ZERO
+			player.set_movement_restricted(true)
+			
+			# --- POOPING LOGIC WHILE FOLLOWING ---
+			# If hungry, and he is close enough to the player, he will poop on the player, even if toilet is clean.
+			if poop_urgency > 30:
+				if not has_started_pooping:
+					has_started_pooping = true
+					# Poop immediately, then start a timer for subsequent poops
+					_instance_poop_on_map()
+					poop_delay_timer.wait_time = randf_range(2.0, 5.0)
+					poop_delay_timer.timeout.connect(_keep_pooping_on_map)
+					poop_delay_timer.start()
+			else:
+				# If the urge passes or the toilet is clean, stop the pooping timer
+				has_started_pooping = false
+				poop_delay_timer.stop()
+				if poop_delay_timer.is_connected("timeout", _keep_pooping_on_map):
+					poop_delay_timer.timeout.disconnect(_keep_pooping_on_map)
+
+		else:
+			# If we are flying towards the player, do not restrict movement
+			player.set_movement_restricted(false)
+
 
 func _eating_state(delta):
 	# For now, just reset hunger and go back to birdhouse
 	hunger = 0.0
 	current_state = State.GOING_TO_BIRDHOUSE
+	player.set_movement_restricted(false)
 
 func _pooping_in_toilet_state(delta):
 	# Move to the toilet
@@ -269,13 +301,8 @@ func _finish_pooping_in_toilet():
 	current_state = State.GOING_TO_BIRDHOUSE
 
 func _pooping_on_map_state(delta):
-	# First, check if the toilet has been cleaned
-	var poop_count = 0
-	for body in poop_area.get_overlapping_bodies():
-		if body.is_in_group("poop"):
-			poop_count += 1
-	
-	if poop_count == 0:
+	# First, check if the toilet has been cleaned. If so, go home.
+	if not _is_toilet_dirty():
 		poop_urgency = 0.0
 		current_state = State.GOING_TO_BIRDHOUSE
 		poop_delay_timer.stop()
@@ -292,7 +319,7 @@ func _pooping_on_map_state(delta):
 		poop_delay_timer.timeout.connect(_keep_pooping_on_map)
 		poop_delay_timer.start()
 	
-	# The bird can just fly around randomly while in this state
+	# Greg can just fly around randomly while in this state
 	if target_position == Vector3.ZERO or global_position.distance_to(target_position) < 1.0:
 		var random_offset = Vector3(randf_range(-5, 5), randf_range(0, 15), randf_range(-5, 5))
 		target_position = global_position + random_offset
@@ -312,7 +339,7 @@ func _instance_poop_on_map():
 	if poop_scene:
 		var poop_instance = poop_scene.instantiate()
 		get_parent().add_child(poop_instance)
-		# Poop at a random offset from the bird
+		# Poop at a random offset from Greg
 		var random_offset = Vector3(randf_range(-3, 3), 0, randf_range(-3, 3))
 		poop_instance.global_position = global_position + random_offset
 
@@ -322,15 +349,24 @@ func feed():
 
 # Private function to check toilet status and decide where to poop
 func _initiate_pooping_sequence():
-	var poop_count = 0
-	for body in poop_area.get_overlapping_bodies():
-		if body.is_in_group("poop"):
-			poop_count += 1
-			
-	if poop_count > 3:
+	if _is_toilet_dirty():
 		current_state = State.POOPING_ON_MAP
 	else:
 		current_state = State.POOPING_IN_TOILET
 	
 	target_position = Vector3.ZERO
 	has_started_pooping = false
+
+func _is_toilet_dirty():
+	var poop_count = 0
+	for body in poop_area.get_overlapping_bodies():
+		if body.is_in_group("poop"):
+			poop_count += 1
+	return poop_count >= 3
+
+func _get_available_food():
+	if feed_area:
+		for body in feed_area.get_overlapping_bodies():
+			if body.is_in_group("food"):
+				return body
+	return null
