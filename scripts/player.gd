@@ -28,20 +28,45 @@ var attack_cooldown = 0.0
 enum DashState { READY, DASHING, COOLDOWN }
 var dash_state = DashState.READY
 var movement_restricted: bool = false
+var is_channeling: bool = false
+var equipped_item: Node = null
+var nearby_interactable: Node = null
 
 @onready var animation_player: AnimationPlayer = $Barbarian/AnimationPlayer
 @onready var twist_pivot: Node3D = $TwistPivot
 @onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
 @onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
 @onready var attack_shape_cast: ShapeCast3D = $AttackShapeCast
+@onready var interactable_detector: Area3D = $InteractableDetector
 var camera_default_distance: float
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	# Store the camera's initial Z position as its default resting distance.
 	camera_default_distance = camera.position.z
+	interactable_detector.body_entered.connect(_on_interactable_detector_body_entered)
+	interactable_detector.body_exited.connect(_on_interactable_detector_body_exited)
+
+func _on_interactable_detector_body_entered(body):
+	if body.is_in_group("interactables"):
+		nearby_interactable = body
+
+func _on_interactable_detector_body_exited(body):
+	if body == nearby_interactable:
+		nearby_interactable = null
+
+func set_equipped_item(item):
+	equipped_item = item
+
+func set_channeling(channeling: bool):
+	is_channeling = channeling
+	if is_channeling:
+		velocity = Vector3.ZERO
+
 
 func _unhandled_input(event):
+	if is_channeling:
+		return
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			# Store the original rotation in case we need to revert it.
@@ -65,18 +90,25 @@ func _physics_process(delta):
 	if attack_cooldown > 0:
 		attack_cooldown -= delta
 
-	# Handle user input for actions
-	if not movement_restricted:
-		if Input.is_action_just_pressed("jump"):
-			_handle_jump()
-		if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
-			_perform_dash()
-	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
-		_handle_attack()
+	# The interact action is always available to start or cancel channeling
+	if Input.is_action_just_pressed("interact"):
+		_handle_interact()
 
-	# Handle movement if not dashing
-	if dash_state != DashState.DASHING:
-		_handle_movement(delta)
+	if is_channeling:
+		velocity = Vector3.ZERO
+	else:
+		# Handle other user input for actions only when not channeling
+		if not movement_restricted:
+			if Input.is_action_just_pressed("jump"):
+				_handle_jump()
+			if Input.is_action_just_pressed("dash") and dash_state == DashState.READY:
+				_perform_dash()
+		if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
+			_handle_attack()
+
+		# Handle movement if not dashing
+		if dash_state != DashState.DASHING:
+			_handle_movement(delta)
 
 	# Apply movement
 	move_and_slide()
@@ -153,6 +185,14 @@ func _handle_attack():
 			# Assuming the enemy has a 'take_damage' method
 			collider.call("take_damage", 10) # Deal 10 damage
 
+func _handle_interact():
+	if equipped_item:
+		animation_player.play(ANIM_INTERACT_NAME)
+		equipped_item.call("drop", self)
+	elif nearby_interactable:
+		animation_player.play(ANIM_INTERACT_NAME)
+		nearby_interactable.call("interact", self)
+
 func _get_wall_normal():
 	if get_slide_collision_count() > 0:
 		for i in range(get_slide_collision_count()):
@@ -178,14 +218,15 @@ func _perform_dash():
 func _update_animation():
 	var anim_to_play = ""
 	
+	if animation_player.current_animation == ANIM_INTERACT_NAME and animation_player.is_playing():
+		return
+
 	if attack_cooldown > 0:
 		anim_to_play = ANIM_ATTACK_NAME
 	elif not is_on_floor():
 		anim_to_play = ANIM_JUMP_NAME
 	else:
-		if Input.is_action_just_pressed("interact"):
-			anim_to_play = ANIM_INTERACT_NAME
-		elif dash_state == DashState.DASHING:
+		if dash_state == DashState.DASHING:
 			anim_to_play = ANIM_DASH_NAME
 		elif velocity.length_squared() > 0.1:
 			anim_to_play = ANIM_RUN_NAME

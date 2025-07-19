@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0f0w10f1ohfu"]
 
-[ext_resource type="PackedScene" uid="uid://bexl4chppxgd1" path="res://assets/models/bird.glb" id="1_66ihq"]
+[ext_resource type="PackedScene" uid="uid://bexl4chppxgd1" path="res://assets/models/bird/bird.glb" id="1_66ihq"]
 
 [node name="bird" instance=ExtResource("1_66ihq")]
 

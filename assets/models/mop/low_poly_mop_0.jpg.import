@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c01a1l6lwuq56"
-path.s3tc="res://.godot/imported/bird_bird.png-6a1805c3779a124af5dd78e3ee8fe2bc.s3tc.ctex"
+uid="uid://38kyisksl67u"
+path.s3tc="res://.godot/imported/low_poly_mop_0.jpg-8660260dba7d5286bab377f661c21bd2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e4d047a1309c471583f0fd836b1c64bc"
+"md5": "f386d90ea25eba9bad5f85020109e3c5"
 }
 
 [deps]
 
-source_file="res://assets/models/bird_bird.png"
-dest_files=["res://.godot/imported/bird_bird.png-6a1805c3779a124af5dd78e3ee8fe2bc.s3tc.ctex"]
+source_file="res://assets/models/mop/low_poly_mop_0.jpg"
+dest_files=["res://.godot/imported/low_poly_mop_0.jpg-8660260dba7d5286bab377f661c21bd2.s3tc.ctex"]
 
 [params]
 

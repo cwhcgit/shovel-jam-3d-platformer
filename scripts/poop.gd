@@ -23,6 +23,8 @@ func take_damage(_damage):
 	var bodies = explosion_radius.get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("player"):
+			if body.equipped_item is Mop:
+				break
 			if MotiveManager:
 				var current_hygiene = MotiveManager.get_motive("Hygiene")
 				MotiveManager.set_motive("Hygiene", current_hygiene - 25)

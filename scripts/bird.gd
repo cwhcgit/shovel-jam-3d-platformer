@@ -11,6 +11,10 @@ const AVOIDANCE_FORCE = 5.0 # How strong the avoidance steering is
 const RAYCAST_COUNT = 9 # Number of raycasts in a fan pattern
 const AVOIDANCE_ANGLE = 90 # The angle of the fan in degrees
 
+# Greg's needs
+const HUNGER_THRESHOLD = 5
+const POOP_THRESHOLD = 60
+
 # Animation names
 const ANIM_IDLE = "greg_idle"
 const ANIM_FLY = "greg_fly"
@@ -57,20 +61,23 @@ func _ready():
 	add_child(poop_delay_timer)
 
 func _physics_process(delta):
-	print_debug("Current state:", State.keys()[current_state])
+	# print_debug("Current state:", State.keys()[current_state])
 	# Update needs over time
 	hunger += delta
 	poop_urgency += delta
 
-	# 1. Hunger is the highest priority. If Greg is hungry, he must follow the player.
-	if hunger > 50 and current_state != State.FOLLOWING_PLAYER and current_state != State.EATING:
-		# Stop any ongoing pooping timers if we are interrupted by hunger
-		poop_delay_timer.stop()
-		current_state = State.FOLLOWING_PLAYER
-		current_fly_speed = FLY_SPEED # Reset speed when starting to follow
+	# 1. Hunger is the highest priority. If Greg is hungry, he must follow the player, unless there's food.
+	if hunger > HUNGER_THRESHOLD and current_state != State.FOLLOWING_PLAYER and current_state != State.EATING:
+		# If there's food, go eat it first.
+		if _get_available_food():
+			current_state = State.GOING_TO_FOOD
+		else:
+			# Start following the player
+			current_state = State.FOLLOWING_PLAYER
+			current_fly_speed = FLY_SPEED # Reset speed when starting to follow
 
 	# 2. If not hungry, check for pooping needs.
-	elif hunger <= 50 and poop_urgency > 30 and not _is_pooping_state(current_state):
+	elif hunger <= HUNGER_THRESHOLD and poop_urgency > POOP_THRESHOLD and not _is_pooping_state(current_state):
 		_initiate_pooping_sequence()
 
 	# 3. If not hungry and not pooping, do rest of behavior
@@ -172,6 +179,11 @@ func _go_to_birdhouse_state(delta):
 
 
 func _idle_behavior_state(delta):
+	# If there's food, go eat it first.
+	if _get_available_food():
+		current_state = State.GOING_TO_FOOD
+		return
+
 	idle_behavior_timer -= delta
 	if not birdhouse_area.get_overlapping_bodies().has(self):
 		current_state = State.GOING_TO_BIRDHOUSE
@@ -232,6 +244,10 @@ func _going_to_food_state(delta):
 
 
 func _following_player_state(delta):
+	if _get_available_food():
+		current_state = State.GOING_TO_FOOD
+		return
+	
 	# In this state, Greg follows the player
 	if player:
 		var target_pos = player.global_position + Vector3.UP * FLIGHT_HEIGHT_OFFSET
@@ -370,3 +386,9 @@ func _get_available_food():
 			if body.is_in_group("food"):
 				return body
 	return null
+
+func get_hunger():
+	return hunger
+
+func get_poop_urgency():
+	return poop_urgency

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=37 format=3 uid="uid://b5w2wros2b7x7"]
 
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
 [ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library_blue.tres" id="2_0wfyh"]
@@ -17,11 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://fi7cprkh4c7g" path="res://scenes/ui/how_to_play_menu.tscn" id="7_htp_ui"]
 [ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_B_Color1.tscn" id="8_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bhhdgwdifncxy" path="res://scenes/ui/controls_menu.tscn" id="8_cm_ui"]
+[ext_resource type="PackedScene" uid="uid://beobar5kghsht" path="res://scenes/ui/greg_motive_ui.tscn" id="9_motive_ui"]
+[ext_resource type="PackedScene" uid="uid://7sgnfowggjpf" path="res://assets/kaykit_kitchen_free/gltf-meshed/bowl.tscn" id="10_vxglm"]
 [ext_resource type="PackedScene" uid="uid://c3uiakjkrqndi" path="res://scenes/greg/greg.tscn" id="10_y6deb"]
 [ext_resource type="PackedScene" uid="uid://dt2lr8xgmq3df" path="res://assets/kaykit_forest_nature/Assets/fbx/Tree_4_C_Color1.fbx" id="10_yc10j"]
 [ext_resource type="PackedScene" uid="uid://bf4yixftso3is" path="res://assets/kaykit_forest_nature/Assets/fbx/Tree_Bare_2_B_Color1.fbx" id="11_jscy8"]
 [ext_resource type="PackedScene" uid="uid://b0vss2bwbisdl" path="res://scenes/greg/poop.tscn" id="11_og1vs"]
 [ext_resource type="PackedScene" uid="uid://cykylgcvmv2n7" path="res://assets/kaykit_forest_nature/Assets/fbx/Tree_2_A_Color1.fbx" id="12_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://dqnv3y6y7v36r" path="res://assets/models/mop/low_poly_mop.tscn" id="13_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://dbw2qitpba2gg" path="res://assets/kaykit_forest_nature/Assets/fbx/Tree_2_D_Color1.fbx" id="13_y6deb"]
 [ext_resource type="ArrayMesh" uid="uid://b7fk0ron34gcd" path="res://assets/kaykit_kitchen_free/potionSmall_blue.obj" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://djhblqvwqur6e" path="res://assets/kaykit_misc/bed_double_A.gltf.glb" id="18_dp3eg"]
@@ -177,6 +180,9 @@ collision_mask = 15
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/PetArea/BirdFeedArea"]
 shape = SubResource("BoxShape3D_og1vs")
 
+[node name="bowl" parent="Objects/PetArea/BirdFeedArea" instance=ExtResource("10_vxglm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.195059, -0.509943, 0)
+
 [node name="Greg" parent="Objects/PetArea" node_paths=PackedStringArray("birdhouse_area", "poop_area", "feed_area", "player") instance=ExtResource("10_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.2174, 12.4422, -2.26659)
 motion_mode = 0
@@ -197,9 +203,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97245, 3.5, -5.52231)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05469, 3.5, -3.42577)
 
 [node name="StorageRoomArea" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4964, 0, 0)
 
 [node name="Placeholder" parent="Objects/StorageRoomArea" instance=ExtResource("10_yc10j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.799, 0, 0)
+
+[node name="low_poly_mop" parent="Objects/StorageRoomArea" instance=ExtResource("13_2wyq8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09105, 4.07474, 1.59046)
 
 [node name="OfficeArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, -0.000279253, 0, 1, 0, 0.000279253, 0, 1, 6.75878, 16.5766, -19.8389)
@@ -267,8 +276,36 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="MotiveUI" parent="UI" instance=ExtResource("3_ui")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ScoreTimeUI" parent="UI" instance=ExtResource("4_jyhfs")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 932.0
+offset_top = 15.0
+offset_right = 972.0
+offset_bottom = 15.0
+grow_horizontal = 1
+
+[node name="GregMotiveUI" parent="UI" instance=ExtResource("9_motive_ui")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 16.0
+offset_top = 73.0
+offset_right = 56.0
+offset_bottom = 73.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="GameOverScreen" parent="UI" instance=ExtResource("5_tbgi4")]
 visible = false

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://beobar5kghsht"]
+
+[ext_resource type="Script" uid="uid://tnx3xjixx7nh" path="res://scripts/ui/greg_motive_ui.gd" id="1_abcde"]
+[ext_resource type="PackedScene" uid="uid://c6vte822t5e5u" path="res://scenes/ui/motive_bar.tscn" id="2_efghi"]
+[ext_resource type="Script" uid="uid://74tm4i4px3ji" path="res://scripts/ui/greg_motive_bar.gd" id="3_jklmn"]
+
+[node name="GregMotiveUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abcde")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = 220.0
+offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Birdie Greg"
+
+[node name="HungerBar" parent="VBoxContainer" instance=ExtResource("2_efghi")]
+layout_mode = 2
+script = ExtResource("3_jklmn")
+
+[node name="Label" parent="VBoxContainer/HungerBar" index="0"]
+text = "Hunger"
+
+[node name="PoopBar" parent="VBoxContainer" instance=ExtResource("2_efghi")]
+layout_mode = 2
+script = ExtResource("3_jklmn")
+
+[node name="Label" parent="VBoxContainer/PoopBar" index="0"]
+text = "Poop"
+
+[editable path="VBoxContainer/HungerBar"]
+[editable path="VBoxContainer/PoopBar"]

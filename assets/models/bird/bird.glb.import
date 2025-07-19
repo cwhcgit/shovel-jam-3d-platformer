@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bexl4chppxgd1"
-path="res://.godot/imported/bird.glb-16e4b657273200dc68447d18f9905946.scn"
+path="res://.godot/imported/bird.glb-17ec580c61455cdb5195d6df0f66ad2b.scn"
 
 [deps]
 
-source_file="res://assets/models/bird.glb"
-dest_files=["res://.godot/imported/bird.glb-16e4b657273200dc68447d18f9905946.scn"]
+source_file="res://assets/models/bird/bird.glb"
+dest_files=["res://.godot/imported/bird.glb-17ec580c61455cdb5195d6df0f66ad2b.scn"]
 
 [params]
 

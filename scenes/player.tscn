@@ -34,3 +34,19 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 
 
 [node name="AttackShapeCast" type="ShapeCast3D" parent="."]
 shape = SubResource("CylinderShape3D_qhqgy")
+
+[node name="InteractableDetector" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableDetector"]
+shape = SubResource("CylinderShape3D_qhqgy")
+
+[node name="MopHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.867016, -0.310756, -0.727523)
+
+[node name="back_pos" type="Marker3D" parent="MopHolder"]
+
+[node name="front_pos" type="Marker3D" parent="MopHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

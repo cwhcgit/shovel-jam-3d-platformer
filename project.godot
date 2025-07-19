@@ -23,6 +23,8 @@ ScoreTimeManager="*res://scripts/score_time_manager.gd"
 [global_group]
 
 player=""
+interactables=""
+food=""
 
 [input]
 
@@ -82,3 +84,4 @@ attack={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Objects"
 3d_physics/layer_4="Greg"
+3d_physics/layer_5="Interactable"
