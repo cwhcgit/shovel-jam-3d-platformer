@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://cmpy5wbaealut"]
 
-[ext_resource type="Script" path="res://scripts/interactables/fun.gd" id="1_nadmp"]
+[ext_resource type="Script" uid="uid://cl7iydit34s3l" path="res://scripts/interactables/fun.gd" id="1_nadmp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y0gy"]
 resource_name = "DarkRed"

@@ -5,13 +5,22 @@ const BASE_SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 
-const ANIM_JUMP_NAME = "Jump_Full_Short"
-const ANIM_WALK_NAME = "Walking_A"
-const ANIM_RUN_NAME = "Running_A"
-const ANIM_INTERACT_NAME = "Interact"
-const ANIM_IDLE_NAME = "Idle"
-const ANIM_DASH_NAME = "Dodge_Forward"
-const ANIM_ATTACK_NAME = "1H_Melee_Attack_Chop"
+# not used anims
+# const ANIM_WALK_NAME = "Walking_A"
+
+# used anims
+const ANIM_JUMP_NAME = "run" # alt
+# const ANIM_RUN_NAME = "Running_A"
+const ANIM_RUN_NAME = "run"
+# const ANIM_INTERACT_NAME = "Interact"
+const ANIM_INTERACT_NAME = "attack" # alt
+# const ANIM_IDLE_NAME = "Idle"
+const ANIM_IDLE_NAME = "idle"
+const ANIM_DASH_NAME = "run" # alt
+# const ANIM_ATTACK_NAME = "1H_Melee_Attack_Chop"
+const ANIM_ATTACK_NAME = "attack"
+
+# Other consts
 const MAX_JUMPS = 2
 const WALL_JUMP_FORCE = 7.0
 const WALL_JUMP_COOLDOWN_TIME = 0.3
@@ -25,14 +34,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var jump_count = 0
 var wall_jump_cooldown = 0.0
 var attack_cooldown = 0.0
-enum DashState { READY, DASHING, COOLDOWN }
+enum DashState {READY, DASHING, COOLDOWN}
 var dash_state = DashState.READY
 var movement_restricted: bool = false
 var is_channeling: bool = false
 var equipped_item: Node = null
 var nearby_interactable: Node = null
 
-@onready var animation_player: AnimationPlayer = $Barbarian/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $PlayerModel/AnimationPlayer
 @onready var twist_pivot: Node3D = $TwistPivot
 @onready var pitch_pivot: Node3D = $TwistPivot/PitchPivot
 @onready var camera: Camera3D = $TwistPivot/PitchPivot/Camera3D
@@ -159,14 +168,14 @@ func _handle_movement(_delta):
 
 	if move_direction.length() > 0.01: # Only handle rotations when there's input
 		# Move direction is the reverse of input direction due to model facing
-		velocity.x = -move_direction.x * speed
-		velocity.z = -move_direction.z * speed
+		velocity.x = - move_direction.x * speed
+		velocity.z = - move_direction.z * speed
 
 		# Rotate the model to face the true movement direction (-move_direction), 
 		# necessary because velocity direction is now reversed, and unusable with facing direction
 		# Because the model's front is +Z, we need its -Z to point toward the opposite of our goal.
 		# Use Basis.looking_at() to prevent the model from tilting up or down.
-		$Barbarian.transform.basis = Basis.looking_at(move_direction, Vector3.UP)
+		$PlayerModel.transform.basis = Basis.looking_at(move_direction, Vector3.UP)
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
@@ -203,7 +212,7 @@ func _get_wall_normal():
 
 func _perform_dash():
 	dash_state = DashState.DASHING
-	var dash_direction = -twist_pivot.global_transform.basis.z.normalized()
+	var dash_direction = - twist_pivot.global_transform.basis.z.normalized()
 	if velocity.length() > 0.1:
 		dash_direction = velocity.normalized()
 	

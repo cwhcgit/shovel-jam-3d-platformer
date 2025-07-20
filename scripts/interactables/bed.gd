@@ -23,7 +23,7 @@ func _start_napping(player):
 	player_napping = player
 	player.set_channeling(true)
 
-	var player_model = player.get_node("Barbarian")
+	var player_model = player.get_node("PlayerModel")
 	original_position = player_model.global_position
 	if player_model:
 		# Player model faces +Z, with head towards +Y. To lie on back, rotate -90 degrees on X axis.
@@ -36,7 +36,7 @@ func _start_napping(player):
 func _stop_napping():
 	is_napping = false
 	if is_instance_valid(player_napping):
-		var player_model = player_napping.get_node("Barbarian")
+		var player_model = player_napping.get_node("PlayerModel")
 		if player_model:
 			# Restore model's original rotation and local position
 			player_model.global_position = original_position

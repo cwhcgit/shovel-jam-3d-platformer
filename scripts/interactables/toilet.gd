@@ -23,7 +23,7 @@ func _start_using(player):
 	player_using = player
 	player.set_channeling(true)
 
-	var player_model = player.get_node("Barbarian")
+	var player_model = player.get_node("PlayerModel")
 	if player_model:
 		# Position the player model to sit on the toilet.
 		# This may need adjustment depending on the model and toilet's origin.
@@ -37,7 +37,7 @@ func _start_using(player):
 func _stop_using():
 	is_using_toilet = false
 	if is_instance_valid(player_using):
-		var player_model = player_using.get_node("Barbarian")
+		var player_model = player_using.get_node("PlayerModel")
 		if player_model:
 			player_model.global_position = original_position
 		player_using.set_channeling(false)

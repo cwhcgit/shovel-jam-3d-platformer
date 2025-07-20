@@ -24,7 +24,7 @@ func _start_having_fun(player):
 	player_having_fun = player
 	player.set_channeling(true)
 
-	var player_model = player.get_node("Barbarian")
+	var player_model = player.get_node("PlayerModel")
 	if player_model:
 		# Store original state and position the player model at the object's origin
 		original_position = player_model.global_position
@@ -38,7 +38,7 @@ func _start_having_fun(player):
 func _stop_having_fun():
 	is_having_fun = false
 	if is_instance_valid(player_having_fun):
-		var player_model = player_having_fun.get_node("Barbarian")
+		var player_model = player_having_fun.get_node("PlayerModel")
 		if player_model:
 			# Restore model's original position and rotation
 			player_model.global_position = original_position

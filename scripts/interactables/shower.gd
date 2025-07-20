@@ -24,7 +24,7 @@ func _start_showering(player):
 	player_showering = player
 	player.set_channeling(true)
 
-	var player_model = player.get_node("Barbarian")
+	var player_model = player.get_node("PlayerModel")
 	if player_model:
 		# Position the player model at the shower's origin.
 		original_position = player_model.global_position
@@ -38,7 +38,7 @@ func _start_showering(player):
 func _stop_showering():
 	is_showering = false
 	if is_instance_valid(player_showering):
-		var player_model = player_showering.get_node("Barbarian")
+		var player_model = player_showering.get_node("PlayerModel")
 		if player_model:
 			player_model.global_position = original_position
 			player_model.rotation = original_rotation
