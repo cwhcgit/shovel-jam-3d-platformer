@@ -257,15 +257,15 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.586802, 0.279918)
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0117226, 0.789193, 0.295092)
 
 [node name="Toilet" parent="Objects/WashArea" instance=ExtResource("21_5q0nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59378, -3.6849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16264, 3.82542, -4.4225)
 collision_layer = 20
-collision_mask = 31
+collision_mask = 19
 
 [node name="ToiletParts" parent="Objects/WashArea/Toilet" index="0"]
-transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -1.49532, -0.38582, -0.990597)
+transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.102779, -0.766975, 0.368616)
 
 [node name="CollisionShape3D" parent="Objects/WashArea/Toilet" index="1"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.47263, 1.4494, -1.0579)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.251308, 0.795412, 0.504776)
 
 [node name="LivingRoomArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14257, -9.98862)

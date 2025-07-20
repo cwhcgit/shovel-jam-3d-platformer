@@ -1,4 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://devixhqvhl7gx"]
+[gd_scene load_steps=13 format=4 uid="uid://devixhqvhl7gx"]
+
+[ext_resource type="Script" uid="uid://8xvgcuvfwoc0" path="res://scripts/interactables/toilet.gd" id="1_73w35"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj8hb"]
 resource_name = "S_Toilet"
@@ -146,10 +148,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g1mrk")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_i6i77"]
-height = 12.6045
+height = 10.2739
 radius = 3.68848
 
-[node name="Toilet" type="RigidBody3D"]
+[node name="Toilet" type="RigidBody3D" groups=["interactables"]]
+script = ExtResource("1_73w35")
 
 [node name="ToiletParts" type="Node3D" parent="."]
 
