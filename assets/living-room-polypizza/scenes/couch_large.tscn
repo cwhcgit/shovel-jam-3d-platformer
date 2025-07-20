@@ -88,6 +88,7 @@ size = Vector3(3.62842, 1.3208, 1)
 [node name="Couch" type="RigidBody3D"]
 collision_layer = 20
 collision_mask = 31
+freeze = true
 script = ExtResource("1_nadmp")
 
 [node name="Couch_Large1" type="MeshInstance3D" parent="."]

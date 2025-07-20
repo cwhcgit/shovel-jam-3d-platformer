@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://devixhqvhl7gx"]
+[gd_scene load_steps=14 format=4 uid="uid://devixhqvhl7gx"]
 
 [ext_resource type="Script" uid="uid://8xvgcuvfwoc0" path="res://scripts/interactables/toilet.gd" id="1_73w35"]
+[ext_resource type="PackedScene" uid="uid://c63chx808ef58" path="res://scenes/effects/glow_effect.tscn" id="2_pdoqd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj8hb"]
 resource_name = "S_Toilet"
@@ -152,6 +153,7 @@ height = 10.2739
 radius = 3.68848
 
 [node name="Toilet" type="RigidBody3D" groups=["interactables"]]
+freeze = true
 script = ExtResource("1_73w35")
 
 [node name="ToiletParts" type="Node3D" parent="."]
@@ -175,3 +177,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.30225, 0)
 shape = SubResource("CylinderShape3D_i6i77")
+
+[node name="GlowEffect" parent="." instance=ExtResource("2_pdoqd")]
+transform = Transform3D(-1.5299e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5299e-07, 0, 12, 0)

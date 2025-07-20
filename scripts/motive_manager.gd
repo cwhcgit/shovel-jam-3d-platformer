@@ -115,7 +115,7 @@ func reset_game_state():
 	for motive_name in motive_data:
 		var motive = motive_data[motive_name]
 		motive.depletion_rate = random.randf_range(0.3, 1.5)
-		motive.value = random.randi_range(60, 80)
+		motive.value = random.randi_range(80, 100)
 		motive.modifiers = [] # Reset modifiers
 	emit_signal("motives_initialized", motive_data)
 	_check_and_update_music()

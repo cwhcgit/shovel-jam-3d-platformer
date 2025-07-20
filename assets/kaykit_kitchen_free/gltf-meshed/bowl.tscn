@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://7sgnfowggjpf"]
+[gd_scene load_steps=20 format=4 uid="uid://7sgnfowggjpf"]
 
 [ext_resource type="Script" uid="uid://cur1gpnfiuvvm" path="res://scripts/interactables/bowl.gd" id="1_dgpya"]
 [ext_resource type="Texture2D" uid="uid://r3af87gkwpmu" path="res://assets/kaykit_kitchen_free/restaurantbits_texture.png" id="1_h4x3y"]
 [ext_resource type="PackedScene" uid="uid://b876orpa1dbqn" path="res://assets/kaykit_kitchen_free/gltf-meshed/food_burger.tscn" id="2_67mki"]
+[ext_resource type="PackedScene" uid="uid://c63chx808ef58" path="res://scenes/effects/glow_effect.tscn" id="4_r2sci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8ey0"]
 resource_name = "restaurant"
@@ -135,3 +136,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 pixel_size = 0.005
 billboard = 1
 texture = SubResource("ViewportTexture_dgpya")
+
+[node name="GlowEffect" parent="." instance=ExtResource("4_r2sci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

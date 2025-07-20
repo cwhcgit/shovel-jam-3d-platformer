@@ -1,60 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqnv3y6y7v36r"]
+[gd_scene load_steps=6 format=3 uid="uid://dqnv3y6y7v36r"]
 
 [ext_resource type="PackedScene" uid="uid://b2b3ep7kh3cea" path="res://assets/models/mop/low_poly_mop.glb" id="1_cx12b"]
 [ext_resource type="Script" uid="uid://rbbowrxj4v4x" path="res://scripts/interactables/mop.gd" id="2_abcde"]
+[ext_resource type="PackedScene" uid="uid://c63chx808ef58" path="res://scenes/effects/glow_effect.tscn" id="3_iuyp6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_thstt"]
 size = Vector3(0.109589, 1.47766, 0.183655)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_12345"]
 size = Vector3(1, 2, 1)
-
-[sub_resource type="Gradient" id="Gradient_spotlight"]
-offsets = PackedFloat32Array(0, 0.6, 1)
-colors = PackedColorArray(1, 1, 0, 0.3, 1, 1, 0, 0.1, 1, 1, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_spotlight"]
-gradient = SubResource("Gradient_spotlight")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spotlight"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(1, 1, 0, 0.5)
-albedo_texture = SubResource("GradientTexture1D_spotlight")
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_spotlight"]
-material = SubResource("StandardMaterial3D_spotlight")
-top_radius = 0.0
-bottom_radius = 0.75
-height = 1.5
-
-[sub_resource type="Gradient" id="Gradient_particle_color"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_particle_color"]
-gradient = SubResource("Gradient_particle_color")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rising"]
-emission_shape = 1
-emission_sphere_radius = 0.2
-direction = Vector3(0, 1, 0)
-spread = 30.0
-initial_velocity_min = 0.5
-initial_velocity_max = 1.5
-gravity = Vector3(0, 0.2, 0)
-scale_min = 0.05
-scale_max = 0.1
-color = Color(1, 1, 0, 1)
-color_ramp = SubResource("GradientTexture1D_particle_color")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glowing"]
-albedo_color = Color(1, 1, 0, 1)
-emission_enabled = true
-emission = Color(1, 1, 0, 1)
-emission_energy_multiplier = 2.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_particles"]
-material = SubResource("StandardMaterial3D_glowing")
 
 [node name="low_poly_mop" type="RigidBody3D" groups=["interactables"]]
 collision_layer = 16
@@ -74,16 +28,5 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_12345")
 
-[node name="GlowEffect" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.75, 0)
-
-[node name="FakeSpotlight" type="MeshInstance3D" parent="GlowEffect"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_spotlight")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="GlowEffect"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
-amount = 30
-lifetime = 2.0
-process_material = SubResource("ParticleProcessMaterial_rising")
-draw_pass_1 = SubResource("QuadMesh_particles")
+[node name="GlowEffect" parent="." instance=ExtResource("3_iuyp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.4, 0)

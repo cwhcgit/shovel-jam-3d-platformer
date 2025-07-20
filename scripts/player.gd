@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 var speed = 5.0
 const BASE_SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 12.5
 const SENSITIVITY = 0.003
 
 # not used anims
