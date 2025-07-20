@@ -1,9 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=40 format=3 uid="uid://b5w2wros2b7x7"]
 
+[ext_resource type="Script" uid="uid://coaj4a8box73n" path="res://scripts/level.gd" id="1_fv21b"]
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
 [ext_resource type="MeshLibrary" uid="uid://60q3g6us80fi" path="res://scenes/gridmap/platformer_mesh_library_blue.tres" id="2_0wfyh"]
 [ext_resource type="MeshLibrary" uid="uid://bq5062ievn7p2" path="res://scenes/gridmap/platformer_mesh_library_green.tres" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://bdbx70btxq30" path="res://scenes/multi-mesh/tree_multimesh.tscn" id="2_ya4ey"]
+[ext_resource type="Material" uid="uid://rftrjbraggot" path="res://resources/procedural_sky_material.tres" id="2_yq6so"]
 [ext_resource type="PackedScene" uid="uid://c3ks668sj64jo" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_3_C_Color1.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://b7w2wros2b7x7" path="res://scenes/ui/motive_ui.tscn" id="3_ui"]
 [ext_resource type="MeshLibrary" uid="uid://5rjjsnq2v8l4" path="res://scenes/gridmap/platformer_mesh_library_objects.tres" id="4_choun"]
@@ -16,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://45h2i0qc6uxt" path="res://scenes/ui/pause_menu.tscn" id="6_pm_ui"]
 [ext_resource type="PackedScene" uid="uid://fi7cprkh4c7g" path="res://scenes/ui/how_to_play_menu.tscn" id="7_htp_ui"]
 [ext_resource type="PackedScene" path="res://assets/kaykit_forest_nature/gltf-meshed/Tree_2_B_Color1.tscn" id="8_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bgserslemnhgk" path="res://assets/kaykit_misc/bed_double_a_gltf.tscn" id="8_2f3dj"]
 [ext_resource type="PackedScene" uid="uid://bhhdgwdifncxy" path="res://scenes/ui/controls_menu.tscn" id="8_cm_ui"]
 [ext_resource type="PackedScene" uid="uid://beobar5kghsht" path="res://scenes/ui/greg_motive_ui.tscn" id="9_motive_ui"]
 [ext_resource type="PackedScene" uid="uid://7sgnfowggjpf" path="res://assets/kaykit_kitchen_free/gltf-meshed/bowl.tscn" id="10_vxglm"]
@@ -27,7 +30,16 @@
 [ext_resource type="PackedScene" uid="uid://dqnv3y6y7v36r" path="res://assets/models/mop/low_poly_mop.tscn" id="13_2wyq8"]
 [ext_resource type="PackedScene" uid="uid://dbw2qitpba2gg" path="res://assets/kaykit_forest_nature/Assets/fbx/Tree_2_D_Color1.fbx" id="13_y6deb"]
 [ext_resource type="ArrayMesh" uid="uid://b7fk0ron34gcd" path="res://assets/kaykit_kitchen_free/potionSmall_blue.obj" id="17_muem4"]
-[ext_resource type="PackedScene" uid="uid://djhblqvwqur6e" path="res://assets/kaykit_misc/bed_double_A.gltf.glb" id="18_dp3eg"]
+
+[sub_resource type="Sky" id="Sky_fv21b"]
+sky_material = ExtResource("2_yq6so")
+
+[sub_resource type="Environment" id="Environment_2f3dj"]
+background_mode = 2
+sky = SubResource("Sky_fv21b")
+fog_light_color = Color(1, 0.894118, 0.709804, 1)
+fog_density = 0.0015
+fog_aerial_perspective = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
 size = Vector3(120, 100, 1)
@@ -41,9 +53,6 @@ size = Vector3(1.97742, 1.7182, 2.01081)
 [sub_resource type="BoxShape3D" id="BoxShape3D_muem4"]
 size = Vector3(2.38965, 1.50769, 2.46326)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dp3eg"]
-size = Vector3(2.96582, 1, 2.94531)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_pm3ni"]
 size = Vector3(1, 0.691406, 3.47223)
 
@@ -54,13 +63,18 @@ size = Vector3(3.41895, 1, 2.87891)
 size = Vector3(1.60736, 1, 1.53381)
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_fv21b")
 
 [node name="Player" parent="." instance=ExtResource("1_wbyy2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950635, 5.01566, 11.6008)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.841435, 0.540358, 0, -0.540358, 0.841435, 0, 88.7606, -82.4962)
+light_color = Color(1, 0.972549, 0.862745, 1)
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2f3dj")
 
 [node name="Objects" type="Node3D" parent="."]
 
@@ -138,15 +152,9 @@ mesh = ExtResource("17_muem4")
 skeleton = NodePath("../../..")
 
 [node name="Bedroom" type="Node3D" parent="Objects"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.657, 8.857, -7.429)
 
-[node name="bed_double_A_gltf" parent="Objects/Bedroom" instance=ExtResource("18_dp3eg")]
-transform = Transform3D(-0.0146257, 0, -1.99995, 0, 2, 0, 1.99995, 0, -0.0146257, -6.65679, 8.85722, -7.42914)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Objects/Bedroom/bed_double_A_gltf"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Bedroom/bed_double_A_gltf/StaticBody3D"]
-transform = Transform3D(1.00003, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1.00003, 0.00635457, 0, 0.0165887)
-shape = SubResource("BoxShape3D_dp3eg")
+[node name="bed_double_A_gltf" parent="Objects/Bedroom" instance=ExtResource("8_2f3dj")]
 
 [node name="GymArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45.3027)

@@ -12,8 +12,8 @@ const RAYCAST_COUNT = 9 # Number of raycasts in a fan pattern
 const AVOIDANCE_ANGLE = 90 # The angle of the fan in degrees
 
 # Greg's needs
-const HUNGER_THRESHOLD = 5
-const POOP_THRESHOLD = 60
+const HUNGER_THRESHOLD = 50
+const POOP_THRESHOLD = 30
 
 # Animation names
 const ANIM_IDLE = "greg_idle"
