@@ -1,4 +1,4 @@
-extends ProgressBar
+extends HBoxContainer
 
 const ARROW_UP_SCENE = preload("res://scenes/ui/arrow_up.tscn")
 const ARROW_DOWN_SCENE = preload("res://scenes/ui/arrow_down.tscn")
@@ -9,7 +9,8 @@ const COLOR_HIGH = Color("28a745") # Green
 const COLOR_MEDIUM = Color("ffc107") # Orange
 const COLOR_LOW = Color("dc3545") # Red
 
-@onready var label = $Label
+@onready var progress_bar = $ProgressBar
+@onready var label = $ProgressBar/Label
 @onready var arrow_container = $ArrowContainer
 
 var style_box
@@ -17,24 +18,24 @@ var last_value: float = 0.0
 
 func _ready():
 	label.text = motive_name
-	last_value = value # Initialize last_value with the current value
+	last_value = progress_bar.value # Initialize last_value with the current value
 
 	# For colored progress bar
 	style_box = StyleBoxFlat.new()
-	add_theme_stylebox_override("fill", style_box)
+	progress_bar.add_theme_stylebox_override("fill", style_box)
 
 	_update_bar_color()
 
 func set_motive_value(new_value: float, change: float):
-	value = clamp(new_value, 0, 100)
+	progress_bar.value = clamp(new_value, 0, 100)
 	
 	_update_bar_color()
-	label.text = "%s: %d" % [motive_name, value]
+	label.text = "%s: %d" % [motive_name, progress_bar.value]
 	
 	_update_arrows(change)
 
 func _update_bar_color():
-	var percentage = value / 100.0
+	var percentage = progress_bar.value / 100.0
 	var color = COLOR_LOW
 
 	if percentage > MotiveManager.HIGH_THRESHOLD:

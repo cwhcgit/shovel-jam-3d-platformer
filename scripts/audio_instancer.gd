@@ -6,11 +6,7 @@ extends Node
 # Music tracks enum for easy reference
 enum MusicTrack {
 	MAIN_THEME,
-	# LEVEL_1,
-	# BOSS_BATTLE,
-	# UNDERGROUND,
-	# VICTORY,
-	# MENU
+	MAIN_THEME_INTENSE
 }
 
 # Audio players for crossfading
@@ -23,6 +19,7 @@ var current_track: MusicTrack = MusicTrack.MAIN_THEME
 var active_player: AudioStreamPlayer
 var inactive_player: AudioStreamPlayer
 var is_transitioning: bool = false
+var is_music_locked: bool = false
 var default_volume: float = 0.0  # 0 dB
 var fade_duration: float = 2.0
 
@@ -33,6 +30,9 @@ signal music_changed(track: MusicTrack)
 signal transition_completed()
 
 func _ready():
+	# This node should process even when the game is paused
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	# Add audio players as children
 	add_child(music_player_1)
 	add_child(music_player_2)
@@ -57,16 +57,24 @@ func _ready():
 	# Start with main theme
 	play_music(MusicTrack.MAIN_THEME, false)
 
+func set_music_lock(locked: bool):
+	is_music_locked = locked
+
 func load_music_tracks():
 	# Load your music files here - replace with actual paths
 	music_tracks[MusicTrack.MAIN_THEME] = preload("res://assets/audio/music/LevelThemeCalm.wav")
+	music_tracks[MusicTrack.MAIN_THEME_INTENSE] = preload("res://assets/audio/music/LevelThemeIntense.wav")
 	# music_tracks[MusicTrack.LEVEL_1] = preload("res://audio/music/level_1.ogg")
 	# music_tracks[MusicTrack.BOSS_BATTLE] = preload("res://audio/music/boss_battle.ogg")
 	# music_tracks[MusicTrack.UNDERGROUND] = preload("res://audio/music/underground.ogg")
 	# music_tracks[MusicTrack.VICTORY] = preload("res://audio/music/victory.ogg")
 	# music_tracks[MusicTrack.MENU] = preload("res://audio/music/menu.ogg")
 
-func play_music(track: MusicTrack, smooth_transition: bool = true):
+func play_music(track: MusicTrack, smooth_transition: bool = true, force: bool = false):
+	# If music is locked, do nothing unless forced
+	if is_music_locked and not force:
+		return
+
 	# Don't restart the same track
 	if track == current_track and active_player.playing:
 		return
@@ -95,7 +103,7 @@ func _smooth_transition_to(new_stream: AudioStream, track: MusicTrack):
 	inactive_player.volume_db = -80.0
 	inactive_player.play()
 	
-	# Create tween for crossfade
+	# Create tween for crossfade that can run while paused
 	var tween = create_tween()
 	tween.set_parallel(true)  # Allow multiple properties to tween simultaneously
 	

@@ -28,15 +28,23 @@ text = "Birdie Greg"
 layout_mode = 2
 script = ExtResource("3_jklmn")
 
-[node name="Label" parent="VBoxContainer/HungerBar" index="0"]
+[node name="ProgressBar" parent="VBoxContainer/HungerBar" index="0"]
+show_percentage = true
+
+[node name="Label" parent="VBoxContainer/HungerBar/ProgressBar" index="0"]
 text = "Hunger"
+horizontal_alignment = 0
 
 [node name="PoopBar" parent="VBoxContainer" instance=ExtResource("2_efghi")]
 layout_mode = 2
 script = ExtResource("3_jklmn")
 
-[node name="Label" parent="VBoxContainer/PoopBar" index="0"]
+[node name="ProgressBar" parent="VBoxContainer/PoopBar" index="0"]
+show_percentage = true
+
+[node name="Label" parent="VBoxContainer/PoopBar/ProgressBar" index="0"]
 text = "Poop"
+horizontal_alignment = 0
 
 [editable path="VBoxContainer/HungerBar"]
 [editable path="VBoxContainer/PoopBar"]

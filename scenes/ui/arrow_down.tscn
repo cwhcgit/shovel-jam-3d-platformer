@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://do7ymlwl1x44e"]
+[gd_scene load_steps=2 format=3 uid="uid://do7ymlwl1x44e"]
 
-[node name="ArrowDown" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://d0pup56xejn4h" path="res://assets/textures/768px-Dark_RED_Arrow_Up.png" id="1_dit1g"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ArrowDown" type="TextureRect"]
 offset_right = 40.0
 offset_bottom = 40.0
+texture = ExtResource("1_dit1g")

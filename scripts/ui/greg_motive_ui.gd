@@ -1,7 +1,7 @@
 extends Control
 
-@onready var hunger_bar: ProgressBar = $VBoxContainer/HungerBar
-@onready var poop_bar: ProgressBar = $VBoxContainer/PoopBar
+@onready var hunger_bar: ProgressBar = $VBoxContainer/HungerBar/ProgressBar
+@onready var poop_bar: ProgressBar = $VBoxContainer/PoopBar/ProgressBar
 
 var greg: Node = null
 

@@ -203,18 +203,12 @@ player_collision_layer = 2
 
 [node name="RigidBody3D" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49338, 3.5, -3.79315)
-explosion_color = null
-hygiene_reduction_rate = null
 
 [node name="RigidBody3D2" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97245, 3.5, -5.52231)
-explosion_color = null
-hygiene_reduction_rate = null
 
 [node name="RigidBody3D3" parent="Objects/PetArea" instance=ExtResource("11_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05469, 3.5, -3.42577)
-explosion_color = null
-hygiene_reduction_rate = null
 
 [node name="StorageRoomArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4964, 0, 0)

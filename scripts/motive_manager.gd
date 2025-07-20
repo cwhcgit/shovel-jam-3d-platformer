@@ -26,6 +26,7 @@ var motive_data = {
 
 var random = RandomNumberGenerator.new()
 var game_is_over = false
+var _is_intense_music_playing = false
 
 func _ready():
 	random.randomize()
@@ -60,6 +61,25 @@ func _process(delta):
 			game_is_over = true
 			emit_signal("game_over")
 			return # Stop processing motives if game is over
+	
+	_check_and_update_music()
+
+
+# --- Music Update ---
+
+func _check_and_update_music():
+	var any_motive_low = false
+	for motive_name in motive_data:
+		if motive_data[motive_name].value < LOW_THRESHOLD * 100:
+			any_motive_low = true
+			break
+	
+	if any_motive_low and not _is_intense_music_playing:
+		_is_intense_music_playing = true
+		AudioInstancer.play_music(AudioInstancer.MusicTrack.MAIN_THEME_INTENSE)
+	elif not any_motive_low and _is_intense_music_playing:
+		_is_intense_music_playing = false
+		AudioInstancer.play_music(AudioInstancer.MusicTrack.MAIN_THEME)
 
 
 # --- Timed Modifiers ---
@@ -88,6 +108,7 @@ func set_motive(motive_name, new_value, change):
 		motive_data[motive_name].value = clamp(new_value, 0, 100)
 		# var change = motive_data[motive_name].value - old_value
 		emit_signal("motive_updated", motive_name, motive_data[motive_name].value, change)
+		_check_and_update_music()
 
 func reset_game_state():
 	game_is_over = false
@@ -97,3 +118,4 @@ func reset_game_state():
 		motive.value = random.randi_range(60, 80)
 		motive.modifiers = [] # Reset modifiers
 	emit_signal("motives_initialized", motive_data)
+	_check_and_update_music()
