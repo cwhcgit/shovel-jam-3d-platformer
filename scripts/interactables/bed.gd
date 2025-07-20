@@ -9,7 +9,7 @@ func _process(delta):
 		# Recover energy over time while napping
 		if MotiveManager:
 			var current_energy = MotiveManager.get_motive("Energy")
-			MotiveManager.set_motive("Energy", current_energy + 10 * delta)
+			MotiveManager.set_motive("Energy", current_energy + 10 * delta, 10 * delta)
 
 func interact(player):
 	if is_napping:

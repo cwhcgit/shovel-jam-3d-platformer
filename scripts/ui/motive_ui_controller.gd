@@ -21,9 +21,9 @@ func on_motives_initialized(motive_data):
 		motive_bar.name = motive_name
 		motive_bar.motive_name = motive_name
 		grid_container.add_child(motive_bar)
-		motive_bar.set_motive_value(motive.value)
+		motive_bar.set_motive_value(motive.value, 0)
 		motive_bars[motive_name] = motive_bar
 
-func on_motive_updated(motive_name, new_value):
+func on_motive_updated(motive_name, new_value, change):
 	if motive_bars.has(motive_name):
-		motive_bars[motive_name].set_motive_value(new_value)
+		motive_bars[motive_name].set_motive_value(new_value, change)

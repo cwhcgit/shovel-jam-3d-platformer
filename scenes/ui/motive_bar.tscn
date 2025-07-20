@@ -22,3 +22,11 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Motive"
+
+[node name="ArrowContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 203.0
+offset_top = -1.0
+offset_right = 243.0
+offset_bottom = 39.0

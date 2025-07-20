@@ -25,13 +25,13 @@ func take_damage(_damage):
 		if body.is_in_group("player"):
 			if MotiveManager:
 				var current_hunger = MotiveManager.get_motive("Hunger")
-				MotiveManager.set_motive("Hunger", current_hunger + 5)
+				MotiveManager.set_motive("Hunger", current_hunger + 5, 5)
 				
 				var current_thirst = MotiveManager.get_motive("Thirst")
-				MotiveManager.set_motive("Thirst", current_thirst + 5)
+				MotiveManager.set_motive("Thirst", current_thirst + 5, 5)
 
 				var current_bladder = MotiveManager.get_motive("Bladder")
-				MotiveManager.set_motive("Bladder", current_bladder - 10)
+				MotiveManager.set_motive("Bladder", current_bladder - 10, -10)
 			break
 			
 	# Remove the carrot

@@ -23,13 +23,13 @@ func _process(delta):
 	if player_in_range and player_node and MotiveManager:
 		print("Player in poop range - reducing hygiene")
 		var current_hygiene = MotiveManager.get_motive("Hygiene")
-		MotiveManager.set_motive("Hygiene", current_hygiene - delta * hygiene_reduction_rate)
+		MotiveManager.set_motive("Hygiene", current_hygiene - delta * hygiene_reduction_rate, -delta * hygiene_reduction_rate)
 
 func _on_player_process(delta):
 	if MotiveManager:
 		print("in poop range reducing hygeine")
 		var current_hygiene = MotiveManager.get_motive("Hygiene")
-		MotiveManager.set_motive("Hygiene", current_hygiene - delta * 2)
+		MotiveManager.set_motive("Hygiene", current_hygiene - delta * 2, -delta * 2)
 
 # This function is called by the player's attack
 func take_damage(_damage):
@@ -49,7 +49,7 @@ func take_damage(_damage):
 				break
 			if MotiveManager:
 				var current_hygiene = MotiveManager.get_motive("Hygiene")
-				MotiveManager.set_motive("Hygiene", current_hygiene - 25)
+				MotiveManager.set_motive("Hygiene", current_hygiene - 25, -25)
 			break
 			
 	# Emit the cleaned signal and remove the poop

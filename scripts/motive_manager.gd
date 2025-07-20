@@ -54,7 +54,7 @@ func _process(delta):
 		if change != 0:
 			motive.value += change
 			motive.value = clamp(motive.value, 0, 100)
-			emit_signal("motive_updated", motive_name, motive.value)
+			emit_signal("motive_updated", motive_name, motive.value, change)
 
 		if motive.value <= 0:
 			game_is_over = true
@@ -82,10 +82,12 @@ func get_motive(motive_name):
 		return motive_data[motive_name].value
 	return 0
 
-func set_motive(motive_name, new_value):
+func set_motive(motive_name, new_value, change):
 	if motive_data.has(motive_name):
+		# var old_value = motive_data[motive_name].value
 		motive_data[motive_name].value = clamp(new_value, 0, 100)
-		emit_signal("motive_updated", motive_name, motive_data[motive_name].value)
+		# var change = motive_data[motive_name].value - old_value
+		emit_signal("motive_updated", motive_name, motive_data[motive_name].value, change)
 
 func reset_game_state():
 	game_is_over = false
