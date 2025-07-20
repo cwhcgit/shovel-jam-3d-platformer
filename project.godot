@@ -13,7 +13,8 @@ config_version=5
 config/name="Shovel Jam Platformer"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://c55fqc1rp3byf"
+config/icon="uid://bmmq8n1bg3iyh"
 
 [autoload]
 
