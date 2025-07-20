@@ -8,6 +8,8 @@ var is_channeling: bool = false
 var channel_timer: float = 0.0
 var player_interacting: Node = null
 
+const SCORE = 25
+
 @onready var progress_bar: ProgressBar = $SubViewport/ProgressBar
 
 func _ready():
@@ -52,3 +54,5 @@ func _finish_channeling():
 		var food_instance = food_scene.instantiate()
 		add_child(food_instance)
 		food_instance.position = Vector3(0, 0.2, 0)
+		# Add score for doing action
+		ScoreTimeManager.add_score(SCORE)

@@ -2,6 +2,7 @@ extends RigidBody3D
 
 signal destroyed
 
+const SCORE = 10
 # In the event I want to score eating these (prob not)
 # signal eaten
 
@@ -39,5 +40,8 @@ func take_damage(_damage):
 	# Emit the signal before freeing the object
 	emit_signal("destroyed")
 	
-	# Remove the carrot
+	# Add score for doing action
+	ScoreTimeManager.add_score(SCORE)
+	
+	# Remove the Carrot
 	queue_free()

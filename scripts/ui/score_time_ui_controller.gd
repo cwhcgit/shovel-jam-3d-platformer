@@ -17,7 +17,7 @@ func _ready():
 	game_over_screen.hide()
 
 func on_score_updated(new_score):
-	score_label.text = "Score: " + str(new_score)
+	score_label.text = "Score: " + str(int(new_score))
 
 func on_time_updated(new_time):
 	time_label.text = "Time: " + str(new_time)

@@ -13,6 +13,8 @@ signal cleaned
 
 var player_in_range: bool = false
 var player_node: Node3D = null
+const SCORE_POOP = 150
+const SCORE_POOP_CLEAN = 50
 
 func _ready():
 	# Connect the Area3D signals
@@ -49,6 +51,8 @@ func take_damage(_damage):
 				# Play clean poop sound
 				if clean_explosion_sound:
 					AudioInstancer.play_sfx(clean_explosion_sound, 0.5)
+					# Add score for doing action
+					ScoreTimeManager.add_score(SCORE_POOP_CLEAN)
 				break
 			if MotiveManager:
 				var current_hygiene = MotiveManager.get_motive("Hygiene")
@@ -56,6 +60,8 @@ func take_damage(_damage):
 				if explosion_sound:
 					AudioInstancer.play_sfx(explosion_sound, 0.5)
 				MotiveManager.set_motive("Hygiene", current_hygiene - 25, -25)
+				# Add score for doing action
+				ScoreTimeManager.add_score(SCORE_POOP)
 			break
 			
 	# Emit the cleaned signal and remove the poop

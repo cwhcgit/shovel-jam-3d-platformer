@@ -1,4 +1,6 @@
-[gd_scene load_steps=221 format=4 uid="uid://dmtmvhvs17fso"]
+[gd_scene load_steps=222 format=4 uid="uid://dmtmvhvs17fso"]
+
+[ext_resource type="Script" uid="uid://072edlysjn8n" path="res://scripts/interactables/shower.gd" id="1_1hybp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acb4b"]
 resource_name = "mat15"
@@ -3433,6 +3435,7 @@ shadow_mesh = SubResource("ArrayMesh_4p5h2")
 size = Vector3(1.54785, 2.65533, 2.75357)
 
 [node name="Shower" type="RigidBody3D"]
+script = ExtResource("1_1hybp")
 
 [node name="ShowerShapes" type="Node3D" parent="."]
 

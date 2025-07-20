@@ -162,10 +162,10 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.657
 
 [node name="bed_double_A_gltf" parent="Objects/BedroomD" instance=ExtResource("8_2f3dj")]
 
-[node name="GymArea" type="Node3D" parent="Objects"]
+[node name="!GymArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45.3027)
 
-[node name="Placeholder" parent="Objects/GymArea" instance=ExtResource("8_0ld40")]
+[node name="Placeholder" parent="Objects/!GymArea" instance=ExtResource("8_0ld40")]
 
 [node name="PetAreaD" type="Node3D" parent="Objects"]
 
@@ -224,62 +224,62 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4964, 0, 0)
 [node name="low_poly_mop" parent="Objects/StorageRoomArea" instance=ExtResource("13_2wyq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09105, 4.40251, 1.59046)
 
-[node name="OfficeArea" type="Node3D" parent="Objects"]
+[node name="!OfficeArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, -0.000279253, 0, 1, 0, 0.000279253, 0, 1, 6.75878, 16.5766, -19.8389)
 
-[node name="PlaceHolder" parent="Objects/OfficeArea" instance=ExtResource("11_jscy8")]
+[node name="PlaceHolder" parent="Objects/!OfficeArea" instance=ExtResource("11_jscy8")]
 
-[node name="PlantsArea" type="Node3D" parent="Objects"]
+[node name="!PlantsArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.3288)
 
-[node name="PlaceHolder" parent="Objects/PlantsArea" instance=ExtResource("12_pm3ni")]
+[node name="PlaceHolder" parent="Objects/!PlantsArea" instance=ExtResource("12_pm3ni")]
 
-[node name="WashArea" type="Node3D" parent="Objects"]
+[node name="WashAreaD" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.044, 0, 0)
 
-[node name="ToiletPlaceHolder" parent="Objects/WashArea" instance=ExtResource("13_y6deb")]
+[node name="ToiletPlaceHolder" parent="Objects/WashAreaD" instance=ExtResource("13_y6deb")]
 
-[node name="ShowerPlaceHolder" parent="Objects/WashArea" instance=ExtResource("13_y6deb")]
+[node name="ShowerPlaceHolder" parent="Objects/WashAreaD" instance=ExtResource("13_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.97739)
 
-[node name="WashingMachinePlaceholder" parent="Objects/WashArea" instance=ExtResource("13_y6deb")]
+[node name="WashingMachinePlaceholder" parent="Objects/WashAreaD" instance=ExtResource("13_y6deb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.44794)
 
-[node name="Shower" parent="Objects/WashArea" instance=ExtResource("20_qkpxi")]
+[node name="Shower" parent="Objects/WashAreaD" instance=ExtResource("20_qkpxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16053, 4.15508, 3.90211)
 collision_layer = 20
 collision_mask = 31
 
-[node name="ShowerShapes" parent="Objects/WashArea/Shower" index="0"]
+[node name="ShowerShapes" parent="Objects/WashAreaD/Shower" index="0"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.586802, 0.279918)
 
-[node name="CollisionShape3D" parent="Objects/WashArea/Shower" index="1"]
+[node name="CollisionShape3D" parent="Objects/WashAreaD/Shower" index="1"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0117226, 0.789193, 0.295092)
 
-[node name="Toilet" parent="Objects/WashArea" instance=ExtResource("21_5q0nq")]
+[node name="Toilet" parent="Objects/WashAreaD" instance=ExtResource("21_5q0nq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16264, 3.82542, -4.4225)
 collision_layer = 20
 collision_mask = 19
 
-[node name="ToiletParts" parent="Objects/WashArea/Toilet" index="0"]
+[node name="ToiletParts" parent="Objects/WashAreaD/Toilet" index="0"]
 transform = Transform3D(-1.31134e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.31134e-08, -0.102779, -0.766975, 0.368616)
 
-[node name="CollisionShape3D" parent="Objects/WashArea/Toilet" index="1"]
+[node name="CollisionShape3D" parent="Objects/WashAreaD/Toilet" index="1"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.251308, 0.795412, 0.504776)
 
-[node name="LivingRoomArea" type="Node3D" parent="Objects"]
+[node name="LivingRoomAreaD" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14257, -9.98862)
 
-[node name="CabinetTelevisionDoo" parent="Objects/LivingRoomArea" instance=ExtResource("34_kmb1v")]
+[node name="CabinetTelevisionDoo" parent="Objects/LivingRoomAreaD" instance=ExtResource("34_kmb1v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68119, -0.225932, 1.36827)
 
-[node name="TelevisionVintage" parent="Objects/LivingRoomArea" instance=ExtResource("36_pibwh")]
+[node name="TelevisionVintage" parent="Objects/LivingRoomAreaD" instance=ExtResource("36_pibwh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95193, 1.22279, 1.74483)
 
-[node name="Couch" parent="Objects/LivingRoomArea" instance=ExtResource("22_5q0nq")]
+[node name="Couch" parent="Objects/LivingRoomAreaD" instance=ExtResource("22_5q0nq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98664, -0.714464, -3.54129)
 
-[node name="Radio" parent="Objects/LivingRoomArea" instance=ExtResource("35_fuf3a")]
+[node name="Radio" parent="Objects/LivingRoomAreaD" instance=ExtResource("35_fuf3a")]
 transform = Transform3D(-0.85396, 0, -0.520339, 0, 1, 0, 0.520339, 0, -0.85396, 6.98089, -0.669195, 0)
 
 [node name="Systems" type="Node" parent="."]
@@ -360,5 +360,5 @@ visible = false
 visible = false
 
 [editable path="Objects/WorldTree"]
-[editable path="Objects/WashArea/Shower"]
-[editable path="Objects/WashArea/Toilet"]
+[editable path="Objects/WashAreaD/Shower"]
+[editable path="Objects/WashAreaD/Toilet"]
