@@ -37,8 +37,8 @@ func take_damage(_damage):
 		var explosion_instance = explosion_scene.instantiate()
 		get_parent().add_child(explosion_instance)
 		explosion_instance.global_position = global_position
-		if explosion_instance.has_method("configure_and_play"):
-			explosion_instance.configure_and_play(explosion_color, explosion_sound)
+		if explosion_instance.has_method("configure"):
+			explosion_instance.configure(explosion_color)
 
 
 	# Check for bodies in the explosion radius
