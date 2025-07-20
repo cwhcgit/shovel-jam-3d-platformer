@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b5w2wros2b7x7"]
+[gd_scene load_steps=46 format=3 uid="uid://b5w2wros2b7x7"]
 
 [ext_resource type="Script" uid="uid://coaj4a8box73n" path="res://scripts/level.gd" id="1_fv21b"]
 [ext_resource type="PackedScene" uid="uid://dcal83x5f8wkq" path="res://scenes/player.tscn" id="1_wbyy2"]
@@ -32,6 +32,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b7fk0ron34gcd" path="res://assets/kaykit_kitchen_free/potionSmall_blue.obj" id="17_muem4"]
 [ext_resource type="PackedScene" uid="uid://dmtmvhvs17fso" path="res://assets/bathroom-polypizza/shower.tscn" id="20_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://devixhqvhl7gx" path="res://assets/toilet-polypizza/toilet.tscn" id="21_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://cmpy5wbaealut" path="res://assets/living-room-polypizza/scenes/couch_large.tscn" id="22_5q0nq"]
+[ext_resource type="PackedScene" uid="uid://c26fkg10f4gh7" path="res://assets/living-room-polypizza/scenes/cabinet_television_doo.tscn" id="34_kmb1v"]
+[ext_resource type="PackedScene" uid="uid://dnfa4h6v5kfgk" path="res://assets/living-room-polypizza/scenes/radio.tscn" id="35_fuf3a"]
+[ext_resource type="PackedScene" uid="uid://l22dnrfy8ieq" path="res://assets/living-room-polypizza/scenes/television_vintage.tscn" id="36_pibwh"]
 
 [sub_resource type="Sky" id="Sky_fv21b"]
 sky_material = ExtResource("2_yq6so")
@@ -68,7 +72,7 @@ size = Vector3(1.60736, 1, 1.53381)
 script = ExtResource("1_fv21b")
 
 [node name="Player" parent="." instance=ExtResource("1_wbyy2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950635, 5.01566, 11.6008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.950635, 5.01566, -20.146)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.841435, 0.540358, 0, -0.540358, 0.841435, 0, 88.7606, -82.4962)
@@ -266,13 +270,17 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.47263, 1.4494, -1.05
 [node name="LivingRoomArea" type="Node3D" parent="Objects"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.14257, -9.98862)
 
-[node name="TVPlaceholder" parent="Objects/LivingRoomArea" instance=ExtResource("12_pm3ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88522, 0, 0)
+[node name="CabinetTelevisionDoo" parent="Objects/LivingRoomArea" instance=ExtResource("34_kmb1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68119, -0.225932, 1.36827)
 
-[node name="SwitchPlaceholder" parent="Objects/LivingRoomArea" instance=ExtResource("12_pm3ni")]
+[node name="TelevisionVintage" parent="Objects/LivingRoomArea" instance=ExtResource("36_pibwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95193, 1.22279, 1.74483)
 
-[node name="CouchPlaceholder" parent="Objects/LivingRoomArea" instance=ExtResource("12_pm3ni")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.49904, 0, -3.6101)
+[node name="Couch" parent="Objects/LivingRoomArea" instance=ExtResource("22_5q0nq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98664, -0.714464, -3.54129)
+
+[node name="Radio" parent="Objects/LivingRoomArea" instance=ExtResource("35_fuf3a")]
+transform = Transform3D(-0.85396, 0, -0.520339, 0, 1, 0, 0.520339, 0, -0.85396, 6.98089, -0.669195, 0)
 
 [node name="Systems" type="Node" parent="."]
 
