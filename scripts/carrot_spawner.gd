@@ -12,13 +12,18 @@ extends Node3D
 @export var spawn_area: Area3D
 
 # The time in seconds between each spawn.
-@export var spawn_interval: float = 2.0
+@export var spawn_interval: float = 5.0
 
 # The timer node that will trigger the spawning.
 @onready var spawn_timer: Timer = $SpawnTimer
 
 # Whether to apply random rotation to spawned objects
 @export var random_rotation: bool = true
+
+# Maximum number of items to spawn
+@export var max_spawn_count = 60
+
+var current_spawn_count: int = 0
 
 func _ready():
 	# --- Basic Checks ---
@@ -41,7 +46,7 @@ func _on_spawn_timer_timeout():
 	Called every time the spawn timer finishes.
 	This function handles the creation and positioning of a new item.
 	"""
-	if not item_to_spawn or not spawn_area:
+	if not item_to_spawn or not spawn_area or current_spawn_count >= max_spawn_count:
 		return
 
 	# Get the shape from the spawn area to determine its bounds
@@ -72,10 +77,13 @@ func _on_spawn_timer_timeout():
 	# --- Instantiate and Place the Item ---
 	var new_item = item_to_spawn.instantiate()
 	
+	# Connect to the item's 'destroyed' signal
+	new_item.destroyed.connect(_on_item_destroyed)
+	
 	# --- Apply Random Rotation ---
 	if random_rotation:
 		# Generate random rotation angles for each axis (in radians)
-		var random_rotation_x = randf_range(0.0, TAU)  # TAU = 2π
+		var random_rotation_x = randf_range(0.0, TAU) # TAU = 2π
 		var random_rotation_y = randf_range(0.0, TAU)
 		var random_rotation_z = randf_range(0.0, TAU)
 		
@@ -87,3 +95,8 @@ func _on_spawn_timer_timeout():
 	
 	# Set its global position
 	new_item.global_position = spawn_position
+
+	current_spawn_count += 1
+
+func _on_item_destroyed():
+	current_spawn_count -= 1

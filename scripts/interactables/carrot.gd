@@ -1,5 +1,7 @@
 extends RigidBody3D
 
+signal destroyed
+
 # In the event I want to score eating these (prob not)
 # signal eaten
 
@@ -34,5 +36,8 @@ func take_damage(_damage):
 				MotiveManager.set_motive("Bladder", current_bladder - 10, -10)
 			break
 			
+	# Emit the signal before freeing the object
+	emit_signal("destroyed")
+	
 	# Remove the carrot
 	queue_free()
