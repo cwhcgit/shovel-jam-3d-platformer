@@ -3430,7 +3430,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4p5h2")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4gu0t"]
-size = Vector3(1.54785, 2.28369, 2.75357)
+size = Vector3(1.54785, 2.65533, 2.75357)
 
 [node name="Shower" type="RigidBody3D"]
 
