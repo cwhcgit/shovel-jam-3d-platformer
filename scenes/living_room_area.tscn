@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c75tn7revn5em"]
+
+[ext_resource type="PackedScene" uid="uid://c26fkg10f4gh7" path="res://assets/living-room-polypizza/scenes/cabinet_television_doo.tscn" id="1_jw4mm"]
+[ext_resource type="PackedScene" uid="uid://l22dnrfy8ieq" path="res://assets/living-room-polypizza/scenes/television_vintage.tscn" id="2_oo0lg"]
+[ext_resource type="PackedScene" uid="uid://cmpy5wbaealut" path="res://assets/living-room-polypizza/scenes/couch_large.tscn" id="3_fbflp"]
+[ext_resource type="PackedScene" uid="uid://dnfa4h6v5kfgk" path="res://assets/living-room-polypizza/scenes/radio.tscn" id="4_ds5rn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmb1v"]
+size = Vector3(8.15796, 2.56165, 7.42383)
+
+[node name="LivingRoomArea" type="StaticBody3D"]
+
+[node name="CabinetTelevisionDoo" parent="." instance=ExtResource("1_jw4mm")]
+
+[node name="TelevisionVintage" parent="." instance=ExtResource("2_oo0lg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3897, 0.353041)
+
+[node name="Couch" parent="." instance=ExtResource("3_fbflp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.822163, -5.63925)
+
+[node name="Radio" parent="." instance=ExtResource("4_ds5rn")]
+transform = Transform3D(-0.85396, 0, -0.520339, 0, 1, 0, 0.520339, 0, -0.85396, 4.91667, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.68909, 0.780823, -2.47949)
+shape = SubResource("BoxShape3D_kmb1v")

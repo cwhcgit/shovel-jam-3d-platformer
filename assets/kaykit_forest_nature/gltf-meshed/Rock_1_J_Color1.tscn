@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" uid="uid://b0lqkarbsav6q" path="res://assets/kaykit_forest_nature/Assets/gltf/Rock_1_J_Color1.gltf" id="1"]
+
+[node name="Rock_1_J_Color1" instance=ExtResource("1")]
+

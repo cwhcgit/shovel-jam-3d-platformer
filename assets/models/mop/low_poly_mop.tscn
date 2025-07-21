@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqnv3y6y7v36r"]
+
+[ext_resource type="PackedScene" uid="uid://b2b3ep7kh3cea" path="res://assets/models/mop/low_poly_mop.glb" id="1_cx12b"]
+[ext_resource type="Script" uid="uid://rbbowrxj4v4x" path="res://scripts/interactables/mop.gd" id="2_abcde"]
+[ext_resource type="PackedScene" uid="uid://c63chx808ef58" path="res://scenes/effects/glow_effect.tscn" id="3_iuyp6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_thstt"]
+size = Vector3(0.109589, 1.47766, 0.183655)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12345"]
+size = Vector3(1, 2, 1)
+
+[node name="low_poly_mop" type="RigidBody3D" groups=["interactables"]]
+collision_layer = 16
+collision_mask = 31
+script = ExtResource("2_abcde")
+
+[node name="low_poly_mop_model" parent="." instance=ExtResource("1_cx12b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161331, 0.238831, -0.00796509)
+shape = SubResource("BoxShape3D_thstt")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_12345")
+
+[node name="GlowEffect" parent="." instance=ExtResource("3_iuyp6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.4, 0)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6gq7x8f3w8w"]
+
+[ext_resource type="Script" uid="uid://1ojyd4x1s7h4" path="res://scripts/effects/explosion.gd" id="1_abcde"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_explosion"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 5.0
+initial_velocity_max = 8.0
+scale_min = 0.1
+scale_max = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_explosion"]
+albedo_color = Color(0.360784, 0.235294, 0.164706, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_explosion"]
+material = SubResource("StandardMaterial3D_explosion")
+
+[node name="Explosion" type="Node3D"]
+script = ExtResource("1_abcde")
+
+[node name="ExplosionParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 50
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_explosion")
+draw_pass_1 = SubResource("SphereMesh_explosion")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

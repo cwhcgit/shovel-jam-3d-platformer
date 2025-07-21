@@ -1,0 +1,172 @@
+[gd_scene load_steps=3 format=3 uid="uid://wgugwvm6sw1p"]
+
+[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/green/arch_wide_green.tscn" id="2_p2en5"]
+[ext_resource type="PackedScene" uid="uid://c8t1w2q8k7v6y" path="res://assets/kaykit_platformer/gltf-meshed/neutral/strut_vertical.tscn" id="83_star_green"]
+
+[node name="platformer_mesh_library_green" type="Node3D"]
+
+[node name="arch_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="arch_tall_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="arch_wide_green" parent="." instance=ExtResource("2_p2en5")]
+
+[node name="ball_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_1x1x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_1x1x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_2x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_2x1x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_2x1x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_3x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_3x1x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_3x1x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_4x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_4x1x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="barrier_4x1x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="bomb_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="bomb_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="bracing_large_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="bracing_medium_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="bracing_small_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="button_base_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="cone_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="diamond_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="flag_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="flag_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="flag_C_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="heart_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="hoop_angled_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="hoop_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="lever_floor_base_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="lever_wall_base_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="lever_wall_base_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_180_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_180_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_90_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_90_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_end_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_straight_A_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="pipe_straight_B_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_2x2x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_2x2x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x2x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x2x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x4x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x4x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_4x4x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x2x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x2x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x6x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x6x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_6x6x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_arrow_2x2x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_arrow_4x4x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_decorative_1x1x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_decorative_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_hole_6x6x1_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_2x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_2x4x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_2x6x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_4x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_4x4x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_4x6x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_6x2x2_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_6x4x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="platform_slope_6x6x4_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="power_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_corner_double_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_corner_padded_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_corner_single_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_straight_double_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_straight_padded_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="railing_straight_single_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="signage_arrow_stand_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="signage_arrow_wall_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="signage_arrows_left_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="signage_arrows_right_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="spring_pad_green" parent="." instance=ExtResource("83_star_green")]
+
+[node name="star_green" parent="." instance=ExtResource("83_star_green")]

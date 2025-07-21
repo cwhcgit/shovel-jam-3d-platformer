@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4fhbwfvxdul3"]
+
+[ext_resource type="PackedScene" uid="uid://dysdl518vw537" path="res://assets/kaykit_platformer/gltf/blue/barrier_4x1x4_blue.gltf" id="1_dsr3c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mv88i"]
+points = PackedVector3Array(-1.95347, 0.169266, -0.388749, 1.84434, 3.96683, 0.3461, 1.83153, 3.95318, -0.388845, 1.84434, 0.0331681, 0.3461, -1.85821, 3.85784, 0.457531, -1.79244, 3.79209, -0.5, 1.79244, 0.207915, -0.5, -1.6784, 0.321569, 0.5, 1.6784, 3.67843, 0.5, 1.6784, 0.321569, 0.5, -1.79244, 0.207915, -0.5, 1.79244, 3.79209, -0.5, -1.96712, 0.156472, 0.346018, -1.83153, 3.95318, -0.388845, 1.95347, 0.169266, -0.388749, 1.95636, 3.77255, 0.405309, -1.83153, 0.0468218, -0.388845, -1.95347, 3.83073, -0.388749, -1.6784, 3.67843, 0.5, -1.77316, 0.0437026, 0.405453, 1.95347, 3.83073, -0.388749, 1.96712, 0.156472, 0.346018, 1.83153, 0.0468218, -0.388845, -1.84434, 3.96683, 0.3461, -1.96712, 3.84353, 0.346018, 1.85821, 0.142157, 0.457531, -1.85821, 0.142157, 0.457531, 1.85821, 3.85784, 0.457531, 1.96712, 3.84353, 0.346018, -1.84434, 0.0331681, 0.3461, 1.77316, 3.9563, 0.405453, -1.95636, 3.77255, 0.405309)
+
+[node name="barrier_4x1x4_blue" instance=ExtResource("1_dsr3c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="barrier_4x1x4_blue" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="barrier_4x1x4_blue/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_mv88i")

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xpqk32lpqwm1"
+path="res://.godot/imported/Grass_2_A_Color1.obj-fffade4b40fadb811f202fa2d429c440.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Grass_2_A_Color1.obj-fffade4b40fadb811f202fa2d429c440.mesh"]
+
+source_file="res://assets/kaykit_forest_nature/Assets/obj/Grass_2_A_Color1.obj"
+dest_files=["res://.godot/imported/Grass_2_A_Color1.obj-fffade4b40fadb811f202fa2d429c440.mesh", "res://.godot/imported/Grass_2_A_Color1.obj-fffade4b40fadb811f202fa2d429c440.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

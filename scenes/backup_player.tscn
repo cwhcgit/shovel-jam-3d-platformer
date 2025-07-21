@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://5h2kablx1xxg"]
+
+[ext_resource type="Script" uid="uid://c3aeosj78537p" path="res://scripts/player.gd" id="1_rb1rj"]
+[ext_resource type="PackedScene" uid="uid://cpalyeu2avv4a" path="res://assets/kaykit_adventurers_free/barbarian/Barbarian.glb" id="2_vyasb"]
+[ext_resource type="PackedScene" uid="uid://cph1jv8kfokcr" path="res://assets/models/player/guy.glb" id="3_juluj"]
+[ext_resource type="Script" uid="uid://byyfpvjqlcd3r" path="res://scripts/player_actions.gd" id="4_7o5ab"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v813g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qhqgy"]
+radius = 1.5
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_rb1rj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_v813g")
+
+[node name="Barbarian" parent="." groups=["player"] instance=ExtResource("2_vyasb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
+
+[node name="PlayerModel" parent="." groups=["player"] instance=ExtResource("3_juluj")]
+
+[node name="PlayerActionHandler" type="Node" parent="."]
+script = ExtResource("4_7o5ab")
+
+[node name="DashTimer" type="Timer" parent="."]
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, -5)
+
+[node name="AttackShapeCast" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_qhqgy")
+
+[node name="InteractableDetector" type="Area3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+collision_layer = 2
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableDetector"]
+shape = SubResource("CylinderShape3D_qhqgy")
+
+[node name="MopHolder" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.867016, -0.310756, -0.727523)
+
+[node name="back_pos" type="Marker3D" parent="MopHolder"]
+
+[node name="front_pos" type="Marker3D" parent="MopHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

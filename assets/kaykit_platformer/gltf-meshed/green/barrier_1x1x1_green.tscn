@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8t1w2q8k7v6y"]
+
+[ext_resource type="PackedScene" uid="uid://your_uid_here" path="res://assets/kaykit_platformer/gltf/green/barrier_1x1x1_green.gltf" id="1_dsr3c"]
+
+[node name="barrier_1x1x1_green" instance=ExtResource("1_dsr3c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]

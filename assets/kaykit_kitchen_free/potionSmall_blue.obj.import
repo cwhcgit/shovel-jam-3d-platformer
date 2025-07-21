@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7fk0ron34gcd"
+path="res://.godot/imported/potionSmall_blue.obj-dd7c03f55c9d281f93d5ec8186a0e337.mesh"
+
+[deps]
+
+files=["res://.godot/imported/potionSmall_blue.obj-dd7c03f55c9d281f93d5ec8186a0e337.mesh"]
+
+source_file="res://assets/kaykit_kitchen_free/potionSmall_blue.obj"
+dest_files=["res://.godot/imported/potionSmall_blue.obj-dd7c03f55c9d281f93d5ec8186a0e337.mesh", "res://.godot/imported/potionSmall_blue.obj-dd7c03f55c9d281f93d5ec8186a0e337.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8t1w2q8k7v6y"]
+
+[ext_resource type="PackedScene" uid="uid://qxfd2yjes6kk" path="res://assets/kaykit_platformer/gltf/green/platform_4x4x2_green.gltf" id="1_dsr3c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ndx0n"]
+points = PackedVector3Array(-1.95027, 0.0499217, -2, -2, 0.0499217, -1.95027, -1.95027, 1.94988, -2, 1.94988, 0.0499217, -2, -1.95027, 0, -1.95027, -2, 1.94988, -1.95027, -2, 0.0499217, 1.94988, -1.95027, 2, -1.95027, 1.94988, 1.94988, -2, 2, 0.0499217, -1.95027, 1.94988, 0, -1.95027, -1.95027, 0, 1.94988, -2, 1.94988, 1.94988, -1.95027, 0.0499217, 2, -1.95027, 2, 1.94988, 1.94988, 2, -1.95027, 2, 1.94988, -1.95027, 2, 0.0499217, 1.94988, 1.94988, 0, 1.94988, -1.95027, 1.94988, 2, 1.94988, 0.0499217, 2, 1.94988, 2, 1.94988, 2, 1.94988, 1.94988, 1.94988, 1.94988, 2)
+
+[node name="platform_4x4x2_green" instance=ExtResource("1_dsr3c")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="platform_4x4x2_green" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="platform_4x4x2_green/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ndx0n")

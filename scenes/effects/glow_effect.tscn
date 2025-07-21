@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://c63chx808ef58"]
+
+[sub_resource type="Gradient" id="Gradient_spotlight"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(1, 1, 0, 0.3, 1, 1, 0, 0.1, 1, 1, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cyxl7"]
+gradient = SubResource("Gradient_spotlight")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spotlight"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 0.5)
+albedo_texture = SubResource("GradientTexture1D_cyxl7")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0durb"]
+material = SubResource("StandardMaterial3D_spotlight")
+top_radius = 0.0
+bottom_radius = 0.75
+height = 1.5
+
+[sub_resource type="Gradient" id="Gradient_mx1co"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_particle_color"]
+gradient = SubResource("Gradient_mx1co")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pchxl"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0.2, 0)
+scale_min = 0.05
+scale_max = 0.1
+color = Color(1, 1, 0, 1)
+color_ramp = SubResource("GradientTexture1D_particle_color")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glowing"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_o4cat"]
+material = SubResource("StandardMaterial3D_glowing")
+
+[node name="GlowEffect" type="Node3D"]
+
+[node name="FakeSpotlight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0durb")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+amount = 30
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_pchxl")
+draw_pass_1 = SubResource("QuadMesh_o4cat")
