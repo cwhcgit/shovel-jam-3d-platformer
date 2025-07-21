@@ -52,3 +52,7 @@ This was a game made for the 2025 InboundShovel Games Jam
     - grow trees
     - defeat pests
     - ...
+
+## Fun?
+
+Possible to explore more of the base mechanics by adding more interesting platforming movement/mechanics & things to fulfil needs/motive in the overworld. Perhaps defeat enemies, perhaps find/explore items and secrets, etc. Typical platformer/adventure game stuff. Having to maintain more of a list of requirements instead of a single one (food) might be an interesting angle. 
