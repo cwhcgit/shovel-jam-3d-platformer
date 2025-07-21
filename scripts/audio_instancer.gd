@@ -166,9 +166,9 @@ func set_fade_duration(duration: float):
 	fade_duration = maxf(duration, 0.1)  # Minimum fade time
 
 # Sound effects methods
-func play_sfx(sound: AudioStream, volume_db: float = 0.0):
+func play_sfx(sound: AudioStream, volume_db: float = 0.0) -> AudioStreamPlayer: 
 	if sound == null:
-		return
+		return null
 	
 	# Create a temporary audio player for this SFX
 	var temp_player = AudioStreamPlayer.new()
@@ -180,6 +180,7 @@ func play_sfx(sound: AudioStream, volume_db: float = 0.0):
 	
 	# Remove player when finished
 	temp_player.finished.connect(func(): temp_player.queue_free())
+	return temp_player
 
 func play_sfx_2d(sound: AudioStream, position: Vector2, volume_db: float = 0.0):
 	if sound == null:
@@ -212,7 +213,7 @@ func on_menu_close():
 	resume_music()
 
 func restore_previous_track():
-	play_music(previous_track)
+	play_music(previous_track, false, true)
 
 # Debug methods
 func get_current_track_name() -> String:

@@ -4,6 +4,7 @@ class_name Toilet
 var is_using_toilet: bool = false
 var player_using: Node = null
 var original_position: Vector3
+var sfx = preload("res://assets/audio/sound_effects/behind-doors-toilet-flush-196151.mp3")
 
 func _process(delta):
 	if is_using_toilet and is_instance_valid(player_using):
@@ -38,6 +39,7 @@ func _start_using(player):
 func _stop_using():
 	is_using_toilet = false
 	AudioInstancer.restore_previous_track()
+	AudioInstancer.play_sfx(sfx, 0.5)
 	if is_instance_valid(player_using):
 		var player_model = player_using.get_node("PlayerModel")
 		if player_model:

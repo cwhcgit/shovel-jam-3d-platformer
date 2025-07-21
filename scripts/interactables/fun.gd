@@ -5,6 +5,8 @@ var is_having_fun: bool = false
 var player_having_fun: Node = null
 var original_position: Vector3
 var original_rotation: Vector3
+var on_sfx = preload("res://assets/audio/sound_effects/fun/tv-on-television-80399.mp3")
+var off_sfx = preload("res://assets/audio/sound_effects/fun/tv-off-light-switch-off-86314.mp3")
 
 func _process(delta):
 	if is_having_fun and is_instance_valid(player_having_fun):
@@ -24,6 +26,7 @@ func _start_having_fun(player):
 	player_having_fun = player
 	player.set_channeling(true)
 	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
+	AudioInstancer.play_sfx(on_sfx, 0.5)
 
 	var player_model = player.get_node("PlayerModel")
 	if player_model:
@@ -39,6 +42,7 @@ func _start_having_fun(player):
 func _stop_having_fun():
 	is_having_fun = false
 	AudioInstancer.restore_previous_track()
+	AudioInstancer.play_sfx(off_sfx, 0.5)
 	if is_instance_valid(player_having_fun):
 		var player_model = player_having_fun.get_node("PlayerModel")
 		if player_model:

@@ -4,6 +4,16 @@ class_name Bed
 var is_napping: bool = false
 var player_napping: Node = null
 var original_position: Vector3
+var sfx_timer: Timer
+
+var sfx_sheets = [
+	preload("res://assets/audio/sound_effects/bed/snore_part_1.mp3"),
+	preload("res://assets/audio/sound_effects/bed/snore_part_2.mp3"),
+	preload("res://assets/audio/sound_effects/bed/snore_part_3.mp3"),
+	preload("res://assets/audio/sound_effects/bed/snore_part_4.mp3"),
+	preload("res://assets/audio/sound_effects/bed/snore_part_5.mp3"),
+	preload("res://assets/audio/sound_effects/bed/snore_part_6.mp3"),
+]
 
 func _process(delta):
 	if is_napping and is_instance_valid(player_napping):
@@ -23,6 +33,14 @@ func _start_napping(player):
 	player_napping = player
 	player.set_channeling(true)
 	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
+
+	sfx_timer = Timer.new()
+	sfx_timer.wait_time = 2.5
+	sfx_timer.one_shot = false
+	sfx_timer.timeout.connect(_on_SfxTimer_timeout)
+	add_child(sfx_timer)
+	sfx_timer.start()
+	_on_SfxTimer_timeout() # Play a sound immediately.
 
 	var player_model = player.get_node("PlayerModel")
 	original_position = player_model.global_position
@@ -46,3 +64,12 @@ func _stop_napping():
 			# player_model.position = Vector3.ZERO
 		player_napping.set_channeling(false)
 	player_napping = null
+	if sfx_timer:
+		sfx_timer.stop()
+		sfx_timer.queue_free()
+		sfx_timer = null
+
+func _on_SfxTimer_timeout():
+	if sfx_sheets.size() > 0:
+		var random_index = randi() % sfx_sheets.size()
+		AudioInstancer.play_sfx(sfx_sheets[random_index], 0.5)

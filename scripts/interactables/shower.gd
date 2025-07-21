@@ -5,6 +5,8 @@ var is_showering: bool = false
 var player_showering: Node = null
 var original_position: Vector3
 var original_rotation: Vector3
+var sfx = preload("res://assets/audio/sound_effects/shower-80209.mp3")
+var sfx_player: AudioStreamPlayer
 
 func _process(delta):
 	if is_showering and is_instance_valid(player_showering):
@@ -24,6 +26,7 @@ func _start_showering(player):
 	player_showering = player
 	player.set_channeling(true)
 	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
+	sfx_player = AudioInstancer.play_sfx(sfx, 0.5)
 
 	var player_model = player.get_node("PlayerModel")
 	if player_model:
@@ -39,6 +42,8 @@ func _start_showering(player):
 func _stop_showering():
 	is_showering = false
 	AudioInstancer.restore_previous_track()
+	sfx_player.stop()
+	sfx_player.queue_free()
 	if is_instance_valid(player_showering):
 		var player_model = player_showering.get_node("PlayerModel")
 		if player_model:

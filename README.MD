@@ -10,18 +10,37 @@ https://micearesocute.itch.io/link-unsure-if-confirmed
     - https://squaremango.itch.io/
     - https://x.com/MangoSquare
 
-- Trees, Tilemaps, Rocks, random objects from https://kaylousberg.itch.io/
-- Shower by Joel Unger [CC-BY] via Poly Pizza
-- Toilet by Pat Siefring [CC-BY] via Poly Pizza
-- Cabinet Television Doo by Kenney
-- Television Vintage by Kenney
-- Couch Large by Quaternius
-- Radio by Quaternius
+- Art Assets
+    - Trees, Tilemaps, Rocks, random objects from https://kaylousberg.itch.io/
+    - Shower by Joel Unger [CC-BY] via Poly Pizza
+    - Toilet by Pat Siefring [CC-BY] via Poly Pizza
+    - Cabinet Television Doo by Kenney
+    - Television Vintage by Kenney
+    - Couch Large by Quaternius
+    - Radio by Quaternius
 
-## Missing stuff
-
-- 
+- Sound
+    - SFX all from pixabay
+        - toilet flush
+        - bling
+        - poop
+        - urgh/urgh2
+        - ...
 
 ## Bugs/Needs fix
 
-- Character positioning 
+- Character positioning on bed/couch is incorrect
+- Sometimes if you use an interactable then immediately stop, the music stays as the elevator music
+- greg related
+    - greg should more aggressively avoid the world tree
+    - greg sometimes can decide to fly into collision objects (mainly the world tree), resulting in it being stuck
+    - greg's position when on top of player's head should follow the model, instead of the base node
+
+## Wanted to add...
+
+- green/red arrow indicator when motives (needs) go up/down
+- some kind of scoreboard/high score (persist/online)
+- more ways to get score (more things to do in the game)
+    - grow trees
+    - defeat pests
+    - ...
