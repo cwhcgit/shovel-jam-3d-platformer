@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://dtm2kk1otrl4d"]
+[gd_scene load_steps=11 format=4 uid="uid://dtm2kk1otrl4d"]
 
 [ext_resource type="Texture2D" uid="uid://r3af87gkwpmu" path="res://assets/kaykit_kitchen_free/restaurantbits_texture.png" id="1_8a6nx"]
 [ext_resource type="Script" uid="uid://s7iaputg1npn" path="res://scripts/interactables/carrot.gd" id="1_y32g4"]
+[ext_resource type="PackedScene" uid="uid://c6gq7x8f3w8w" path="res://scenes/effects/explosion.tscn" id="2_m33qs"]
+[ext_resource type="AudioStream" uid="uid://4tknwdyc6064" path="res://assets/audio/sound_effects/g_poop/clean-bling-get-coin-351945.mp3" id="3_jlmeb"]
+[ext_resource type="AudioStream" uid="uid://b1td6otffylok" path="res://assets/audio/sound_effects/carrot/munch-1.mp3" id="3_m33qs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d28tv"]
 resource_name = "restaurant"
@@ -50,7 +53,10 @@ radius = 3.0
 
 [node name="RigidBody3D" type="RigidBody3D"]
 script = ExtResource("1_y32g4")
-explosion_color = null
+explosion_scene = ExtResource("2_m33qs")
+explosion_color = Color(0.916641, 0.349602, 0, 1)
+explosion_sounds = ExtResource("3_m33qs")
+clean_explosion_sound = ExtResource("3_jlmeb")
 
 [node name="food_ingredient_carrot" type="MeshInstance3D" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
