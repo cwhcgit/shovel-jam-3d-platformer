@@ -12,6 +12,7 @@ var _final_countdown_triggered = false
 
 func _process(delta):
 	if game_running:
+		FloatingNumbersManager.mark_score_from_time()
 		add_score(delta * 10)
 		time_left -= delta
 		if time_left <= 0:

@@ -51,6 +51,9 @@ func take_damage(_damage):
 
 				var current_bladder = MotiveManager.get_motive("Bladder")
 				MotiveManager.set_motive("Bladder", current_bladder - 10, -10)
+	
+				# Add score for doing action
+				ScoreTimeManager.add_score(SCORE)
 
 				var random_index = randi() % sfx_sheets.size()
 				AudioInstancer.play_sfx(load(sfx_sheets[random_index]), 0.5)
@@ -58,9 +61,6 @@ func take_damage(_damage):
 			
 	# Emit the signal before freeing the object
 	emit_signal("destroyed")
-	
-	# Add score for doing action
-	ScoreTimeManager.add_score(SCORE)
 	
 	# Remove the Carrot
 	queue_free()

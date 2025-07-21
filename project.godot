@@ -21,6 +21,7 @@ config/icon="uid://bmmq8n1bg3iyh"
 MotiveManager="*res://scripts/motive_manager.gd"
 ScoreTimeManager="*res://scripts/score_time_manager.gd"
 AudioInstancer="*res://scripts/audio_instancer.gd"
+FloatingNumbersManager="*res://scripts/floating_numbers_manager.gd"
 
 [global_group]
 
