@@ -39,7 +39,7 @@ var dash_state = DashState.READY
 var movement_restricted: bool = false
 var is_channeling: bool = false
 var equipped_item: Node = null
-var nearby_interactable: Node = null
+var nearby_interactables: Array[Node] = []
 
 @onready var animation_player: AnimationPlayer = $PlayerModel/AnimationPlayer
 @onready var twist_pivot: Node3D = $TwistPivot
@@ -58,11 +58,12 @@ func _ready():
 
 func _on_interactable_detector_body_entered(body):
 	if body.is_in_group("interactables"):
-		nearby_interactable = body
+		if not nearby_interactables.has(body):
+			nearby_interactables.append(body)
 
 func _on_interactable_detector_body_exited(body):
-	if body == nearby_interactable:
-		nearby_interactable = null
+	if body.is_in_group("interactables"):
+		nearby_interactables.erase(body)
 
 func set_equipped_item(item):
 	equipped_item = item
@@ -194,13 +195,29 @@ func _handle_attack():
 			# Assuming the enemy has a 'take_damage' method
 			collider.call("take_damage", 10) # Deal 10 damage
 
+
+# Add this new function to get the prioritized interactable
+func get_priority_interactable() -> Node:
+	if nearby_interactables.is_empty():
+		return null
+	
+	# First, check for Mop objects (highest priority)
+	for interactable in nearby_interactables:
+		if interactable is Mop:
+			return interactable
+	
+	# If no mop found, return the first available interactable
+	return nearby_interactables[0]
+
 func _handle_interact():
 	if equipped_item:
 		animation_player.play(ANIM_INTERACT_NAME)
 		equipped_item.call("drop", self)
-	elif nearby_interactable:
-		animation_player.play(ANIM_INTERACT_NAME)
-		nearby_interactable.call("interact", self)
+	else:
+		var priority_interactable = get_priority_interactable()
+		if priority_interactable:
+			animation_player.play(ANIM_INTERACT_NAME)
+			priority_interactable.call("interact", self)
 
 func _get_wall_normal():
 	if get_slide_collision_count() > 0:
