@@ -2,6 +2,8 @@
 
 https://micearesocute.itch.io/link-unsure-if-confirmed
 
+This was a game made for the 2025 InboundShovel Games Jam
+
 ## Credits
 
 - Programming: micearesocute
