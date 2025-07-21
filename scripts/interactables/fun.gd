@@ -23,6 +23,7 @@ func _start_having_fun(player):
 	is_having_fun = true
 	player_having_fun = player
 	player.set_channeling(true)
+	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
 
 	var player_model = player.get_node("PlayerModel")
 	if player_model:
@@ -37,6 +38,7 @@ func _start_having_fun(player):
 
 func _stop_having_fun():
 	is_having_fun = false
+	AudioInstancer.restore_previous_track()
 	if is_instance_valid(player_having_fun):
 		var player_model = player_having_fun.get_node("PlayerModel")
 		if player_model:

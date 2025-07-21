@@ -6,7 +6,8 @@ extends Node
 # Music tracks enum for easy reference
 enum MusicTrack {
 	MAIN_THEME,
-	MAIN_THEME_INTENSE
+	MAIN_THEME_INTENSE,
+	ELEVATOR
 }
 
 # Audio players for crossfading
@@ -16,6 +17,7 @@ enum MusicTrack {
 
 # Current state
 var current_track: MusicTrack = MusicTrack.MAIN_THEME
+var previous_track: MusicTrack
 var active_player: AudioStreamPlayer
 var inactive_player: AudioStreamPlayer
 var is_transitioning: bool = false
@@ -64,6 +66,7 @@ func load_music_tracks():
 	# Load your music files here - replace with actual paths
 	music_tracks[MusicTrack.MAIN_THEME] = preload("res://assets/audio/music/LevelThemeCalm.wav")
 	music_tracks[MusicTrack.MAIN_THEME_INTENSE] = preload("res://assets/audio/music/LevelThemeIntense.wav")
+	music_tracks[MusicTrack.ELEVATOR] = preload("res://assets/audio/music/ElevatorMusic.wav")
 	# music_tracks[MusicTrack.LEVEL_1] = preload("res://audio/music/level_1.ogg")
 	# music_tracks[MusicTrack.BOSS_BATTLE] = preload("res://audio/music/boss_battle.ogg")
 	# music_tracks[MusicTrack.UNDERGROUND] = preload("res://audio/music/underground.ogg")
@@ -84,6 +87,8 @@ func play_music(track: MusicTrack, smooth_transition: bool = true, force: bool =
 		push_error("Music track not found: " + str(track))
 		return
 	
+	previous_track = current_track
+
 	var new_stream = music_tracks[track]
 	
 	if smooth_transition and active_player.playing:
@@ -205,6 +210,9 @@ func on_menu_open():
 
 func on_menu_close():
 	resume_music()
+
+func restore_previous_track():
+	play_music(previous_track)
 
 # Debug methods
 func get_current_track_name() -> String:

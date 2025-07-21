@@ -22,6 +22,7 @@ func _start_using(player):
 	is_using_toilet = true
 	player_using = player
 	player.set_channeling(true)
+	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
 
 	var player_model = player.get_node("PlayerModel")
 	if player_model:
@@ -36,6 +37,7 @@ func _start_using(player):
 
 func _stop_using():
 	is_using_toilet = false
+	AudioInstancer.restore_previous_track()
 	if is_instance_valid(player_using):
 		var player_model = player_using.get_node("PlayerModel")
 		if player_model:

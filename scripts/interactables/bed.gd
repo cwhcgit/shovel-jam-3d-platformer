@@ -22,6 +22,7 @@ func _start_napping(player):
 	is_napping = true
 	player_napping = player
 	player.set_channeling(true)
+	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
 
 	var player_model = player.get_node("PlayerModel")
 	original_position = player_model.global_position
@@ -35,6 +36,7 @@ func _start_napping(player):
 
 func _stop_napping():
 	is_napping = false
+	AudioInstancer.restore_previous_track()
 	if is_instance_valid(player_napping):
 		var player_model = player_napping.get_node("PlayerModel")
 		if player_model:

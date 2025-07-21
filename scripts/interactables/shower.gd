@@ -23,6 +23,7 @@ func _start_showering(player):
 	is_showering = true
 	player_showering = player
 	player.set_channeling(true)
+	AudioInstancer.play_music(AudioInstancer.MusicTrack.ELEVATOR, true)
 
 	var player_model = player.get_node("PlayerModel")
 	if player_model:
@@ -37,6 +38,7 @@ func _start_showering(player):
 
 func _stop_showering():
 	is_showering = false
+	AudioInstancer.restore_previous_track()
 	if is_instance_valid(player_showering):
 		var player_model = player_showering.get_node("PlayerModel")
 		if player_model:
