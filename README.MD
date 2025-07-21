@@ -4,7 +4,9 @@ https://micearesocute.itch.io/link-unsure-if-confirmed
 
 ## Credits
 
-- Protag/Greg (birdie) model/animations: Chip!
+- Programming: micearesocute
+    - https://micearesocute.itch.io
+- Protag/Greg (birdie) model/animations, game icon, loading screen art: Chip!
     - https://kitifulninesgames.itch.io/
 - Main theme/alternate main theme music: Square 
     - https://squaremango.itch.io/
@@ -25,6 +27,10 @@ https://micearesocute.itch.io/link-unsure-if-confirmed
         - bling
         - poop
         - urgh/urgh2
+        - carrot crunch
+        - bed cat snoring
+        - tv on/off
+        - shower
         - ...
 
 ## Bugs/Needs fix
